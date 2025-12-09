@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Lanuch MapleServer",
+				"type": "go",
+				"request": "launch",
+				"mode": "auto",
+				"cwd": "${workspaceFolder}",
+				"program": "${workspaceFolder}/cmd",
+				"console": "integratedTerminal",
+				"output": "${workspaceFolder}/bin/MapleServer.exe",
+				"env": {},
+				"args": []
+			}
+		],
+		"compounds": []
+	},
+	"settings": {}
+}
