@@ -1,0 +1,3 @@
+package login
+
+const LOGIN_DB_WRITE_ERROR = "LOGIN_DB_WRITE_ERROR"

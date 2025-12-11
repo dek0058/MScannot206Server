@@ -1,18 +1,11 @@
 package repository
 
-func NewUser(uid string) *User {
-	return &User{
-		Uid: uid,
-	}
-}
-
-type User struct {
-	Uid string `json:"uid" bson:"uid"`
-}
+import "MScannot206/shared/entity"
 
 type UserRepository interface {
 	Start() error
 	Stop() error
 
-	FindUserByUID(string) (*User, error)
+	FindUserByUids(uids []string) ([]*entity.User, []string, error)
+	InsertUserByUids(uids []string) ([]*entity.User, error)
 }

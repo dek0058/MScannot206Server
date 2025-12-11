@@ -6,6 +6,7 @@ import (
 	"MScannot206/shared/service"
 	"encoding/json"
 	"errors"
+	"log"
 	"net/http"
 )
 
@@ -80,7 +81,6 @@ func (s *LoginService) Stop() error {
 
 func (s *LoginService) onLogin(w http.ResponseWriter, r *http.Request) {
 
-	// HTTP POST만 허용
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
@@ -92,22 +92,44 @@ func (s *LoginService) onLogin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// uid := req.Uid
+	var response LoginResponse
 
-	// user, err := s.userRepo.FindUserByUID(uid)
-	// if err != nil {
-	// 	http.Error(w, "User Not Found", http.StatusInternalServerError)
-	// 	return
-	// }
+	users, newUids, err := s.userRepo.FindUserByUids(req.Uids)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
-	// _ = user
+	// 신규 유저 생성
+	if len(newUids) > 0 {
+		newUsers, err := s.userRepo.InsertUserByUids(newUids)
+		if err != nil {
+			// 신규 유저는 로그인 불가
+			log.Printf("신규 유저 생성 불가: %v", err)
 
-	// TODO: 접속중인 계정인지 확인
-	//println("User logged in:", req.UserIds)
-	for _, id := range req.UserIds {
-		println(id)
+			for _, uid := range newUids {
+				reason := LoginFailUid{
+					Uid:       uid,
+					ErrorCode: LOGIN_DB_WRITE_ERROR,
+				}
+				response.FailUids = append(response.FailUids, reason)
+			}
+
+			// TODO: 생성 불가능한 유저 uid 로그 추가
+		} else {
+			users = append(users, newUsers...)
+		}
+	}
+
+	// 로그인 프로세스
+	for _, u := range users {
+		response.SuccessUids = append(response.SuccessUids, u.Uid)
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		log.Printf("onLogin JSON Encode Error: %v", err)
+	}
 }
