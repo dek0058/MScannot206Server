@@ -117,7 +117,7 @@ Loop:
 
 	errs = nil
 	for _, svc := range s.services {
-		if err := svc.Init(s); err != nil {
+		if err := svc.Init(); err != nil {
 			errs = errors.Join(errs, err)
 			log.Println(err)
 		}
@@ -148,25 +148,30 @@ func (s *WebServer) Start() error {
 	return s.server.ListenAndServe()
 }
 
-func (s *WebServer) Shutdown() error {
+func (s *WebServer) Quit() error {
 	for _, svc := range s.services {
 		if err := svc.Stop(); err != nil {
 			log.Println(err)
 		}
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-
-	if err := s.server.Shutdown(ctx); err != nil {
+	if err := s.server.Shutdown(s.ctx); err != nil {
 		return err
 	}
 
-	if err := s.mongoClient.Disconnect(ctx); err != nil {
+	if err := s.mongoClient.Disconnect(s.ctx); err != nil {
 		return err
+	}
+
+	if s.cancelFunc != nil {
+		s.cancelFunc()
 	}
 
 	return nil
+}
+
+func (s WebServer) GetServices() []service.GenericService {
+	return s.services
 }
 
 func (s *WebServer) AddService(svc service.GenericService) error {

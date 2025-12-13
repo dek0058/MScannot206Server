@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -9,13 +10,26 @@ import (
 type ServiceHost interface {
 	// Core
 	GetContext() context.Context
+	GetServices() []GenericService
+	AddService(svc GenericService) error
+	Quit() error
 
 	// DB
 	GetMongoClient() *mongo.Client
 }
 
-func GetService[T GenericService](host ServiceHost) T {
+func GetService[T GenericService](host ServiceHost) (T, error) {
 	var ret T
-	// TODO: 서비스 가져오기
-	return ret
+
+	if host == nil {
+		return ret, fmt.Errorf("host is nil")
+	}
+
+	for _, svc := range host.GetServices() {
+		if casted, ok := svc.(T); ok {
+			return casted, nil
+		}
+	}
+
+	return ret, fmt.Errorf("service not found: %T", ret)
 }

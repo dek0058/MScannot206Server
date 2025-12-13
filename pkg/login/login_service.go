@@ -35,7 +35,7 @@ type LoginService struct {
 	userRepo repository.UserRepository
 }
 
-func (s *LoginService) Init(host service.ServiceHost) error {
+func (s *LoginService) Init() error {
 	var err error
 
 	// TODO: 외부에서 가져올 수 있도록 수정 필요
