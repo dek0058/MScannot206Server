@@ -1,10 +1,13 @@
 package main
 
 import (
+	"MScannot206/pkg/auth"
 	"MScannot206/pkg/login"
 	"MScannot206/pkg/manager"
+	"MScannot206/pkg/user"
 	"MScannot206/shared/config"
 	"MScannot206/shared/server"
+	"MScannot206/shared/service"
 	"context"
 	"errors"
 	"flag"
@@ -91,6 +94,13 @@ func main() {
 		panic(err)
 	}
 
+	// 인증 서비스
+	auth_service, err := auth.NewAuthService(web_server)
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("인증 서비스 생성 오류")
+	}
+
 	// 로그인 서비스
 	login_service, err := login.NewLoginService(web_server, web_server.GetRouter())
 	if err != nil {
@@ -98,14 +108,27 @@ func main() {
 		log.Error().Err(err).Msg("로그인 서비스 생성 오류")
 	}
 
+	// 유저 서비스
+	user_service, err := user.NewUserService(web_server)
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("유저 서비스 생성 오류")
+	}
+
 	if errs != nil {
 		panic(errs)
 	}
 
 	errs = nil
-	if err := web_server.AddService(login_service); err != nil {
-		errs = errors.Join(errs, err)
-		log.Error().Err(err).Msg("로그인 서비스 추가 오류")
+	for _, svc := range []service.GenericService{
+		auth_service,
+		user_service,
+		login_service,
+	} {
+		if err := web_server.AddService(svc); err != nil {
+			errs = errors.Join(errs, err)
+			log.Error().Err(err).Msg("서비스 추가 오류")
+		}
 	}
 
 	if errs != nil {
