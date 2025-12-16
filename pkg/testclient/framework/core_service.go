@@ -1,4 +1,4 @@
-package testclient
+package framework
 
 import (
 	"MScannot206/shared/service"
@@ -36,20 +36,7 @@ type CoreService struct {
 	commands map[string]ClientCommand
 }
 
-func (s *CoreService) addCommand(cmd ClientCommand) {
-	for _, c := range cmd.Commands() {
-		absC := strings.ToLower(c)
-		if _, exists := s.commands[absC]; exists {
-			log.Warn().Msgf("명령어 중복 등록 시도: %s", c)
-			continue
-		}
-		s.commands[absC] = cmd
-	}
-}
-
 func (s *CoreService) Init() error {
-	s.addCommand(NewLoginCommand(s.host))
-
 	return nil
 }
 
@@ -60,6 +47,23 @@ func (s *CoreService) Start() error {
 }
 
 func (s *CoreService) Stop() error {
+	return nil
+}
+
+func (s *CoreService) AddCommand(cmd ClientCommand) error {
+	if cmd == nil {
+		return errors.New("cmd is nil")
+	}
+
+	for _, c := range cmd.Commands() {
+		absC := strings.ToLower(c)
+		if _, exists := s.commands[absC]; exists {
+			log.Warn().Msgf("명령어 중복 등록 시도: %s", c)
+			continue
+		}
+		s.commands[absC] = cmd
+	}
+
 	return nil
 }
 

@@ -2,8 +2,9 @@ package main
 
 import (
 	"MScannot206/pkg/auth"
+	"MScannot206/pkg/logger"
 	"MScannot206/pkg/login"
-	"MScannot206/pkg/manager"
+	"MScannot206/pkg/serverinfo"
 	"MScannot206/pkg/user"
 	"MScannot206/shared/config"
 	"MScannot206/shared/server"
@@ -37,7 +38,10 @@ func main() {
 	serverCfg := &config.WebServerConfig{
 		Port: 8080,
 
-		MongoUri: "mongodb://localhost:27017/",
+		ServerName: "DevServer",
+
+		MongoUri:       "mongodb://localhost:27017/",
+		MongoEnvDBName: "MSenv",
 	}
 
 	flag.StringVar(&logCfgPath, "logconfig", "", "로그 설정 파일 경로 지정")
@@ -62,10 +66,10 @@ func main() {
 		}
 	}
 
-	if err := manager.GetLogManager().Init(*logCfg); err != nil {
+	if err := logger.GetLogManager().Init(*logCfg); err != nil {
 		println("로그 매니저 초기화 실패:", err)
 	}
-	defer manager.GetLogManager().Close()
+	defer logger.GetLogManager().Close()
 
 	if serverCfgPath != "" {
 		if err := config.LoadYamlConfig(serverCfgPath, serverCfg); err != nil {
@@ -92,6 +96,13 @@ func main() {
 
 	if err != nil {
 		panic(err)
+	}
+
+	// 서버정보 서비스
+	serverInfo_service, err := serverinfo.NewServerInfoService(web_server, serverCfg.ServerName, serverCfg.MongoEnvDBName)
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("서버정보 서비스 생성 오류")
 	}
 
 	// 인증 서비스
@@ -121,6 +132,7 @@ func main() {
 
 	errs = nil
 	for _, svc := range []service.GenericService{
+		serverInfo_service,
 		auth_service,
 		user_service,
 		login_service,

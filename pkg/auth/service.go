@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"MScannot206/pkg/auth/mongo"
+	"MScannot206/pkg/auth/session"
 	"MScannot206/shared/entity"
 	"MScannot206/shared/repository"
 	"MScannot206/shared/service"
@@ -35,7 +35,7 @@ func (s *AuthService) Init() error {
 	var err error
 
 	dbName := "MStest"
-	s.sessionRepo, err = mongo.NewSessionRepository(s.host.GetContext(), s.host.GetMongoClient(), dbName)
+	s.sessionRepo, err = session.NewSessionRepository(s.host.GetContext(), s.host.GetMongoClient(), dbName)
 	if err != nil {
 		return err
 	}

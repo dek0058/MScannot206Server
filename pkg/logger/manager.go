@@ -1,4 +1,4 @@
-package manager
+package logger
 
 import (
 	"MScannot206/shared/config"

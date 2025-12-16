@@ -1,25 +1,18 @@
 package main
 
 import (
-	"MScannot206/pkg/manager"
+	"MScannot206/pkg/logger"
 	"MScannot206/pkg/testclient"
-	"MScannot206/shared/client"
 	"MScannot206/shared/config"
-	"MScannot206/shared/service"
 	"context"
-	"errors"
 	"flag"
 	"os"
-	"os/signal"
 	"path/filepath"
-	"syscall"
 
 	"github.com/rs/zerolog/log"
 )
 
 func main() {
-	var errs error
-
 	ex, err := os.Executable()
 	if err != nil {
 		panic(err)
@@ -59,10 +52,10 @@ func main() {
 		}
 	}
 
-	if err := manager.GetLogManager().Init(*logCfg); err != nil {
+	if err := logger.GetLogManager().Init(*logCfg); err != nil {
 		println("로그 매니저 초기화 실패:", err)
 	}
-	defer manager.GetLogManager().Close()
+	defer logger.GetLogManager().Close()
 
 	if clientCfgPath != "" {
 		if err := config.LoadYamlConfig(clientCfgPath, clientCfg); err != nil {
@@ -82,66 +75,13 @@ func main() {
 		}
 	}
 
-	client, err := client.NewWebClient(
-		context.Background(),
-		clientCfg,
-	)
+	client, err := testclient.CreateTestClient(context.Background(), clientCfg)
 
 	if err != nil {
 		panic(err)
 	}
 
-	// 코어 서비스
-	core_service, err := testclient.NewCoreService(client)
-	if err != nil {
-		errs = errors.Join(errs, err)
-		log.Error().Err(err).Msg("코어 서비스 생성 오류")
-	}
-
-	// 로그인 서비스
-	login_service, err := testclient.NewLoginService(client)
-	if err != nil {
-		errs = errors.Join(errs, err)
-		log.Error().Err(err).Msg("로그인 서비스 생성 오류")
-	}
-
-	if errs != nil {
-		panic(errs)
-	}
-
-	errs = nil
-	for _, svc := range []service.GenericService{
-		core_service,
-		login_service,
-	} {
-		if err := client.AddService(svc); err != nil {
-			errs = errors.Join(errs, err)
-			log.Error().Err(err).Msg("서비스 추가 오류")
-		}
-	}
-
-	if errs != nil {
-		panic(errs)
-	}
-
-	if err := client.Init(); err != nil {
+	if err := testclient.Run(client); err != nil {
 		panic(err)
-	}
-
-	go func() {
-		if err := client.Start(); err != nil {
-			panic(err)
-		}
-	}()
-
-	sigCh := make(chan os.Signal, 1)
-	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
-
-	select {
-	case <-sigCh:
-		log.Printf("클라이언트 강제 종료")
-
-	case <-client.GetContext().Done():
-		log.Printf("클라이언트 종료")
 	}
 }

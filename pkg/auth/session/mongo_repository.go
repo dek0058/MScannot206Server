@@ -1,7 +1,7 @@
-package mongo
+package session
 
 import (
-	"MScannot206/pkg/shared"
+	"MScannot206/shared"
 	"MScannot206/shared/entity"
 	"context"
 	"errors"

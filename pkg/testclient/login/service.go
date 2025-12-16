@@ -1,4 +1,4 @@
-package testclient
+package login
 
 import (
 	"MScannot206/pkg/login"

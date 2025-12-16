@@ -1,6 +1,7 @@
-package testclient
+package login
 
 import (
+	"MScannot206/pkg/testclient/framework"
 	"MScannot206/shared/service"
 	"fmt"
 )
@@ -39,5 +40,5 @@ func (c *LoginCommand) Execute(args []string) error {
 }
 
 func (c *LoginCommand) Description() string {
-	return MakeCommandDescription(c.Commands(), "<uid>", "로그인을 요청 합니다.")
+	return framework.MakeCommandDescription(c.Commands(), "<uid>", "로그인을 요청 합니다.")
 }

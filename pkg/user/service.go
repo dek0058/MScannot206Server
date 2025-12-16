@@ -1,7 +1,6 @@
 package user
 
 import (
-	"MScannot206/pkg/user/mongo"
 	"MScannot206/shared/repository"
 	"MScannot206/shared/service"
 	"errors"
@@ -29,7 +28,7 @@ func (s *UserService) Init() error {
 
 	dbName := "MStest"
 
-	s.userRepo, err = mongo.NewUserRepository(s.host.GetMongoClient(), dbName)
+	s.userRepo, err = NewUserRepository(s.host.GetMongoClient(), dbName)
 	if err != nil {
 		return err
 	}

@@ -3,7 +3,6 @@ package login
 import (
 	"MScannot206/pkg/auth"
 	"MScannot206/pkg/user"
-	"MScannot206/pkg/user/mongo"
 	"MScannot206/shared/repository"
 	"MScannot206/shared/service"
 	"encoding/json"
@@ -50,7 +49,7 @@ func (s *LoginService) Init() error {
 	// TODO: 외부에서 가져올 수 있도록 수정 필요
 	dbName := "MStest"
 
-	s.userRepo, err = mongo.NewUserRepository(s.host.GetMongoClient(), dbName)
+	s.userRepo, err = user.NewUserRepository(s.host.GetMongoClient(), dbName)
 	if err != nil {
 		log.Err(err)
 		errs = errors.Join(errs, err)
