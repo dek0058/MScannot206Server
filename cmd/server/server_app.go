@@ -102,7 +102,7 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 	}
 
 	errs = nil
-	for _, svc := range []service.GenericService{
+	for _, svc := range []service.Service{
 		serverInfo_service,
 		auth_service,
 		user_service,

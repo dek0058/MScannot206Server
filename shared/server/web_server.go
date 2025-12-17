@@ -38,7 +38,7 @@ func NewWebServer(
 		cfg: webServerCfg,
 
 		router:   http.NewServeMux(),
-		services: make([]service.GenericService, 0),
+		services: make([]service.Service, 0),
 	}
 
 	return server, nil
@@ -58,7 +58,7 @@ type WebServer struct {
 	// DB
 	mongoClient *mongo.Client
 
-	services []service.GenericService
+	services []service.Service
 }
 
 func (s WebServer) GetContext() context.Context {
@@ -109,7 +109,6 @@ Loop:
 			log.Info().Msg("서버 Context 취소되었습니다., 초기화 작업을 중단합니다.")
 			return s.ctx.Err()
 		}
-
 	}
 
 	if errs != nil {
@@ -176,11 +175,11 @@ func (s *WebServer) Quit() error {
 	return nil
 }
 
-func (s WebServer) GetServices() []service.GenericService {
+func (s WebServer) GetServices() []service.Service {
 	return s.services
 }
 
-func (s *WebServer) AddService(svc service.GenericService) error {
+func (s *WebServer) AddService(svc service.Service) error {
 	if svc == nil {
 		return errors.New("service is null")
 	}

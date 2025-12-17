@@ -64,3 +64,12 @@ func (s *UserService) Start() error {
 func (s *UserService) Stop() error {
 	return nil
 }
+
+func (s *UserService) ConnectUser(uid string, token string) error {
+
+	return nil
+}
+
+func (s *UserService) DisconnectUser(uid string, token string) error {
+	return nil
+}

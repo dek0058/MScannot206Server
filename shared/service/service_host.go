@@ -10,15 +10,15 @@ import (
 type ServiceHost interface {
 	// Core
 	GetContext() context.Context
-	GetServices() []GenericService
-	AddService(svc GenericService) error
+	GetServices() []Service
+	AddService(svc Service) error
 	Quit() error
 
 	// DB
 	GetMongoClient() *mongo.Client
 }
 
-func GetService[T GenericService](host ServiceHost) (T, error) {
+func GetService[T Service](host ServiceHost) (T, error) {
 	var ret T
 
 	if host == nil {
