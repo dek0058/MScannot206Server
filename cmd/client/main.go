@@ -2,7 +2,8 @@ package main
 
 import (
 	"MScannot206/pkg/logger"
-	"MScannot206/pkg/testclient"
+	"MScannot206/pkg/testclient/app"
+	testclient_config "MScannot206/pkg/testclient/config"
 	"MScannot206/shared/config"
 	"context"
 	"flag"
@@ -25,7 +26,7 @@ func main() {
 	}
 
 	var clientCfgPath string
-	clientCfg := &config.WebClientConfig{
+	clientCfg := &testclient_config.ClientConfig{
 		Url:  "http://localhost",
 		Port: 8080,
 	}
@@ -53,7 +54,7 @@ func main() {
 	}
 
 	if err := logger.GetLogManager().Init(*logCfg); err != nil {
-		println("로그 매니저 초기화 실패:", err)
+		log.Err(err).Msg("로그 매니저 초기화에 실패하였습니다.")
 	}
 	defer logger.GetLogManager().Close()
 
@@ -75,13 +76,15 @@ func main() {
 		}
 	}
 
-	client, err := testclient.CreateTestClient(context.Background(), clientCfg)
+	client, err := app.CreateTestClient(context.Background(), clientCfg)
 
 	if err != nil {
+		log.Err(err).Msg("테스트 클라이언트 생성 중 에러가 발생하였습니다.")
 		panic(err)
 	}
 
-	if err := testclient.Run(client); err != nil {
+	if err := app.Run(client); err != nil {
+		log.Err(err).Msg("테스트 클라이언트 실행 중 에러가 발생하였습니다.")
 		panic(err)
 	}
 }

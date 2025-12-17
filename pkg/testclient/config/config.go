@@ -1,6 +1,6 @@
 package config
 
-type WebClientConfig struct {
+type ClientConfig struct {
 	Url  string `yaml:"url"`
 	Port uint16 `yaml:"port"`
 }

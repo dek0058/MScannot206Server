@@ -2,18 +2,17 @@ package login
 
 import (
 	"MScannot206/pkg/testclient/framework"
-	"MScannot206/shared/service"
 	"fmt"
 )
 
-func NewLoginCommand(host service.ServiceHost) *LoginCommand {
+func NewLoginCommand(client framework.Client) (*LoginCommand, error) {
 	return &LoginCommand{
-		host: host,
-	}
+		client: client,
+	}, nil
 }
 
 type LoginCommand struct {
-	host service.ServiceHost
+	client framework.Client
 }
 
 func (c *LoginCommand) Commands() []string {
@@ -21,7 +20,7 @@ func (c *LoginCommand) Commands() []string {
 }
 
 func (c *LoginCommand) Execute(args []string) error {
-	loginService, err := service.GetService[*LoginService](c.host)
+	loginLogic, err := framework.GetLogic[*LoginLogic](c.client)
 	if err != nil {
 		return err
 	}
@@ -32,7 +31,7 @@ func (c *LoginCommand) Execute(args []string) error {
 
 	uid := args[0]
 
-	if err := loginService.RequestLogin(uid); err != nil {
+	if err := loginLogic.RequestLogin(uid); err != nil {
 		return err
 	}
 

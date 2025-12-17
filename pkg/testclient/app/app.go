@@ -1,11 +1,10 @@
-package testclient
+package app
 
 import (
+	"MScannot206/pkg/testclient/client"
+	"MScannot206/pkg/testclient/config"
 	"MScannot206/pkg/testclient/framework"
 	"MScannot206/pkg/testclient/login"
-	"MScannot206/shared/client"
-	"MScannot206/shared/config"
-	"MScannot206/shared/service"
 	"context"
 	"errors"
 	"os"
@@ -15,10 +14,10 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func CreateTestClient(ctx context.Context, cfg *config.WebClientConfig) (*client.WebClient, error) {
+func CreateTestClient(ctx context.Context, cfg *config.ClientConfig) (framework.Client, error) {
 	var errs error
 
-	client, err := client.NewWebClient(
+	client, err := client.NewClient(
 		ctx,
 		cfg,
 	)
@@ -27,15 +26,8 @@ func CreateTestClient(ctx context.Context, cfg *config.WebClientConfig) (*client
 		return nil, err
 	}
 
-	// 코어 서비스
-	core_service, err := framework.NewCoreService(client)
-	if err != nil {
-		errs = errors.Join(errs, err)
-		log.Error().Err(err).Msg("코어 서비스 생성 오류")
-	}
-
-	// 로그인 서비스
-	login_service, err := login.NewLoginService(client)
+	// 로그인 로직
+	login_logic, err := login.NewLoginLogic(client)
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("로그인 서비스 생성 오류")
@@ -46,11 +38,10 @@ func CreateTestClient(ctx context.Context, cfg *config.WebClientConfig) (*client
 	}
 
 	errs = nil
-	for _, svc := range []service.GenericService{
-		core_service,
-		login_service,
+	for _, l := range []framework.Logic{
+		login_logic,
 	} {
-		if err := client.AddService(svc); err != nil {
+		if err := client.AddLogic(l); err != nil {
 			errs = errors.Join(errs, err)
 			log.Error().Err(err).Msg("서비스 추가 오류")
 		}
@@ -59,7 +50,7 @@ func CreateTestClient(ctx context.Context, cfg *config.WebClientConfig) (*client
 	return client, nil
 }
 
-func Run(client *client.WebClient) error {
+func Run(client framework.Client) error {
 	if client == nil {
 		return errors.New("client is null")
 	}
@@ -83,25 +74,36 @@ func Run(client *client.WebClient) error {
 
 	select {
 	case <-sigCh:
-		log.Printf("클라이언트 강제 종료")
+		log.Info().Msg("클라이언트를 강제 종료합니다.")
 
 	case <-client.GetContext().Done():
-		log.Printf("클라이언트 종료")
+		log.Info().Msg("클라이언트 종료합니다.")
 	}
 
 	return nil
 }
 
-func RegisterCommands(client *client.WebClient) error {
+func RegisterCommands(client framework.Client) error {
 	var errs error
 
-	coreService, err := service.GetService[*framework.CoreService](client)
+	loginCommand, err := login.NewLoginCommand(client)
 	if err != nil {
-		return err
+		errs = errors.Join(errs, err)
+		log.Err(err)
 	}
 
-	if err := coreService.AddCommand(login.NewLoginCommand(client)); err != nil {
-		errs = errors.Join(errs, err)
+	if errs != nil {
+		return errs
+	}
+
+	errs = nil
+	for _, cmd := range []framework.ClientCommand{
+		loginCommand,
+	} {
+		if err := client.AddCommand(cmd); err != nil {
+			errs = errors.Join(errs, err)
+			log.Err(err)
+		}
 	}
 
 	return errs
