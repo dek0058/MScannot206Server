@@ -20,6 +20,10 @@ func NewWebServer(
 	cfg *config.WebServerConfig,
 	mongoClient *mongo.Client,
 ) (*WebServer, error) {
+	if mongoClient == nil {
+		return nil, errors.New("mongo client is null")
+	}
+
 	ctxWithCancel, cancel := context.WithCancel(ctx)
 
 	webServerCfg := cfg
@@ -29,10 +33,6 @@ func NewWebServer(
 
 			MongoUri: "mongodb://localhost:27017/",
 		}
-	}
-
-	if mongoClient == nil {
-		return nil, errors.New("mongo client is null")
 	}
 
 	server := &WebServer{

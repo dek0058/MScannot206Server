@@ -253,6 +253,7 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 				}
 			} else {
 				// 기타 오류가 발생하였음으로 생성한 캐릭터 이름을 전부 삭제 요청
+				log.Warn().Msg("캐릭터 생성 중 오류 발생, 생성된 캐릭터 이름 삭제 시도")
 				errException = err
 				for _, info := range successInfos {
 					removeCharNames = append(removeCharNames, info.Name)
@@ -262,7 +263,6 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 					})
 					removeCharNameModels = append(removeCharNameModels, opts)
 				}
-				return nil, nil, err
 			}
 		}
 	}
