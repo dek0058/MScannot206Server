@@ -51,7 +51,7 @@ func (r *UserMongoRepository) FindUserByUids(ctx context.Context, uids []string)
 	newUids := make([]string, 0, requestCount)
 
 	filter := bson.D{
-		{Key: "uid", Value: bson.D{{Key: "$in", Value: uids}}},
+		{Key: "_id", Value: bson.D{{Key: "$in", Value: uids}}},
 	}
 
 	cursor, err := r.user.Find(ctx, filter)
@@ -169,6 +169,12 @@ func (r *UserMongoRepository) ExistsCharacterNames(ctx context.Context, names []
 	return existsMap, nil
 }
 
+func (r *UserMongoRepository) GetUsersCharacterSlotCount(ctx context.Context, uids []string) (map[string]int, error) {
+	slotCountMap := make(map[string]int, len(uids))
+
+	return slotCountMap, nil
+}
+
 func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*UserCreateCharacterInfo) ([]string, []string, error) {
 	if len(infos) == 0 {
 		return []string{}, []string{}, nil
@@ -216,7 +222,7 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 			}},
 		}
 		filter := bson.D{
-			{Key: "uid", Value: info.Uid},
+			{Key: "_id", Value: info.Uid},
 		}
 
 		newCharModels = append(newCharModels, mongo.NewUpdateOneModel().SetFilter(filter).SetUpdate(update).SetUpsert(false))
@@ -295,4 +301,36 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 	}
 
 	return success, fail, nil
+}
+
+func (r *UserMongoRepository) FindCharacters(ctx context.Context, uids []string) (map[string][]*entity.Character, error) {
+	charMap := make(map[string][]*entity.Character, len(uids))
+
+	filter := bson.D{
+		{Key: "_id", Value: bson.D{{Key: "$in", Value: uids}}},
+	}
+
+	opts := options.Find().SetProjection(
+		bson.M{
+			"_id":        1,
+			"characters": 1,
+		},
+	)
+
+	cursor, err := r.user.Find(ctx, filter, opts)
+	if err != nil {
+		return nil, err
+	}
+	defer cursor.Close(ctx)
+
+	var users []*entity.User
+	if err := cursor.All(ctx, &users); err != nil {
+		return nil, err
+	}
+
+	for _, u := range users {
+		charMap[u.Uid] = u.Characters
+	}
+
+	return charMap, nil
 }

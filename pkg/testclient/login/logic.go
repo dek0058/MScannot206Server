@@ -81,7 +81,7 @@ func (l *LoginLogic) RequestLogin(uid string) error {
 	var token string = ""
 
 	if successCount == 0 && failCount == 0 {
-		return shared.ToError(login.LOGIN_LOGIN_UNABLE)
+		return shared.ToError(login.LOGIN_UNABLE)
 	} else if failCount > 0 {
 		for _, failUid := range res.FailUids {
 			if failUid.Uid == uid {

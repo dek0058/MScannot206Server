@@ -5,7 +5,6 @@ import (
 	"MScannot206/pkg/testclient/user/character"
 	"MScannot206/pkg/user"
 	"MScannot206/shared"
-	"MScannot206/shared/def"
 	"MScannot206/shared/entity"
 	"errors"
 )
@@ -149,15 +148,6 @@ func (l *UserLogic) RequestCreateCharacter(uid string, slot int, name string) er
 	u, ok := l.users[uid]
 	if !ok {
 		return ErrUserNotFound
-	}
-
-	slotCount, err := l.GetCharacterSlotCount(uid)
-	if err != nil {
-		return err
-	}
-
-	if slotCount >= def.MaxCharacterSlot {
-		return entity.ErrCharacterSlotIsFull
 	}
 
 	req := &user.CreateCharacterRequest{

@@ -2,6 +2,7 @@ package user
 
 import (
 	"MScannot206/pkg/auth/session"
+	"MScannot206/shared/def"
 	"MScannot206/shared/entity"
 	"MScannot206/shared/server"
 	"MScannot206/shared/service"
@@ -98,12 +99,21 @@ func (s *UserService) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 	sessions := make([]*entity.UserSession, 0, requestCount)
 	createInfos := make(map[string]*UserCreateCharacterInfo, requestCount)
 	for _, entry := range req.Requests {
-		s := &entity.UserSession{
-			Uid:   entry.Uid,
-			Token: entry.Token,
+		// 잘못된 슬롯 검출
+		if entry.Slot < 1 || entry.Slot > def.MaxCharacterSlot {
+			res.Responses = append(res.Responses, &UserCreateCharacterResult{
+				Uid:       entry.Uid,
+				Slot:      entry.Slot,
+				ErrorCode: USER_CHARACTER_SLOT_INVALID_ERROR,
+			})
+		} else {
+			s := &entity.UserSession{
+				Uid:   entry.Uid,
+				Token: entry.Token,
+			}
+			sessions = append(sessions, s)
+			createInfos[entry.Uid] = entry
 		}
-		sessions = append(sessions, s)
-		createInfos[entry.Uid] = entry
 	}
 
 	_, invalidUids, err := s.authServiceHandler.ValidateUserSessions(ctx, sessions)
@@ -121,6 +131,32 @@ func (s *UserService) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 	}
 
 	// TODO: 캐릭터 최대 슬롯 수 판별
+	userCharacters, err := s.userRepo.FindCharacters(ctx, func() []string {
+		uids := make([]string, 0, len(createInfos))
+		for uid := range createInfos {
+			uids = append(uids, uid)
+		}
+		return uids
+	}())
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	for uid, chars := range userCharacters {
+		for _, ch := range chars {
+			if ch.Slot == createInfos[uid].Slot {
+				// 이미 해당 슬롯에 캐릭터가 존재함
+				res.Responses = append(res.Responses, &UserCreateCharacterResult{
+					Uid:       uid,
+					Slot:      createInfos[uid].Slot,
+					ErrorCode: USER_CHARACTER_SLOT_ALREADY_EXISTS_ERROR,
+				})
+				delete(createInfos, uid)
+				break
+			}
+		}
+	}
 
 	userCreateInfos := make([]*UserCreateCharacterInfo, 0, len(createInfos))
 	for _, info := range createInfos {

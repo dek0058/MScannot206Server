@@ -5,7 +5,6 @@ import (
 	"MScannot206/pkg/testclient/user"
 	"MScannot206/pkg/testclient/user/handler"
 	"MScannot206/shared/def"
-	"MScannot206/shared/entity"
 	"errors"
 	"strconv"
 
@@ -59,15 +58,6 @@ func (c *CharacterCreateCommand) Execute(args []string) error {
 		return errors.New("slot이 최대 캐릭터 슬롯 수를 초과하였습니다")
 	}
 	name := args[1]
-
-	slotCount, err := c.userLogic.GetCharacterSlotCount(c.userHandler.GetUid())
-	if err != nil {
-		return err
-	}
-
-	if slotCount >= def.MaxCharacterSlot {
-		return entity.ErrCharacterSlotIsFull
-	}
 
 	if err := c.userLogic.RequestCheckCharacterName(c.userHandler.GetUid(), name); err != nil {
 		return err

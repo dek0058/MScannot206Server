@@ -12,7 +12,7 @@ func NewUser(uid string) *User {
 }
 
 type User struct {
-	Uid string `json:"uid" bson:"uid"`
+	Uid string `json:"uid" bson:"_id"`
 
 	Characters []*Character `json:"characters,omitempty" bson:"characters,omitempty"`
 }
