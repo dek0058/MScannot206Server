@@ -21,6 +21,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
 func loadDefaultConfig(executablePath string, defaultFileName string, cfg interface{}) {
@@ -174,10 +175,15 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 func run(ctx context.Context, cfg *config.WebServerConfig) error {
 	opts := options.Client().ApplyURI(cfg.MongoUri)
 	mongoClient, err := mongo.Connect(ctx, opts)
+	log.Info().Msgf("MongoDB 연결을 시도 합니다. [uri:%v]", cfg.MongoUri)
 	if err != nil {
 		log.Err(err).Msgf("MongoDB 연결에 실패하였습니다. [uri:%v]", cfg.MongoUri)
 		return err
+	} else if err := mongoClient.Ping(ctx, readpref.Primary()); err != nil {
+		log.Err(err).Msgf("MongoDB 연결 실패하였습니다.. [uri:%v]", cfg.MongoUri)
+		return err
 	}
+
 	log.Info().Msgf("MongoDB 연결 완료이 완료되었습니다. [uri:%v]", cfg.MongoUri)
 
 	web_server, err := server.NewWebServer(
