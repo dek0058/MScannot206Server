@@ -213,12 +213,14 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 
 	newCharModels := make([]mongo.WriteModel, 0, len(successInfos))
 	for _, info := range successInfos {
+		char := &entity.Character{
+			Slot: info.Slot,
+			Name: info.Name,
+		}
+
 		update := bson.D{
 			{Key: "$push", Value: bson.D{
-				{Key: "characters", Value: bson.D{
-					{Key: "key", Value: info.Slot},
-					{Key: "name", Value: info.Name},
-				}},
+				{Key: "characters", Value: char},
 			}},
 		}
 		filter := bson.D{

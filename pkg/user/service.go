@@ -130,7 +130,6 @@ func (s *UserService) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		})
 	}
 
-	// TODO: 캐릭터 최대 슬롯 수 판별
 	userCharacters, err := s.userRepo.FindCharacters(ctx, func() []string {
 		uids := make([]string, 0, len(createInfos))
 		for uid := range createInfos {
