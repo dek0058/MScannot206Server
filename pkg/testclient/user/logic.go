@@ -115,7 +115,7 @@ func (l *UserLogic) RequestCheckCharacterName(uid string, name string) error {
 	}
 
 	res, err := framework.WebRequest[user.CheckCharacterNameRequest, user.CheckCharacterNameResponse](l.client).
-		Endpoint("user/character/create/check_name").
+		Endpoint("api/v1/user/character/create/check_name").
 		Body(req).
 		Post()
 
@@ -162,7 +162,7 @@ func (l *UserLogic) RequestCreateCharacter(uid string, slot int, name string) er
 	}
 
 	res, err := framework.WebRequest[user.CreateCharacterRequest, user.CreateCharacterResponse](l.client).
-		Endpoint("user/character/create").
+		Endpoint("api/v1/user/character/create").
 		Body(req).
 		Post()
 
@@ -213,7 +213,7 @@ func (l *UserLogic) RequestDeleteCharacter(uid string, slot int) error {
 	}
 
 	res, err := framework.WebRequest[user.DeleteCharacterRequest, user.DeleteCharacterResponse](l.client).
-		Endpoint("user/character/delete").
+		Endpoint("api/v1/user/character/delete").
 		Body(req).
 		Post()
 

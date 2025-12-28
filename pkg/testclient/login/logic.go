@@ -67,7 +67,7 @@ func (l *LoginLogic) RequestLogin(uid string) error {
 	log.Info().Msgf("로그인 요청: %s", uid)
 
 	res, err := framework.WebRequest[login.LoginRequest, login.LoginResponse](l.client).
-		Endpoint("login").
+		Endpoint("api/v1/login").
 		Body(req).
 		Post()
 	if err != nil {

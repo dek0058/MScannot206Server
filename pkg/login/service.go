@@ -39,7 +39,8 @@ type LoginService struct {
 }
 
 func (s *LoginService) Init() error {
-	s.router.HandleFunc("/login", s.onLogin)
+
+	s.router.HandleFunc("POST /api/v1/login", s.onLogin)
 
 	return nil
 }

@@ -41,9 +41,9 @@ type UserService struct {
 }
 
 func (s *UserService) Init() error {
-	s.router.HandleFunc("/user/character/create", s.onCreateCharacter)
-	s.router.HandleFunc("/user/character/create/check_name", s.onCheckCharacterName)
-	s.router.HandleFunc("/user/character/delete", s.onDeleteCharacter)
+	s.router.HandleFunc("POST /api/v1/user/character/create", s.onCreateCharacter)
+	s.router.HandleFunc("POST /api/v1/user/character/create/check_name", s.onCheckCharacterName)
+	s.router.HandleFunc("POST /api/v1/user/character/delete", s.onDeleteCharacter)
 
 	return nil
 }
