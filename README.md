@@ -15,3 +15,34 @@
 
 - [🔐 로그인/인증 API (Login)](document/login.md)
 - [👤 유저/캐릭터 API (User)](document/user.md)
+
+## 🏗️ 메인 아키텍처
+
+```mermaid
+graph TD
+    classDef user fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000,font-weight:bold;
+    classDef client fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#000000,font-weight:bold;
+    classDef server fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#000000,font-weight:bold;
+    classDef db fill:#FFF3E0,stroke:#EF6C00,stroke-width:2px,color:#000000,font-weight:bold;
+
+    User((User)):::user
+    Client[Client]:::client
+
+    subgraph Server_Area [Server Side]
+        direction TB
+        Services[Services]:::server
+        Repositories[Repositories]:::server
+    end
+
+    subgraph Data_Area [Persistence Layer]
+        DB[("MongoDB")]:::db
+    end
+
+    User--->|1.Connect|Client
+    Client -->|2.API Request| Services
+    Services -->|3.Input Data| Repositories
+    Repositories -->|4.Query| DB
+    DB -.->|5.Result| Repositories
+    Repositories -.->|6.Output Data| Services
+    Services -.->|7.API Response| Client
+```
