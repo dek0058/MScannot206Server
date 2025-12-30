@@ -69,3 +69,21 @@ graph TD
 
 테스트 목적으로 제작된 간단한 콘솔 클라이언트가 포함되어 있습니다. 해당 클라이언트는 `pkg/testclient` 디렉토리에서 확인할 수 있습니다.
 
+### 기본 상태 명령어
+```console
+사용 가능한 명령어 목록:
+    -help, -?, -h                          : 도움말 출력
+    -exit, -quit, -q                       : 프로그램 종료
+    -login <uid>                           : 로그인을 요청 합니다.
+    -user_select <uid>                     : 로그인 된 유저를 선택 합니다.
+```
+
+### 유저 선택시 명령어
+```console
+사용 가능한 명령어 목록:
+    -help, -?, -h                           : 도움말 출력
+    -exit, -quit, -q                        : 선택 된 유저 선택 해제
+    -character_list                         : 캐릭터 리스트를 요청 합니다.
+    -character_delete <slot:number>         : 캐릭터 삭제를 요청 합니다.
+    -character_create <slot:number> <name>  : 캐릭터 생성을 요청 합니다.
+```

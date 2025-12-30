@@ -68,5 +68,5 @@ func (c *CharacterDeleteCommand) Execute(args []string) error {
 }
 
 func (c *CharacterDeleteCommand) Description() string {
-	return framework.MakeCommandDescription(c.Commands(), "<slot>", "캐릭터 삭제를 요청 합니다.")
+	return framework.MakeCommandDescription(c.Commands(), "<slot:number>", "캐릭터 삭제를 요청 합니다.")
 }
