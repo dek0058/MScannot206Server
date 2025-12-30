@@ -43,12 +43,12 @@ graph TD
 
     User--->|1.Connect|Client
     Client -->|2.API Request| Handlers
-    Handlers -->|3.API Call| Services
-    Services -->|4.Input Data| Repositories
+    Handlers -->|3.Call Method| Services
+    Services -->|4.Request Data Access| Repositories
     Repositories -->|5.Query| DB
     DB -.->|6.Result| Repositories
-    Repositories -.->|7.Business Logic Result| Services
-    Services -.->|8.Response Data| Handlers
+    Repositories -.->|7.Return Entity/Model| Services
+    Services -.->|8.Return DTO/Result| Handlers
     Handlers -.->|9.API Response| Client
 ```
 
