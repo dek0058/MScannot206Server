@@ -27,7 +27,7 @@
 
 ## 🏗️ 아키텍처
 
-### 메인 플로우
+### 메인
 
 ```mermaid
 graph TD
@@ -59,6 +59,78 @@ graph TD
     Repositories -.->|7.Return Entity/Model| Services
     Services -.->|8.Return DTO/Result| Handlers
     Handlers -.->|9.API Response| Client
+```
+
+### 서버 구조
+
+```mermaid
+graph TD
+    classDef client fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#000
+    classDef entry fill:#FFEBEE,stroke:#C62828,stroke-width:2px,color:#000
+    classDef config fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#000
+    classDef layer fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#000
+    classDef shared fill:#FFF3E0,stroke:#EF6C00,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    classDef db fill:#ECEFF1,stroke:#455A64,stroke-width:2px,color:#000
+
+    subgraph Server_Process [Go Server Process]
+        direction TB
+        
+        Entry["Entry Point (main.go)"]:::entry
+        
+        %% 설정파일
+        subgraph Config_Init [설정 파일]
+            direction LR
+            YamlLoader[YAML Loader]:::config
+            WebServerCfg[WebServer Config]:::config
+            LogCfg[Log Config]:::config
+        end
+
+        %% 핵심 계층 (Layered Architecture)
+        subgraph Core_Layers [Core Layers]
+            direction TB
+            
+            %% Web Server & Presentation Layer
+            subgraph Presentation [Presentation Layer]
+                WebServer[Web Server]:::layer
+                Router[HTTP Router]:::layer
+                ApiHandlers[API Handlers]:::layer
+            end
+            
+            %% Business Layer
+            subgraph Business [Business Layer]
+                Services[Services]:::layer
+            end
+            
+             %% Data Access Layer
+            subgraph DataAccess [Data Access Layer]
+                Repos[Repositories]:::layer
+            end
+        end
+
+        %% 공용 모듈 (Shared)
+        subgraph Shared_Pkg [Shared Package]
+            Entities[Entities / Models]:::shared
+            Defs[Definitions / Constants]:::shared
+            Utils[Utilities]:::shared
+            ErrCode[Error Codes]:::shared
+        end
+    end
+
+    MongoDB[("MongoDB")]:::db
+
+    Entry -->|Load| YamlLoader
+    YamlLoader --> WebServerCfg
+    YamlLoader --> LogCfg
+
+    Entry -->|Setup| WebServer
+    Entry -->|Register| Services
+    WebServer --> Router
+    Router --> ApiHandlers
+
+    ApiHandlers -->|Method Call| Services
+    Services -->|Data Request| Repos
+    Repos -->|MongoDB Query| MongoDB
+
 ```
 
 ### 상세 플로우
