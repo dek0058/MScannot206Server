@@ -136,7 +136,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		}
 	}
 
-	createdCharacters, err := h.userService.CreateCharacterByUsers(ctx, func() []*user.UserCreateCharacter {
+	createdCharacters, failureUids, err := h.userService.CreateCharacterByUsers(ctx, func() []*user.UserCreateCharacter {
 		createInfos := make([]*user.UserCreateCharacter, 0, len(requests))
 		for _, info := range requests {
 			createInfos = append(createInfos, info)
@@ -153,9 +153,14 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		character, ok := createdCharacters[uid]
 		// 생성된 캐릭터가 없을 경우
 		if !ok {
+			errorCode := user.USER_CREATE_CHARACTER_DB_WRITE_ERROR
+			if _, ok := failureUids[uid]; ok {
+				errorCode = failureUids[uid]
+			}
+
 			res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
 				Uid:       uid,
-				ErrorCode: user.USER_CREATE_CHARACTER_DB_WRITE_ERROR,
+				ErrorCode: errorCode,
 			})
 			continue
 		}

@@ -50,9 +50,9 @@ func (s *UserService) FindCharacterNames(ctx context.Context, names []string) (m
 	return s.userRepo.ExistsCharacterNames(ctx, names)
 }
 
-func (s *UserService) CreateCharacterByUsers(ctx context.Context, createInfos []*UserCreateCharacter) (map[string]*entity.Character, error) {
+func (s *UserService) CreateCharacterByUsers(ctx context.Context, createInfos []*UserCreateCharacter) (map[string]*entity.Character, map[string]string, error) {
 	if len(createInfos) == 0 {
-		return map[string]*entity.Character{}, nil
+		return map[string]*entity.Character{}, map[string]string{}, nil
 	}
 	return s.userRepo.CreateCharacters(ctx, createInfos)
 }

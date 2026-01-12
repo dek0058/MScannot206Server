@@ -216,11 +216,12 @@ func (r *UserMongoRepository) ExistsCharacterNames(ctx context.Context, names []
 	return existsMap, nil
 }
 
-func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*UserCreateCharacter) (map[string]*entity.Character, error) {
+func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*UserCreateCharacter) (map[string]*entity.Character, map[string]string, error) {
 	if len(infos) == 0 {
-		return map[string]*entity.Character{}, nil
+		return map[string]*entity.Character{}, map[string]string{}, nil
 	}
 
+	failureUids := make(map[string]string, len(infos))
 	userRequests := make(map[string]*UserCreateCharacter, len(infos))
 	charNameModels := make([]mongo.WriteModel, len(infos))
 
@@ -238,10 +239,14 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 	if err != nil {
 		if bulkErr, ok := err.(mongo.BulkWriteException); ok {
 			for _, writeErr := range bulkErr.WriteErrors {
+				uid := infos[writeErr.Index].Uid
+				if mongo.IsDuplicateKeyError(writeErr) {
+					failureUids[uid] = USER_CHARACTER_NAME_ALREADY_EXISTS_ERROR
+				}
 				delete(userRequests, infos[writeErr.Index].Uid)
 			}
 		} else {
-			return nil, err
+			return nil, nil, err
 		}
 	}
 
@@ -290,7 +295,7 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 				// 캐릭터 생성 중 오류가 발생함... CS처리가 필요 할 수 있음
 				// TODO:특수 상황 로그 남기기
 				log.Err(err)
-				return nil, err
+				return nil, nil, err
 			}
 		}
 	}
@@ -308,7 +313,7 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 		}
 	}
 
-	return createdCharacters, nil
+	return createdCharacters, failureUids, nil
 }
 
 func (r *UserMongoRepository) DeleteCharacters(ctx context.Context, infos []*UserDeleteCharacter) ([]string, error) {
