@@ -71,15 +71,15 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		} else {
 			// 캐릭터 이름 유효성 검사
 			errCode = user.ValidateCharacterName(entry.Name, h.host.GetLocale())
+		}
 
-			// 오류가 있을 경우 다음 요청으로 넘어감
-			if errCode != "" {
-				res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
-					Uid:       entry.Uid,
-					ErrorCode: errCode,
-				})
-				continue
-			}
+		// 오류가 있을 경우 다음 요청으로 넘어감
+		if errCode != "" {
+			res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+				Uid:       entry.Uid,
+				ErrorCode: errCode,
+			})
+			continue
 		}
 
 		sessions = append(sessions, &entity.UserSession{
