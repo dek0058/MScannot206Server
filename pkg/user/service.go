@@ -14,10 +14,6 @@ type UserService struct {
 	userRepo *UserMongoRepository
 }
 
-func (s *UserService) Init() error {
-	return nil
-}
-
 func (s *UserService) Start() error {
 	return nil
 }

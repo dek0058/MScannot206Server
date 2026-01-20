@@ -4,6 +4,7 @@ import (
 	"MScannot206/pkg/api"
 	"MScannot206/pkg/auth"
 	"MScannot206/pkg/auth/session"
+	"MScannot206/pkg/channel"
 	"MScannot206/pkg/login"
 	"MScannot206/pkg/serverinfo"
 	"MScannot206/pkg/user"
@@ -82,7 +83,7 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 	}
 
 	// 인증 서비스
-	auth_service, err := auth.NewAuthService(server)
+	auth_service, err := auth.NewAuthService()
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("인증 서비스 생성 오류")
@@ -100,6 +101,13 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("유저 서비스 생성 오류")
+	}
+
+	// 채널 서비스
+	channel_service, err := channel.NewChannelService()
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("채널 서비스 생성 오류")
 	}
 
 	if errs != nil {
@@ -124,6 +132,12 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		log.Error().Err(err).Msg("유저 레포지토리 생성 오류")
 	}
 
+	channelRepo, err := channel.NewChannelMongoRepository(server.GetMongoClient(), gameDBName)
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("채널 레포지토리 생성 오류")
+	}
+
 	// Register Handlers
 	errs = nil
 
@@ -142,6 +156,11 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		log.Error().Err(err).Msg("유저 서비스 레포지토리 설정 오류")
 	}
 
+	if err := channel_service.SetRepositories(channelRepo); err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("채널 서비스 레포지토리 설정 오류")
+	}
+
 	if errs != nil {
 		return errs
 	}
@@ -153,6 +172,7 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		auth_service,
 		user_service,
 		login_service,
+		channel_service,
 	} {
 		if err := server.AddService(svc); err != nil {
 			errs = errors.Join(errs, err)

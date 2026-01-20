@@ -14,10 +14,6 @@ type LoginService struct {
 	userRepoHandler UserRepositoryHandler
 }
 
-func (s *LoginService) Init() error {
-	return nil
-}
-
 func (s *LoginService) Start() error {
 	return nil
 }

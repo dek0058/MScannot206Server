@@ -3,7 +3,6 @@ package auth
 import (
 	"MScannot206/pkg/auth/session"
 	"MScannot206/shared/entity"
-	"MScannot206/shared/service"
 	"context"
 	"crypto/rand"
 	"encoding/base64"
@@ -12,26 +11,12 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func NewAuthService(
-	host service.ServiceHost,
-) (*AuthService, error) {
-	if host == nil {
-		return nil, errors.New("host is null")
-	}
-
-	return &AuthService{
-		host: host,
-	}, nil
+func NewAuthService() (*AuthService, error) {
+	return &AuthService{}, nil
 }
 
 type AuthService struct {
-	host service.ServiceHost
-
 	sessionRepo *session.SessionRepository
-}
-
-func (s *AuthService) Init() error {
-	return nil
 }
 
 func (s *AuthService) Start() error {
