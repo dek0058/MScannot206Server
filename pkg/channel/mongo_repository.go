@@ -5,6 +5,7 @@ import (
 	"MScannot206/shared/entity"
 	"context"
 	"errors"
+	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -36,19 +37,20 @@ type ChannelMongoRepository struct {
 	channel *mongo.Collection
 }
 
+type channelDoc struct {
+	ID       string    `bson:"_id"`
+	CreateAt time.Time `bson:"create_at"`
+}
+
 func (r *ChannelMongoRepository) AddChannel(ctx context.Context, id string) error {
-	filter := bson.M{
-		"_id": id,
+
+	doc := &channelDoc{
+		ID:       id,
+		CreateAt: time.Now(),
 	}
 
-	update := bson.M{
-		"$inc": bson.M{"index": 1},
-	}
+	_, err := r.channel.InsertOne(ctx, doc)
 
-	opts := options.FindOneAndUpdate().SetReturnDocument(options.After).SetUpsert(true)
-
-	var doc entity.Channel
-	err := r.channel.FindOneAndUpdate(ctx, filter, update, opts).Decode(&doc)
 	return err
 }
 
@@ -63,19 +65,31 @@ func (r *ChannelMongoRepository) RemoveChannel(ctx context.Context, id string) e
 }
 
 func (r *ChannelMongoRepository) GetChannels(ctx context.Context) ([]*entity.Channel, error) {
-	cursor, err := r.channel.Find(ctx, bson.M{})
+	opts := options.Find().SetSort(
+		bson.D{{Key: "create_at", Value: -1}},
+	)
+
+	cursor, err := r.channel.Find(ctx, bson.M{}, opts)
 	if err != nil {
 		return nil, err
 	}
 	defer cursor.Close(ctx)
 
-	channels := make([]*entity.Channel, 0)
+	docs := make([]*channelDoc, 0)
 	for cursor.Next(ctx) {
-		var channel entity.Channel
-		if err := cursor.Decode(&channel); err != nil {
+		var doc channelDoc
+		if err := cursor.Decode(&doc); err != nil {
 			return nil, err
 		}
-		channels = append(channels, &channel)
+		docs = append(docs, &doc)
+	}
+
+	channels := make([]*entity.Channel, 0, len(docs))
+	for i, doc := range docs {
+		channels = append(channels, &entity.Channel{
+			Id:    doc.ID,
+			Index: i + 1,
+		})
 	}
 
 	return channels, nil
