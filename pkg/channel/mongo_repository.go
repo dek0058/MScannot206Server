@@ -42,7 +42,7 @@ func (r *ChannelMongoRepository) AddChannel(ctx context.Context, id string) erro
 	}
 
 	update := bson.M{
-		"$inc:": bson.M{"index": 1},
+		"$inc": bson.M{"index": 1},
 		"$setOnInsert": bson.M{
 			"_id": id,
 		},
