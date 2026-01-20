@@ -37,7 +37,7 @@ type ChannelHandler struct {
 func (h *ChannelHandler) RegisterHandle(r *http.ServeMux) {
 	r.HandleFunc("POST /api/v1/channel/start", h.HandleStartChannel)
 	r.HandleFunc("POST /api/v1/channel/stop", h.HandleStopChannel)
-	r.HandleFunc("POST /api/v1/channel/list", h.HandleListChannel)
+	r.HandleFunc("GET /api/v1/channel/list", h.HandleListChannel)
 }
 
 func (h *ChannelHandler) HandleStartChannel(w http.ResponseWriter, r *http.Request) {
