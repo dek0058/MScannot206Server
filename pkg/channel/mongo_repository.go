@@ -43,15 +43,12 @@ func (r *ChannelMongoRepository) AddChannel(ctx context.Context, id string) erro
 
 	update := bson.M{
 		"$inc": bson.M{"index": 1},
-		"$setOnInsert": bson.M{
-			"_id": id,
-		},
 	}
 
-	opts := options.Update().SetUpsert(true)
+	opts := options.FindOneAndUpdate().SetReturnDocument(options.After).SetUpsert(true)
 
-	_, err := r.channel.UpdateOne(ctx, filter, update, opts)
-
+	var doc entity.Channel
+	err := r.channel.FindOneAndUpdate(ctx, filter, update, opts).Decode(&doc)
 	return err
 }
 
