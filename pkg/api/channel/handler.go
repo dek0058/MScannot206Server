@@ -93,6 +93,4 @@ func (h *ChannelHandler) HandleListChannel(w http.ResponseWriter, r *http.Reques
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
-	w.WriteHeader(http.StatusOK)
 }
