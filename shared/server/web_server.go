@@ -98,7 +98,7 @@ func (s *WebServer) Init() error {
 
 func (s *WebServer) Start() error {
 	for _, svc := range s.services {
-		if err := svc.Start(); err != nil {
+		if err := svc.Start(s.ctx); err != nil {
 			log.Err(err).Msg("서버 시작 중 에러가 발생하였습니다.")
 		}
 	}
@@ -108,7 +108,7 @@ func (s *WebServer) Start() error {
 
 func (s *WebServer) Quit() error {
 	for _, svc := range s.services {
-		if err := svc.Stop(); err != nil {
+		if err := svc.Stop(s.ctx); err != nil {
 			log.Err(err).Msg("서버 종료 중 에러가 발생하였습니다.")
 		}
 	}

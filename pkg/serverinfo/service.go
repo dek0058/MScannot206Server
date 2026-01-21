@@ -2,6 +2,7 @@ package serverinfo
 
 import (
 	"MScannot206/shared/service"
+	"context"
 	"errors"
 )
 
@@ -54,15 +55,11 @@ type ServerInfoService struct {
 	serverInfoRepo *ServerInfoRepository
 }
 
-func (s *ServerInfoService) Init() error {
+func (s *ServerInfoService) Start(ctx context.Context) error {
 	return nil
 }
 
-func (s *ServerInfoService) Start() error {
-	return nil
-}
-
-func (s *ServerInfoService) Stop() error {
+func (s *ServerInfoService) Stop(ctx context.Context) error {
 	return nil
 }
 

@@ -13,6 +13,7 @@ import (
 )
 
 var ErrChannelRepositoryIsNil = errors.New("channel repository is nil")
+var SequenceName = "channel"
 
 func NewChannelMongoRepository(
 	client *mongo.Client,
@@ -26,6 +27,7 @@ func NewChannelMongoRepository(
 		client: client,
 
 		channel: client.Database(dbName).Collection(shared.Channel),
+		counter: client.Database(dbName).Collection(shared.Counter),
 	}
 
 	return repo, nil
@@ -35,62 +37,106 @@ type ChannelMongoRepository struct {
 	client *mongo.Client
 
 	channel *mongo.Collection
+	counter *mongo.Collection
 }
 
-type channelDoc struct {
-	ID       string    `bson:"_id"`
-	CreateAt time.Time `bson:"create_at"`
-}
-
-func (r *ChannelMongoRepository) AddChannel(ctx context.Context, id string) error {
-
-	doc := &channelDoc{
-		ID:       id,
-		CreateAt: time.Now(),
-	}
-
-	_, err := r.channel.InsertOne(ctx, doc)
-
-	return err
-}
-
-func (r *ChannelMongoRepository) RemoveChannel(ctx context.Context, id string) error {
+func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, error) {
 	filter := bson.M{
-		"_id": id,
+		"_id": SequenceName,
 	}
 
-	_, err := r.channel.DeleteOne(ctx, filter)
+	update := bson.M{
+		"$inc": bson.M{
+			"seq": 1,
+		},
+	}
 
+	opts := options.FindOneAndUpdate().SetUpsert(true).SetReturnDocument(options.After)
+
+	var entity entity.Counter
+	err := r.counter.FindOneAndUpdate(ctx, filter, update, opts).Decode(&entity)
+
+	return entity.Seq, err
+}
+
+func (r *ChannelMongoRepository) CreateLease(ctx context.Context, channel entity.Channel) error {
+	_, err := r.channel.InsertOne(ctx, channel)
 	return err
 }
 
-func (r *ChannelMongoRepository) GetChannels(ctx context.Context) ([]*entity.Channel, error) {
-	opts := options.Find().SetSort(
-		bson.D{{Key: "create_at", Value: -1}},
-	)
+func (r *ChannelMongoRepository) RenewLease(ctx context.Context, leaseID string, newExpiry time.Time) (*entity.Channel, error) {
+	filter := bson.M{
+		"lease_id": leaseID,
+	}
 
-	cursor, err := r.channel.Find(ctx, bson.M{}, opts)
+	update := bson.M{
+		"$set": bson.M{
+			"expires_at": newExpiry,
+		},
+	}
+
+	opts := options.FindOneAndUpdate().SetReturnDocument(options.After)
+
+	var entity entity.Channel
+	err := r.channel.FindOneAndUpdate(ctx, filter, update, opts).Decode(&entity)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return nil, nil // Lease not found
+		}
+		return nil, err
+	}
+
+	return &entity, nil
+}
+
+func (r *ChannelMongoRepository) FindExpiredLeases(ctx context.Context, now time.Time) ([]*entity.Channel, error) {
+
+	filter := bson.M{
+		"expires_at": bson.M{
+			"$lte": now,
+		},
+	}
+
+	cursor, err := r.channel.Find(ctx, filter)
 	if err != nil {
 		return nil, err
 	}
 	defer cursor.Close(ctx)
 
-	docs := make([]*channelDoc, 0)
-	for cursor.Next(ctx) {
-		var doc channelDoc
-		if err := cursor.Decode(&doc); err != nil {
-			return nil, err
-		}
-		docs = append(docs, &doc)
+	var expired []*entity.Channel
+	if err := cursor.All(ctx, &expired); err != nil {
+		return nil, err
 	}
 
-	channels := make([]*entity.Channel, 0, len(docs))
-	for i, doc := range docs {
-		channels = append(channels, &entity.Channel{
-			Id:    doc.ID,
-			Index: i + 1,
-		})
+	return expired, nil
+}
+
+func (r *ChannelMongoRepository) DeleteLeases(ctx context.Context, leaseIDs []string) (int64, error) {
+	filter := bson.M{
+		"lease_id": bson.M{
+			"$in": leaseIDs,
+		},
 	}
 
-	return channels, nil
+	result, err := r.channel.DeleteMany(ctx, filter)
+	if err != nil {
+		return 0, err
+	}
+
+	return result.DeletedCount, nil
+}
+
+func (r *ChannelMongoRepository) GetAllActiveLeases(ctx context.Context) ([]*entity.Channel, error) {
+	cursor, err := r.channel.Find(ctx, bson.M{})
+	if err != nil {
+		return nil, err
+	}
+	defer cursor.Close(ctx)
+
+	var activeChannels []*entity.Channel
+	if err := cursor.All(ctx, &activeChannels); err != nil {
+		return nil, err
+	}
+
+	return activeChannels, nil
 }

@@ -19,11 +19,11 @@ type AuthService struct {
 	sessionRepo *session.SessionRepository
 }
 
-func (s *AuthService) Start() error {
+func (s *AuthService) Start(ctx context.Context) error {
 	return nil
 }
 
-func (s *AuthService) Stop() error {
+func (s *AuthService) Stop(ctx context.Context) error {
 	return nil
 }
 

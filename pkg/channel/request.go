@@ -1,9 +1,9 @@
 package channel
 
-type StartChannelRequest struct {
+type AcquireChannelRequest struct {
 	Id string `json:"id"`
 }
 
-type StopChannelRequest struct {
+type RenewChannelRequest struct {
 	Id string `json:"id"`
 }

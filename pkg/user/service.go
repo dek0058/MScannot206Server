@@ -14,11 +14,11 @@ type UserService struct {
 	userRepo *UserMongoRepository
 }
 
-func (s *UserService) Start() error {
+func (s *UserService) Start(ctx context.Context) error {
 	return nil
 }
 
-func (s *UserService) Stop() error {
+func (s *UserService) Stop(ctx context.Context) error {
 	return nil
 }
 
