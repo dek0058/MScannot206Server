@@ -42,6 +42,16 @@ func (s *ChannelService) SetRepositories(
 }
 
 func (s *ChannelService) Create(ctx context.Context, channelId string) (*entity.Channel, error) {
+	existingChannel, err := s.channelRepo.FindChannelByID(ctx, channelId)
+	if err != nil {
+		return nil, err
+	}
+
+	if existingChannel != nil {
+		log.Info().Str("channel_id", channelId).Msg("이미 존재하는 채널입니다. 갱신을 수행합니다.")
+		return s.Renew(ctx, channelId)
+	}
+
 	nextIndex, err := s.channelRepo.PopRecyclableIndex(ctx)
 	if err != nil {
 		return nil, err
@@ -61,6 +71,12 @@ func (s *ChannelService) Create(ctx context.Context, channelId string) (*entity.
 	}
 
 	if err := s.channelRepo.CreateChannel(ctx, *newChannel); err != nil {
+		if nextIndex != 0 {
+			// 재활용한 인덱스를 다시 넣어줌
+			if pushErr := s.channelRepo.PushRecyclableIndex(ctx, nextIndex); pushErr != nil {
+				log.Error().Err(pushErr).Int("index", nextIndex).Msg("채널 인덱스를 재활용 목록에 다시 추가하는데 실패했습니다.")
+			}
+		}
 		return nil, err
 	}
 
@@ -109,6 +125,7 @@ func (s *ChannelService) runCleanup(ctx context.Context) {
 	var expiredIds []string
 	for _, ch := range expired {
 		expiredIds = append(expiredIds, ch.Id)
+
 		if err := s.channelRepo.PushRecyclableIndex(ctx, ch.Index); err != nil {
 			log.Error().Err(err).Int("index", ch.Index).Msg("채널 인덱스 재활용 목록에 추가 중 오류 발생했습니다.")
 		} else {

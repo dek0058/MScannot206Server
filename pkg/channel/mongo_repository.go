@@ -16,6 +16,7 @@ var ErrChannelRepositoryIsNil = errors.New("channel repository is nil")
 var SequenceName = "channel"
 
 func NewChannelMongoRepository(
+	ctx context.Context,
 	client *mongo.Client,
 	dbName string,
 ) (*ChannelMongoRepository, error) {
@@ -32,6 +33,10 @@ func NewChannelMongoRepository(
 		channelRecycle: client.Database(dbName).Collection(shared.ChannelRecycle),
 	}
 
+	if err := repo.ensureIndexes(ctx); err != nil {
+		return nil, err
+	}
+
 	return repo, nil
 }
 
@@ -42,6 +47,17 @@ type ChannelMongoRepository struct {
 
 	channel        *mongo.Collection
 	channelRecycle *mongo.Collection
+}
+
+func (r *ChannelMongoRepository) ensureIndexes(ctx context.Context) error {
+	index := mongo.IndexModel{
+		Keys: bson.D{
+			{Key: "expires_at", Value: 1},
+		},
+	}
+
+	_, err := r.channel.Indexes().CreateOne(ctx, index)
+	return err
 }
 
 func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, error) {
@@ -64,17 +80,7 @@ func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, erro
 }
 
 func (r *ChannelMongoRepository) CreateChannel(ctx context.Context, channel entity.Channel) error {
-	filter := bson.M{
-		"_id": channel.Id,
-	}
-
-	update := bson.M{
-		"$setOnInsert": channel,
-	}
-
-	opts := options.Update().SetUpsert(true)
-
-	_, err := r.channel.UpdateOne(ctx, filter, update, opts)
+	_, err := r.channel.InsertOne(ctx, channel)
 	return err
 }
 
@@ -96,6 +102,23 @@ func (r *ChannelMongoRepository) RenewChannel(ctx context.Context, channelId str
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			return nil, nil // Lease not found
+		}
+		return nil, err
+	}
+
+	return &entity, nil
+}
+
+func (r *ChannelMongoRepository) FindChannelByID(ctx context.Context, channelId string) (*entity.Channel, error) {
+	filter := bson.M{
+		"_id": channelId,
+	}
+
+	var entity entity.Channel
+	err := r.channel.FindOne(ctx, filter).Decode(&entity)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return nil, nil // Channel not found
 		}
 		return nil, err
 	}

@@ -132,7 +132,7 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		log.Error().Err(err).Msg("유저 레포지토리 생성 오류")
 	}
 
-	channelRepo, err := channel.NewChannelMongoRepository(server.GetMongoClient(), gameDBName)
+	channelRepo, err := channel.NewChannelMongoRepository(server.GetContext(), server.GetMongoClient(), gameDBName)
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("채널 레포지토리 생성 오류")
