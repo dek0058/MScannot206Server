@@ -26,8 +26,10 @@ func NewChannelMongoRepository(
 	repo := &ChannelMongoRepository{
 		client: client,
 
-		channel: client.Database(dbName).Collection(shared.Channel),
 		counter: client.Database(dbName).Collection(shared.Counter),
+
+		channel:        client.Database(dbName).Collection(shared.Channel),
+		channelRecycle: client.Database(dbName).Collection(shared.ChannelRecycle),
 	}
 
 	return repo, nil
@@ -36,8 +38,10 @@ func NewChannelMongoRepository(
 type ChannelMongoRepository struct {
 	client *mongo.Client
 
-	channel *mongo.Collection
 	counter *mongo.Collection
+
+	channel        *mongo.Collection
+	channelRecycle *mongo.Collection
 }
 
 func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, error) {
@@ -59,14 +63,14 @@ func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, erro
 	return entity.Seq, err
 }
 
-func (r *ChannelMongoRepository) CreateLease(ctx context.Context, channel entity.Channel) error {
+func (r *ChannelMongoRepository) CreateChannel(ctx context.Context, channel entity.Channel) error {
 	_, err := r.channel.InsertOne(ctx, channel)
 	return err
 }
 
-func (r *ChannelMongoRepository) RenewLease(ctx context.Context, leaseID string, newExpiry time.Time) (*entity.Channel, error) {
+func (r *ChannelMongoRepository) RenewChannel(ctx context.Context, channelId string, newExpiry time.Time) (*entity.Channel, error) {
 	filter := bson.M{
-		"lease_id": leaseID,
+		"_id": channelId,
 	}
 
 	update := bson.M{
@@ -89,7 +93,7 @@ func (r *ChannelMongoRepository) RenewLease(ctx context.Context, leaseID string,
 	return &entity, nil
 }
 
-func (r *ChannelMongoRepository) FindExpiredLeases(ctx context.Context, now time.Time) ([]*entity.Channel, error) {
+func (r *ChannelMongoRepository) FindExpiredChannels(ctx context.Context, now time.Time) ([]*entity.Channel, error) {
 
 	filter := bson.M{
 		"expires_at": bson.M{
@@ -111,10 +115,10 @@ func (r *ChannelMongoRepository) FindExpiredLeases(ctx context.Context, now time
 	return expired, nil
 }
 
-func (r *ChannelMongoRepository) DeleteLeases(ctx context.Context, leaseIDs []string) (int64, error) {
+func (r *ChannelMongoRepository) DeleteChannels(ctx context.Context, channelIDs []string) (int64, error) {
 	filter := bson.M{
-		"lease_id": bson.M{
-			"$in": leaseIDs,
+		"_id": bson.M{
+			"$in": channelIDs,
 		},
 	}
 
@@ -126,7 +130,7 @@ func (r *ChannelMongoRepository) DeleteLeases(ctx context.Context, leaseIDs []st
 	return result.DeletedCount, nil
 }
 
-func (r *ChannelMongoRepository) GetAllActiveLeases(ctx context.Context) ([]*entity.Channel, error) {
+func (r *ChannelMongoRepository) GetAllActiveChannels(ctx context.Context) ([]*entity.Channel, error) {
 	cursor, err := r.channel.Find(ctx, bson.M{})
 	if err != nil {
 		return nil, err
@@ -139,4 +143,25 @@ func (r *ChannelMongoRepository) GetAllActiveLeases(ctx context.Context) ([]*ent
 	}
 
 	return activeChannels, nil
+}
+
+func (r *ChannelMongoRepository) PopRecyclableIndex(ctx context.Context) (int, error) {
+	var entity entity.ChannelRecycler
+	opts := options.FindOneAndDelete().SetSort(bson.M{"index": 1})
+	err := r.channelRecycle.FindOneAndDelete(ctx, bson.M{}, opts).Decode(&entity)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return 0, nil // No recyclable index available
+		}
+		return 0, err
+	}
+	return entity.Index, nil
+}
+
+func (r *ChannelMongoRepository) PushRecyclableIndex(ctx context.Context, index int) error {
+	recycler := entity.ChannelRecycler{
+		Index: index,
+	}
+	_, err := r.channelRecycle.InsertOne(ctx, recycler)
+	return err
 }

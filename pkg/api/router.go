@@ -1,7 +1,7 @@
 package api
 
 import (
-	"MScannot206/pkg/api/channel"
+	channel_api "MScannot206/pkg/api/channel"
 	"MScannot206/pkg/api/login"
 	"MScannot206/pkg/api/user"
 	"MScannot206/shared/service"
@@ -34,7 +34,7 @@ func SetupRoutes(host service.ServiceHost, r *http.ServeMux) error {
 		errs = errors.Join(errs, err)
 	}
 
-	channelHandler, err := channel.NewChannelHandler(host)
+	channelHandler, err := channel_api.NewChannelHandler(host)
 	if err != nil {
 		errs = errors.Join(errs, err)
 	}

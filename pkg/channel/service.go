@@ -6,11 +6,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/google/uuid"
 	"github.com/rs/zerolog/log"
 )
 
-const LeaseDuration = 5 * time.Minute
+const LeaseDuration = 30 * time.Minute
 
 func NewChannelService() (*ChannelService, error) {
 	return &ChannelService{}, nil
@@ -42,29 +41,35 @@ func (s *ChannelService) SetRepositories(
 	return errs
 }
 
-func (s *ChannelService) Acquire(ctx context.Context, channelId string) (*entity.Channel, error) {
-	nextIndex, err := s.channelRepo.GetNextSequence(ctx)
+func (s *ChannelService) Create(ctx context.Context, channelId string) (*entity.Channel, error) {
+	nextIndex, err := s.channelRepo.PopRecyclableIndex(ctx)
 	if err != nil {
 		return nil, err
 	}
 
+	if nextIndex == 0 {
+		nextIndex, err = s.channelRepo.GetNextSequence(ctx)
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	newChannel := &entity.Channel{
-		ID:        channelId,
+		Id:        channelId,
 		Index:     nextIndex,
-		LeaseID:   uuid.NewString(),
 		ExpiresAt: time.Now().Add(LeaseDuration),
 	}
 
-	if err := s.channelRepo.CreateLease(ctx, *newChannel); err != nil {
+	if err := s.channelRepo.CreateChannel(ctx, *newChannel); err != nil {
 		return nil, err
 	}
 
 	return newChannel, nil
 }
 
-func (s *ChannelService) Renew(ctx context.Context, leaseID string) (*entity.Channel, error) {
+func (s *ChannelService) Renew(ctx context.Context, channelId string) (*entity.Channel, error) {
 	newExpiry := time.Now().UTC().Add(LeaseDuration)
-	renewedChannel, err := s.channelRepo.RenewLease(ctx, leaseID, newExpiry)
+	renewedChannel, err := s.channelRepo.RenewChannel(ctx, channelId, newExpiry)
 	if err != nil {
 		return nil, err
 	}
@@ -73,7 +78,7 @@ func (s *ChannelService) Renew(ctx context.Context, leaseID string) (*entity.Cha
 }
 
 func (s *ChannelService) GetChannels(ctx context.Context) ([]*entity.Channel, error) {
-	return s.channelRepo.GetAllActiveLeases(ctx)
+	return s.channelRepo.GetAllActiveChannels(ctx)
 }
 
 func (s *ChannelService) startCleanup(ctx context.Context, interval time.Duration) {
@@ -81,8 +86,6 @@ func (s *ChannelService) startCleanup(ctx context.Context, interval time.Duratio
 	go func() {
 		for {
 			<-ticker.C
-			log.Info().Msg("만료된 채널 정리 작업 시작합니다.")
-
 			ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
 			s.runCleanup(ctx)
 			cancel()
@@ -91,7 +94,7 @@ func (s *ChannelService) startCleanup(ctx context.Context, interval time.Duratio
 }
 
 func (s *ChannelService) runCleanup(ctx context.Context) {
-	expired, err := s.channelRepo.FindExpiredLeases(ctx, time.Now())
+	expired, err := s.channelRepo.FindExpiredChannels(ctx, time.Now())
 	if err != nil {
 		log.Error().Err(err).Msg("만료된 채널 조회 중 오류가 발생했습니다.")
 		return
@@ -101,13 +104,19 @@ func (s *ChannelService) runCleanup(ctx context.Context) {
 		return
 	}
 
+	log.Info().Msg("만료된 채널 정리 작업 시작합니다.")
+
 	var expiredIds []string
 	for _, ch := range expired {
-		expiredIds = append(expiredIds, ch.LeaseID)
-		// TODO: 재활용 로직 추가
+		expiredIds = append(expiredIds, ch.Id)
+		if err := s.channelRepo.PushRecyclableIndex(ctx, ch.Index); err != nil {
+			log.Error().Err(err).Int("index", ch.Index).Msg("채널 인덱스 재활용 목록에 추가 중 오류 발생했습니다.")
+		} else {
+			log.Info().Int("index", ch.Index).Msg("채널 인덱스를 재활용 목록에 추가했습니다.")
+		}
 	}
 
-	deletedCount, err := s.channelRepo.DeleteLeases(ctx, expiredIds)
+	deletedCount, err := s.channelRepo.DeleteChannels(ctx, expiredIds)
 	if err != nil {
 		log.Error().Err(err).Msg("만료된 채널 삭제 중 오류가 발생했습니다.")
 		return

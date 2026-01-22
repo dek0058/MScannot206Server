@@ -1,7 +1,7 @@
 package channel
 
 import (
-	"MScannot206/pkg/channel"
+	channel_pkg "MScannot206/pkg/channel"
 	"MScannot206/shared/service"
 	"encoding/json"
 	"net/http"
@@ -16,7 +16,7 @@ func NewChannelHandler(
 		return nil, service.ErrServiceHostIsNil
 	}
 
-	channelService, err := service.GetService[*channel.ChannelService](host)
+	channelService, err := service.GetService[*channel_pkg.ChannelService](host)
 	if err != nil {
 		return nil, err
 	}
@@ -31,35 +31,46 @@ func NewChannelHandler(
 type ChannelHandler struct {
 	host service.ServiceHost
 
-	channelService *channel.ChannelService
+	channelService *channel_pkg.ChannelService
 }
 
 func (h *ChannelHandler) RegisterHandle(r *http.ServeMux) {
-	r.HandleFunc("POST /api/v1/channel/acquire", h.HandleAcquireChannel)
+	r.HandleFunc("POST /api/v1/channel/create", h.HandleCreateChannel)
 	r.HandleFunc("POST /api/v1/channel/renew", h.HandleRenewChannel)
+	r.HandleFunc("GET /api/v1/channel/list", h.HandleListChannels)
 }
 
-func (h *ChannelHandler) HandleAcquireChannel(w http.ResponseWriter, r *http.Request) {
+func (h *ChannelHandler) HandleCreateChannel(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
-	var req channel.AcquireChannelRequest
+	var req channel_pkg.AcquireChannelRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	channel, err := h.channelService.Acquire(ctx, req.Id)
+	channel, err := h.channelService.Create(ctx, req.Id)
 	if err != nil {
-		log.Error().Err(err).Msg("채널 임대 중 오류가 발생했습니다.")
+		log.Err(err).Msg("채널 생성 중 오류가 발생했습니다.")
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	log.Info().Str("channel_id", channel.ID).Msg("채널을 임대하였습니다.")
+	log.Info().Str("channel_id", channel.Id).Msg("채널을 생성하였습니다.")
+
+	channels, err := h.channelService.GetChannels(ctx)
+	if err != nil {
+		log.Err(err).Msg("채널들을 불러오는 중 오류가 발생했습니다.")
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var res channel_pkg.CreateChannelResponse
+	res.Channels = channels
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(channel); err != nil {
+	if err := json.NewEncoder(w).Encode(res); err != nil {
 		log.Error().Err(err).Msg("채널 임대 응답 인코딩 중 오류가 발생했습니다.")
 	}
 }
@@ -67,7 +78,7 @@ func (h *ChannelHandler) HandleAcquireChannel(w http.ResponseWriter, r *http.Req
 func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
-	var req channel.RenewChannelRequest
+	var req channel_pkg.RenewChannelRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
@@ -86,9 +97,40 @@ func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	channels, err := h.channelService.GetChannels(ctx)
+	if err != nil {
+		log.Err(err).Msg("채널들을 불러오는 중 오류가 발생했습니다.")
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var res channel_pkg.RenewChannelResponse
+	res.Channels = channels
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(channel); err != nil {
+	if err := json.NewEncoder(w).Encode(res); err != nil {
 		log.Error().Err(err).Msg("채널 갱신 응답 인코딩 중 오류가 발생했습니다.")
+	}
+}
+
+func (h *ChannelHandler) HandleListChannels(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+
+	channels, err := h.channelService.GetChannels(ctx)
+	if err != nil {
+		log.Err(err).Msg("채널들을 불러오는 중 오류가 발생했습니다.")
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var res channel_pkg.ChannelListResponse
+	res.Channels = channels
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(res); err != nil {
+		log.Error().Err(err).Msg("채널 목록 응답 인코딩 중 오류가 발생했습니다.")
 	}
 }
