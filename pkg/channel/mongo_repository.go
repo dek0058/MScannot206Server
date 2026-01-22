@@ -64,7 +64,17 @@ func (r *ChannelMongoRepository) GetNextSequence(ctx context.Context) (int, erro
 }
 
 func (r *ChannelMongoRepository) CreateChannel(ctx context.Context, channel entity.Channel) error {
-	_, err := r.channel.InsertOne(ctx, channel)
+	filter := bson.M{
+		"_id": channel.Id,
+	}
+
+	update := bson.M{
+		"$setOnInsert": channel,
+	}
+
+	opts := options.Update().SetUpsert(true)
+
+	_, err := r.channel.UpdateOne(ctx, filter, update, opts)
 	return err
 }
 
