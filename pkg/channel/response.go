@@ -1,15 +1,18 @@
 package channel
 
-import "MScannot206/shared/entity"
+type Channel struct {
+	Id    string `json:"id"`
+	Index int    `json:"index"`
+}
 
 type CreateChannelResponse struct {
-	Channels []*entity.Channel `json:"channels"`
+	Channels []*Channel `json:"channels"`
 }
 
 type RenewChannelResponse struct {
-	Channels []*entity.Channel `json:"channels"`
+	Channels []*Channel `json:"channels"`
 }
 
 type ChannelListResponse struct {
-	Channels []*entity.Channel `json:"channels"`
+	Channels []*Channel `json:"channels"`
 }

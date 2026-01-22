@@ -66,7 +66,7 @@ func (h *ChannelHandler) HandleCreateChannel(w http.ResponseWriter, r *http.Requ
 	}
 
 	var res channel_pkg.CreateChannelResponse
-	res.Channels = channels
+	res.Channels = channel_pkg.ToChannels(channels)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -105,7 +105,7 @@ func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Reque
 	}
 
 	var res channel_pkg.RenewChannelResponse
-	res.Channels = channels
+	res.Channels = channel_pkg.ToChannels(channels)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -125,7 +125,7 @@ func (h *ChannelHandler) HandleListChannels(w http.ResponseWriter, r *http.Reque
 	}
 
 	var res channel_pkg.ChannelListResponse
-	res.Channels = channels
+	res.Channels = channel_pkg.ToChannels(channels)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
