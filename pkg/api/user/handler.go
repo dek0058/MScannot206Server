@@ -56,6 +56,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
@@ -188,6 +189,7 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
@@ -271,6 +273,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)

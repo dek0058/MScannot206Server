@@ -53,6 +53,7 @@ func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	if len(req.Uids) == 0 {
 		http.Error(w, "No UIDs provided", http.StatusBadRequest)

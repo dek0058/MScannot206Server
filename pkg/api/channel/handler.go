@@ -48,6 +48,7 @@ func (h *ChannelHandler) HandleCreateChannel(w http.ResponseWriter, r *http.Requ
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	channel, err := h.channelService.Create(ctx, req.Id)
 	if err != nil {
@@ -83,6 +84,7 @@ func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Reque
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	defer r.Body.Close()
 
 	channel, err := h.channelService.Renew(ctx, req.Id)
 	if err != nil {

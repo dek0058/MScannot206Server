@@ -1,6 +1,7 @@
 package api
 
 import (
+	"MScannot206/pkg/api/batch"
 	channel_api "MScannot206/pkg/api/channel"
 	"MScannot206/pkg/api/login"
 	"MScannot206/pkg/api/user"
@@ -22,7 +23,15 @@ func SetupRoutes(host service.ServiceHost, r *http.ServeMux) error {
 		return errors.New("router가 없습니다.")
 	}
 
+	apiManager := NewApiManager()
+
 	var errs error
+
+	// Batch
+	batchHandler, err := batch.NewBatchHandler(host, apiManager)
+	if err != nil {
+		errs = errors.Join(errs, err)
+	}
 
 	loginHandler, err := login.NewLoginHandler(host)
 	if err != nil {
@@ -41,6 +50,7 @@ func SetupRoutes(host service.ServiceHost, r *http.ServeMux) error {
 
 	// bind
 	for _, h := range []apiHandler{
+		batchHandler,
 		loginHandler,
 		userHandler,
 		channelHandler,
