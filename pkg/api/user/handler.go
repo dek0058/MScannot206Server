@@ -6,7 +6,10 @@ import (
 	"MScannot206/pkg/user"
 	"MScannot206/shared/entity"
 	"MScannot206/shared/service"
+	"context"
 	"encoding/json"
+	"errors"
+	"io"
 	"net/http"
 )
 
@@ -47,16 +50,35 @@ func (h *UserHandler) RegisterHandle(r *http.ServeMux) {
 	r.HandleFunc("POST /api/v1/user/character/delete", h.onDeleteCharacter)
 }
 
-// 캐릭터 생성 핸들러
-func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-
-	var req user.CreateCharacterRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
+func (h *UserHandler) GetApiNames() []string {
+	return []string{
+		"user/character/create",
+		"user/character/create/check_name",
+		"user/character/delete",
 	}
-	defer r.Body.Close()
+}
+
+func (h *UserHandler) Execute(ctx context.Context, api string, body string) (any, error) {
+	switch api {
+	case "user/character/create":
+		return h.createCharacter(ctx, body)
+
+	case "user/character/create/check_name":
+		return h.checkCharacterName(ctx, body)
+
+	case "user/character/delete":
+		return h.deleteCharacter(ctx, body)
+
+	default:
+		return nil, errors.New("알 수 없는 API 호출입니다: " + api)
+	}
+}
+
+func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, error) {
+	var req user.CreateCharacterRequest
+	if err := json.Unmarshal([]byte(body), &req); err != nil {
+		return nil, err
+	}
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
@@ -97,8 +119,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 
 	_, invalidUids, err := h.authService.ValidateUserSessions(ctx, sessions)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for _, uid := range invalidUids {
@@ -118,8 +139,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 	}())
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for uid, characters := range userCharacters {
@@ -146,8 +166,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 	}())
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for uid := range requests {
@@ -172,24 +191,14 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		})
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-
-	if err := json.NewEncoder(w).Encode(&res); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	return &res, nil
 }
 
-// 캐릭터 이름 중복 확인 핸들러
-func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-
+func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any, error) {
 	var req user.CheckCharacterNameRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
+	if err := json.Unmarshal([]byte(body), &req); err != nil {
+		return nil, err
 	}
-	defer r.Body.Close()
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
@@ -219,8 +228,7 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 
 	_, invalidUids, err := h.authService.ValidateUserSessions(ctx, sessions)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for _, uid := range invalidUids {
@@ -240,8 +248,7 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 	}())
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for uid, info := range requests {
@@ -257,23 +264,14 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 		}
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(&res); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	return &res, nil
 }
 
-// 캐릭터 삭제 핸들러
-func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-
+func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, error) {
 	var req user.DeleteCharacterRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
+	if err := json.Unmarshal([]byte(body), &req); err != nil {
+		return nil, err
 	}
-	defer r.Body.Close()
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
@@ -304,8 +302,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 
 	_, invalidUids, err := h.authService.ValidateUserSessions(ctx, sessions)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for _, uid := range invalidUids {
@@ -325,8 +322,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 	}())
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	userDeleteCharacters := make([]*user.UserDeleteCharacter, 0, len(requests))
@@ -359,8 +355,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 	// 캐릭터 삭제 처리
 	successUids, err := h.userService.DeleteCharactersByUsers(ctx, userDeleteCharacters)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	for _, uid := range successUids {
@@ -374,6 +369,87 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 				ErrorCode: user.USER_DELETE_CHARACTER_DB_WRITE_ERROR,
 			})
 		}
+	}
+
+	return &res, nil
+}
+
+// 캐릭터 생성 핸들러
+func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) {
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	defer r.Body.Close()
+
+	ret, err := h.createCharacter(r.Context(), string(body))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	res, ok := ret.(*user.CreateCharacterResponse)
+	if !ok {
+		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(&res); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+// 캐릭터 이름 중복 확인 핸들러
+func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Request) {
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	defer r.Body.Close()
+
+	ret, err := h.checkCharacterName(r.Context(), string(body))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	res, ok := ret.(*user.CheckCharacterNameResponse)
+	if !ok {
+		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(&res); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+// 캐릭터 삭제 핸들러
+func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) {
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	defer r.Body.Close()
+
+	ret, err := h.deleteCharacter(r.Context(), string(body))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	res, ok := ret.(*user.DeleteCharacterResponse)
+	if !ok {
+		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
+		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")

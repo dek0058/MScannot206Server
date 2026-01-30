@@ -5,7 +5,10 @@ import (
 	"MScannot206/pkg/login"
 	"MScannot206/shared/entity"
 	"MScannot206/shared/service"
+	"context"
 	"encoding/json"
+	"errors"
+	"io"
 	"net/http"
 )
 
@@ -45,19 +48,26 @@ func (h *LoginHandler) RegisterHandle(r *http.ServeMux) {
 	r.HandleFunc("POST /api/v1/login", h.HandleLogin)
 }
 
-func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-
-	var req login.LoginRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
+func (h *LoginHandler) GetApiNames() []string {
+	return []string{
+		"login",
 	}
-	defer r.Body.Close()
+}
 
-	if len(req.Uids) == 0 {
-		http.Error(w, "No UIDs provided", http.StatusBadRequest)
-		return
+func (h *LoginHandler) Execute(ctx context.Context, api string, body string) (any, error) {
+	switch api {
+	case "login":
+		return h.login(ctx, body)
+
+	default:
+		return nil, errors.New("알 수 없는 API 호출입니다: " + api)
+	}
+}
+
+func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
+	var req login.LoginRequest
+	if err := json.Unmarshal([]byte(body), &req); err != nil {
+		return nil, err
 	}
 
 	failureUids := make(map[string]struct{})
@@ -70,15 +80,13 @@ func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 	// 로그인 처리
 	users, err := h.loginService.LoginUsers(ctx, req.Uids)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	// 세션 생성
 	sessions, failureUsers, err := h.authService.CreateUserSessions(ctx, users)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 
 	// 로그인에 성공한 유저에 대한 처리 및 실패한 유저에 대한 처리
@@ -116,6 +124,31 @@ func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 			Token:      s.Token,
 		}
 		res.SuccessUids = append(res.SuccessUids, success)
+	}
+
+	return &res, nil
+}
+
+func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	defer r.Body.Close()
+
+	ret, err := h.login(ctx, string(bodyBytes))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	res, ok := ret.(*login.LoginResponse)
+	if !ok {
+		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
+		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")

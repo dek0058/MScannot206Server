@@ -5,3 +5,9 @@ type DataTransferObject struct {
 	Body      string `json:"body"`
 	ErrorCode string `json:"error_code,omitempty"`
 }
+
+type ApiResult struct {
+	Api       string
+	Body      any
+	ErrorCode string
+}

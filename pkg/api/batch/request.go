@@ -1,5 +1,5 @@
 package batch
 
 type HttpRequest struct {
-	Dto []DataTransferObject `json:"dto"`
+	Dto DataTransferObject `json:"dto"`
 }
