@@ -75,7 +75,7 @@ func (h *UserHandler) Execute(ctx context.Context, api string, body string) (any
 }
 
 func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, error) {
-	var req user.CreateCharacterRequest
+	var req CreateCharacterRequest
 	if err := json.Unmarshal([]byte(body), &req); err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
 	requests := make(map[string]*user.UserCreateCharacter, requestCount)
-	var res user.CreateCharacterResponse
+	var res CreateCharacterResponse
 
 	for _, entry := range req.Requests {
 		errCode := ""
@@ -98,7 +98,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 
 		// 오류가 있을 경우 다음 요청으로 넘어감
 		if errCode != "" {
-			res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+			res.Responses = append(res.Responses, &UserCreateCharacterResult{
 				Uid:       entry.Uid,
 				ErrorCode: errCode,
 			})
@@ -124,7 +124,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 
 	for _, uid := range invalidUids {
 		delete(requests, uid)
-		res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+		res.Responses = append(res.Responses, &UserCreateCharacterResult{
 			Uid:       uid,
 			ErrorCode: session.SESSION_TOKEN_INVALID_ERROR,
 		})
@@ -148,7 +148,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 				continue
 			}
 
-			res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+			res.Responses = append(res.Responses, &UserCreateCharacterResult{
 				Uid:       uid,
 				ErrorCode: user.USER_CHARACTER_SLOT_ALREADY_EXISTS_ERROR,
 			})
@@ -178,14 +178,14 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 				errorCode = failureUids[uid]
 			}
 
-			res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+			res.Responses = append(res.Responses, &UserCreateCharacterResult{
 				Uid:       uid,
 				ErrorCode: errorCode,
 			})
 			continue
 		}
 
-		res.Responses = append(res.Responses, &user.UserCreateCharacterResult{
+		res.Responses = append(res.Responses, &UserCreateCharacterResult{
 			Uid:       uid,
 			Character: character,
 		})
@@ -195,7 +195,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 }
 
 func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any, error) {
-	var req user.CheckCharacterNameRequest
+	var req CheckCharacterNameRequest
 	if err := json.Unmarshal([]byte(body), &req); err != nil {
 		return nil, err
 	}
@@ -203,12 +203,12 @@ func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any,
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
 	requests := make(map[string]*user.UserCreateCharacter, requestCount)
-	var res user.CheckCharacterNameResponse
+	var res CheckCharacterNameResponse
 
 	for _, entry := range req.Requests {
 		// 캐릭터 이름 유효성 검사
 		if errCode := user.ValidateCharacterName(entry.Name, h.host.GetLocale()); errCode != "" {
-			res.Responses = append(res.Responses, &user.UserNameCheckResult{
+			res.Responses = append(res.Responses, &UserNameCheckResult{
 				Uid:       entry.Uid,
 				ErrorCode: errCode,
 			})
@@ -233,7 +233,7 @@ func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any,
 
 	for _, uid := range invalidUids {
 		delete(requests, uid)
-		res.Responses = append(res.Responses, &user.UserNameCheckResult{
+		res.Responses = append(res.Responses, &UserNameCheckResult{
 			Uid:       uid,
 			ErrorCode: session.SESSION_TOKEN_INVALID_ERROR,
 		})
@@ -253,12 +253,12 @@ func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any,
 
 	for uid, info := range requests {
 		if exists, ok := existingNames[info.Name]; ok && exists {
-			res.Responses = append(res.Responses, &user.UserNameCheckResult{
+			res.Responses = append(res.Responses, &UserNameCheckResult{
 				Uid:       uid,
 				ErrorCode: user.USER_CHARACTER_NAME_ALREADY_EXISTS_ERROR,
 			})
 		} else {
-			res.Responses = append(res.Responses, &user.UserNameCheckResult{
+			res.Responses = append(res.Responses, &UserNameCheckResult{
 				Uid: uid,
 			})
 		}
@@ -268,20 +268,20 @@ func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any,
 }
 
 func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, error) {
-	var req user.DeleteCharacterRequest
+	var req DeleteCharacterRequest
 	if err := json.Unmarshal([]byte(body), &req); err != nil {
 		return nil, err
 	}
 
 	requestCount := len(req.Requests)
 	sessions := make([]*entity.UserSession, 0, requestCount)
-	requests := make(map[string]*user.UserDeleteCharacterInfo, requestCount)
+	requests := make(map[string]*UserDeleteCharacterInfo, requestCount)
 
-	var res user.DeleteCharacterResponse
+	var res DeleteCharacterResponse
 
 	for _, entry := range req.Requests {
 		if user.IsInvalidCharacterSlot(entry.Slot) {
-			res.Responses = append(res.Responses, &user.UserDeleteCharacterResult{
+			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
 				Uid:       entry.Uid,
 				ErrorCode: user.USER_CHARACTER_SLOT_INVALID_ERROR,
 			})
@@ -293,7 +293,7 @@ func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, er
 			Token: entry.Token,
 		})
 
-		requests[entry.Uid] = &user.UserDeleteCharacterInfo{
+		requests[entry.Uid] = &UserDeleteCharacterInfo{
 			Uid:   entry.Uid,
 			Token: entry.Token,
 			Slot:  entry.Slot,
@@ -307,7 +307,7 @@ func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, er
 
 	for _, uid := range invalidUids {
 		delete(requests, uid)
-		res.Responses = append(res.Responses, &user.UserDeleteCharacterResult{
+		res.Responses = append(res.Responses, &UserDeleteCharacterResult{
 			Uid:       uid,
 			ErrorCode: session.SESSION_TOKEN_INVALID_ERROR,
 		})
@@ -337,7 +337,7 @@ func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, er
 		}
 
 		if foundCharacter == nil {
-			res.Responses = append(res.Responses, &user.UserDeleteCharacterResult{
+			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
 				Uid:       uid,
 				ErrorCode: user.USER_DELETE_CHARACTER_SLOT_NOT_FOUND_ERROR,
 			})
@@ -360,11 +360,11 @@ func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, er
 
 	for _, uid := range successUids {
 		if _, ok := requests[uid]; ok {
-			res.Responses = append(res.Responses, &user.UserDeleteCharacterResult{
+			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
 				Uid: uid,
 			})
 		} else {
-			res.Responses = append(res.Responses, &user.UserDeleteCharacterResult{
+			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
 				Uid:       uid,
 				ErrorCode: user.USER_DELETE_CHARACTER_DB_WRITE_ERROR,
 			})
@@ -389,7 +389,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	res, ok := ret.(*user.CreateCharacterResponse)
+	res, ok := ret.(*CreateCharacterResponse)
 	if !ok {
 		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
 		return
@@ -418,7 +418,7 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	res, ok := ret.(*user.CheckCharacterNameResponse)
+	res, ok := ret.(*CheckCharacterNameResponse)
 	if !ok {
 		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
 		return
@@ -446,7 +446,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	res, ok := ret.(*user.DeleteCharacterResponse)
+	res, ok := ret.(*DeleteCharacterResponse)
 	if !ok {
 		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
 		return

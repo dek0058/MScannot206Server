@@ -1,6 +1,7 @@
 package user
 
 import (
+	user_api "MScannot206/pkg/api/user"
 	"MScannot206/pkg/testclient/framework"
 	"MScannot206/pkg/testclient/user/character"
 	"MScannot206/pkg/user"
@@ -104,8 +105,8 @@ func (l *UserLogic) RequestCheckCharacterName(uid string, name string) error {
 		return ErrUserNotFound
 	}
 
-	req := &user.CheckCharacterNameRequest{
-		Requests: []*user.UserNameCheckInfo{
+	req := &user_api.CheckCharacterNameRequest{
+		Requests: []*user_api.UserNameCheckInfo{
 			{
 				Uid:   u.Uid,
 				Token: u.Token,
@@ -114,7 +115,7 @@ func (l *UserLogic) RequestCheckCharacterName(uid string, name string) error {
 		},
 	}
 
-	res, err := framework.WebRequest[user.CheckCharacterNameRequest, user.CheckCharacterNameResponse](l.client).
+	res, err := framework.WebRequest[user_api.CheckCharacterNameRequest, user_api.CheckCharacterNameResponse](l.client).
 		Endpoint("api/v1/user/character/create/check_name").
 		Body(req).
 		Post()
@@ -148,8 +149,8 @@ func (l *UserLogic) RequestCreateCharacter(uid string, slot int, name string) er
 		return ErrUserNotFound
 	}
 
-	req := &user.CreateCharacterRequest{
-		Requests: []*user.UserCreateCharacterInfo{
+	req := &user_api.CreateCharacterRequest{
+		Requests: []*user_api.UserCreateCharacterInfo{
 			{
 				Uid:   u.Uid,
 				Token: u.Token,
@@ -159,7 +160,7 @@ func (l *UserLogic) RequestCreateCharacter(uid string, slot int, name string) er
 		},
 	}
 
-	res, err := framework.WebRequest[user.CreateCharacterRequest, user.CreateCharacterResponse](l.client).
+	res, err := framework.WebRequest[user_api.CreateCharacterRequest, user_api.CreateCharacterResponse](l.client).
 		Endpoint("api/v1/user/character/create").
 		Body(req).
 		Post()
@@ -172,7 +173,7 @@ func (l *UserLogic) RequestCreateCharacter(uid string, slot int, name string) er
 		return shared.ToError(user.USER_CREATE_CHARACTER_UNKNOWN_ERROR)
 	}
 
-	var response *user.UserCreateCharacterResult
+	var response *user_api.UserCreateCharacterResult
 	for _, r := range res.Responses {
 		if r.Uid != uid {
 			continue
@@ -204,8 +205,8 @@ func (l *UserLogic) RequestDeleteCharacter(uid string, slot int) error {
 		return ErrUserNotFound
 	}
 
-	req := &user.DeleteCharacterRequest{
-		Requests: []*user.UserDeleteCharacterInfo{
+	req := &user_api.DeleteCharacterRequest{
+		Requests: []*user_api.UserDeleteCharacterInfo{
 			{
 				Uid:   u.Uid,
 				Token: u.Token,
@@ -214,7 +215,7 @@ func (l *UserLogic) RequestDeleteCharacter(uid string, slot int) error {
 		},
 	}
 
-	res, err := framework.WebRequest[user.DeleteCharacterRequest, user.DeleteCharacterResponse](l.client).
+	res, err := framework.WebRequest[user_api.DeleteCharacterRequest, user_api.DeleteCharacterResponse](l.client).
 		Endpoint("api/v1/user/character/delete").
 		Body(req).
 		Post()
@@ -227,7 +228,7 @@ func (l *UserLogic) RequestDeleteCharacter(uid string, slot int) error {
 		return shared.ToError(user.USER_DELETE_CHARACTER_UNKNOWN_ERROR)
 	}
 
-	var response *user.UserDeleteCharacterResult
+	var response *user_api.UserDeleteCharacterResult
 	for _, r := range res.Responses {
 		if r.Uid == uid {
 			response = r

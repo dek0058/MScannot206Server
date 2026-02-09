@@ -12,7 +12,8 @@ type LoginFailure struct {
 	ErrorCode string `json:"error_code,omitempty"`
 }
 
+// 로그인 응답 구조체
 type LoginResponse struct {
-	SuccessUids []*LoginSuccess `json:"success_uids"`
-	FailUids    []*LoginFailure `json:"fail_uids"`
+	Successes []*LoginSuccess `json:"successes"`
+	Failures  []*LoginFailure `json:"failures"`
 }

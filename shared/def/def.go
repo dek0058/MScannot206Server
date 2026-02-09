@@ -1,5 +1,5 @@
 package def
 
-const MaxCharacterSlot = 3
-const MinCharacterNameLength = 3
-const MaxCharacterNameLength = 10
+const MaxCharacterSlot = 4
+const MinCharacterNameLength = 1
+const MaxCharacterNameLength = 12

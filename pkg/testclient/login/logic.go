@@ -1,6 +1,7 @@
 package login
 
 import (
+	api_login "MScannot206/pkg/api/login"
 	"MScannot206/pkg/login"
 	"MScannot206/pkg/testclient/framework"
 	"MScannot206/pkg/testclient/user/command"
@@ -60,13 +61,13 @@ func (l *LoginLogic) RequestLogin(uid string) error {
 		return fmt.Errorf("uid is empty")
 	}
 
-	req := &login.LoginRequest{
+	req := &api_login.LoginRequest{
 		Uids: []string{uid},
 	}
 
 	log.Info().Msgf("로그인 요청: %s", uid)
 
-	res, err := framework.WebRequest[login.LoginRequest, login.LoginResponse](l.client).
+	res, err := framework.WebRequest[api_login.LoginRequest, api_login.LoginResponse](l.client).
 		Endpoint("api/v1/login").
 		Body(req).
 		Post()
@@ -74,8 +75,8 @@ func (l *LoginLogic) RequestLogin(uid string) error {
 		return err
 	}
 
-	successCount := len(res.SuccessUids)
-	failCount := len(res.FailUids)
+	successCount := len(res.Successes)
+	failCount := len(res.Failures)
 
 	var userEntity *entity.User
 	var token string = ""
@@ -83,13 +84,13 @@ func (l *LoginLogic) RequestLogin(uid string) error {
 	if successCount == 0 && failCount == 0 {
 		return shared.ToError(login.LOGIN_UNABLE)
 	} else if failCount > 0 {
-		for _, failUid := range res.FailUids {
+		for _, failUid := range res.Failures {
 			if failUid.Uid == uid {
 				return shared.ToError(failUid.ErrorCode)
 			}
 		}
 	} else if successCount > 0 {
-		for _, successUid := range res.SuccessUids {
+		for _, successUid := range res.Successes {
 			if successUid.UserEntity.Uid == uid {
 				userEntity = successUid.UserEntity
 				token = successUid.Token

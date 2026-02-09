@@ -65,7 +65,7 @@ func (h *LoginHandler) Execute(ctx context.Context, api string, body string) (an
 }
 
 func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
-	var req login.LoginRequest
+	var req LoginRequest
 	if err := json.Unmarshal([]byte(body), &req); err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
 		failureUids[uid] = struct{}{}
 	}
 
-	var res login.LoginResponse
+	var res LoginResponse
 
 	// 로그인 처리
 	users, err := h.loginService.LoginUsers(ctx, req.Uids)
@@ -98,11 +98,11 @@ func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
 
 	// 로그인에 실패한 유저의 경우 DB 쓰기 오류로 간주, 신규 유저는 새로 생성하기 때문
 	for uid := range failureUids {
-		reason := &login.LoginFailure{
+		reason := &LoginFailure{
 			Uid:       uid,
 			ErrorCode: login.LOGIN_DB_WRITE_ERROR,
 		}
-		res.FailUids = append(res.FailUids, reason)
+		res.Failures = append(res.Failures, reason)
 	}
 
 	// 세션 생성에 실패한 유저 추가
@@ -110,20 +110,20 @@ func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
 		delete(failureUids, u.Uid)
 
 		// 이유 추가
-		reason := &login.LoginFailure{
+		reason := &LoginFailure{
 			Uid:       u.Uid,
 			ErrorCode: login.LOGIN_SESSION_CREATE_ERROR,
 		}
-		res.FailUids = append(res.FailUids, reason)
+		res.Failures = append(res.Failures, reason)
 	}
 
 	// 최종적으로 성공한 유저 리스폰 정보 생성
 	for _, s := range sessions {
-		success := &login.LoginSuccess{
+		success := &LoginSuccess{
 			UserEntity: loggedinUsers[s.Uid],
 			Token:      s.Token,
 		}
-		res.SuccessUids = append(res.SuccessUids, success)
+		res.Successes = append(res.Successes, success)
 	}
 
 	return &res, nil
@@ -145,7 +145,7 @@ func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res, ok := ret.(*login.LoginResponse)
+	res, ok := ret.(*LoginResponse)
 	if !ok {
 		http.Error(w, "응답 변환에 실패했습니다.", http.StatusInternalServerError)
 		return
