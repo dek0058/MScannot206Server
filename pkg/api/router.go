@@ -7,13 +7,14 @@ import (
 	"MScannot206/pkg/api/user"
 	"MScannot206/shared/service"
 	"context"
+	"encoding/json"
 	"errors"
 	"net/http"
 )
 
 type apiHandler interface {
 	RegisterHandle(*http.ServeMux)
-	Execute(ctx context.Context, api string, body string) (any, error)
+	Execute(ctx context.Context, api string, body json.RawMessage) (any, error)
 	GetApiNames() []string
 }
 

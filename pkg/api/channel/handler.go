@@ -51,16 +51,16 @@ func (h *ChannelHandler) GetApiNames() []string {
 	}
 }
 
-func (h *ChannelHandler) Execute(ctx context.Context, api string, body string) (any, error) {
+func (h *ChannelHandler) Execute(ctx context.Context, api string, body json.RawMessage) (any, error) {
 	switch api {
 	default:
 		return nil, errors.New("알 수 없는 API 호출입니다: " + api)
 	}
 }
 
-func (h *ChannelHandler) createChannel(ctx context.Context, body string) (any, error) {
+func (h *ChannelHandler) createChannel(ctx context.Context, body json.RawMessage) (any, error) {
 	var req channel_pkg.AcquireChannelRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		log.Error().Err(err).Msg("채널 생성 요청 파싱 중 오류가 발생했습니다.")
 		return nil, err
 	}
@@ -85,9 +85,9 @@ func (h *ChannelHandler) createChannel(ctx context.Context, body string) (any, e
 	return res, nil
 }
 
-func (h *ChannelHandler) renewChannel(ctx context.Context, body string) (any, error) {
+func (h *ChannelHandler) renewChannel(ctx context.Context, body json.RawMessage) (any, error) {
 	var req channel_pkg.RenewChannelRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		log.Error().Err(err).Msg("채널 갱신 요청 파싱 중 오류가 발생했습니다.")
 		return nil, err
 	}
@@ -114,7 +114,7 @@ func (h *ChannelHandler) renewChannel(ctx context.Context, body string) (any, er
 	return res, nil
 }
 
-func (h *ChannelHandler) listChannels(ctx context.Context, body string) (any, error) {
+func (h *ChannelHandler) listChannels(ctx context.Context, body json.RawMessage) (any, error) {
 	channels, err := h.channelService.GetChannels(ctx)
 	if err != nil {
 		log.Err(err).Msg("채널들을 불러오는 중 오류가 발생했습니다.")
@@ -135,7 +135,7 @@ func (h *ChannelHandler) HandleCreateChannel(w http.ResponseWriter, r *http.Requ
 	}
 	defer r.Body.Close()
 
-	ret, err := h.createChannel(r.Context(), string(body))
+	ret, err := h.createChannel(r.Context(), body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -162,7 +162,7 @@ func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Reque
 	}
 	defer r.Body.Close()
 
-	ret, err := h.renewChannel(r.Context(), string(body))
+	ret, err := h.renewChannel(r.Context(), body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -183,7 +183,7 @@ func (h *ChannelHandler) HandleRenewChannel(w http.ResponseWriter, r *http.Reque
 
 func (h *ChannelHandler) HandleListChannels(w http.ResponseWriter, r *http.Request) {
 
-	ret, err := h.listChannels(r.Context(), "")
+	ret, err := h.listChannels(r.Context(), json.RawMessage{})
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

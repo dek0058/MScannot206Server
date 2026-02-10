@@ -58,7 +58,7 @@ func (h *UserHandler) GetApiNames() []string {
 	}
 }
 
-func (h *UserHandler) Execute(ctx context.Context, api string, body string) (any, error) {
+func (h *UserHandler) Execute(ctx context.Context, api string, body json.RawMessage) (any, error) {
 	switch api {
 	case "user/character/create":
 		return h.createCharacter(ctx, body)
@@ -74,9 +74,9 @@ func (h *UserHandler) Execute(ctx context.Context, api string, body string) (any
 	}
 }
 
-func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, error) {
+func (h *UserHandler) createCharacter(ctx context.Context, body json.RawMessage) (any, error) {
 	var req CreateCharacterRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		return nil, err
 	}
 
@@ -194,9 +194,9 @@ func (h *UserHandler) createCharacter(ctx context.Context, body string) (any, er
 	return &res, nil
 }
 
-func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any, error) {
+func (h *UserHandler) checkCharacterName(ctx context.Context, body json.RawMessage) (any, error) {
 	var req CheckCharacterNameRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		return nil, err
 	}
 
@@ -267,9 +267,9 @@ func (h *UserHandler) checkCharacterName(ctx context.Context, body string) (any,
 	return &res, nil
 }
 
-func (h *UserHandler) deleteCharacter(ctx context.Context, body string) (any, error) {
+func (h *UserHandler) deleteCharacter(ctx context.Context, body json.RawMessage) (any, error) {
 	var req DeleteCharacterRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		return nil, err
 	}
 
@@ -383,7 +383,7 @@ func (h *UserHandler) onCreateCharacter(w http.ResponseWriter, r *http.Request) 
 	}
 	defer r.Body.Close()
 
-	ret, err := h.createCharacter(r.Context(), string(body))
+	ret, err := h.createCharacter(r.Context(), body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -412,7 +412,7 @@ func (h *UserHandler) onCheckCharacterName(w http.ResponseWriter, r *http.Reques
 	}
 	defer r.Body.Close()
 
-	ret, err := h.checkCharacterName(r.Context(), string(body))
+	ret, err := h.checkCharacterName(r.Context(), body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -440,7 +440,7 @@ func (h *UserHandler) onDeleteCharacter(w http.ResponseWriter, r *http.Request) 
 	}
 	defer r.Body.Close()
 
-	ret, err := h.deleteCharacter(r.Context(), string(body))
+	ret, err := h.deleteCharacter(r.Context(), body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

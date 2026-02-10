@@ -54,7 +54,7 @@ func (h *LoginHandler) GetApiNames() []string {
 	}
 }
 
-func (h *LoginHandler) Execute(ctx context.Context, api string, body string) (any, error) {
+func (h *LoginHandler) Execute(ctx context.Context, api string, body json.RawMessage) (any, error) {
 	switch api {
 	case "login":
 		return h.login(ctx, body)
@@ -64,9 +64,9 @@ func (h *LoginHandler) Execute(ctx context.Context, api string, body string) (an
 	}
 }
 
-func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
+func (h *LoginHandler) login(ctx context.Context, body json.RawMessage) (any, error) {
 	var req LoginRequest
-	if err := json.Unmarshal([]byte(body), &req); err != nil {
+	if err := json.Unmarshal(body, &req); err != nil {
 		return nil, err
 	}
 
@@ -132,14 +132,14 @@ func (h *LoginHandler) login(ctx context.Context, body string) (any, error) {
 func (h *LoginHandler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
-	bodyBytes, err := io.ReadAll(r.Body)
+	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	defer r.Body.Close()
 
-	ret, err := h.login(ctx, string(bodyBytes))
+	ret, err := h.login(ctx, body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

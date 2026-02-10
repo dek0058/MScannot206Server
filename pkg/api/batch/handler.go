@@ -14,7 +14,7 @@ import (
 var ErrAPIManagerIsNil = errors.New("apiManager가 없습니다.")
 
 type apiManager interface {
-	ExecuteApi(ctx context.Context, wg *sync.WaitGroup, api string, body string) (<-chan *ApiResult, error)
+	ExecuteApi(ctx context.Context, wg *sync.WaitGroup, api string, body json.RawMessage) (<-chan *ApiResult, error)
 }
 
 func NewBatchHandler(
@@ -105,7 +105,7 @@ func (h *BatchHandler) HandleBatch(w http.ResponseWriter, r *http.Request) {
 
 		res.Dto = append(res.Dto, DataTransferObject{
 			Api:       apiResult.Api,
-			Body:      string(jsonBody),
+			Body:      jsonBody,
 			ErrorCode: apiResult.ErrorCode,
 		})
 	}

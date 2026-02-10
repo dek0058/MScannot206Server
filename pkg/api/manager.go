@@ -3,6 +3,7 @@ package api
 import (
 	"MScannot206/pkg/api/batch"
 	"context"
+	"encoding/json"
 	"errors"
 	"strings"
 	"sync"
@@ -11,7 +12,7 @@ import (
 )
 
 type ApiCaller interface {
-	Execute(ctx context.Context, api string, body string) (any, error)
+	Execute(ctx context.Context, api string, body json.RawMessage) (any, error)
 }
 
 func NewApiManager() *ApiManager {
@@ -28,7 +29,7 @@ func (m *ApiManager) RegisterApiCaller(api string, caller ApiCaller) {
 	m.callers[strings.ToLower(api)] = caller
 }
 
-func (m *ApiManager) ExecuteApi(ctx context.Context, wg *sync.WaitGroup, api string, body string) (<-chan *batch.ApiResult, error) {
+func (m *ApiManager) ExecuteApi(ctx context.Context, wg *sync.WaitGroup, api string, body json.RawMessage) (<-chan *batch.ApiResult, error) {
 	if api == "" {
 		return nil, errors.New("빈 API 호출은 허용되지 않습니다")
 	}
