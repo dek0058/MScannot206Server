@@ -361,7 +361,8 @@ func (h *UserHandler) deleteCharacter(ctx context.Context, body json.RawMessage)
 	for _, uid := range successUids {
 		if _, ok := requests[uid]; ok {
 			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
-				Uid: uid,
+				Uid:  uid,
+				Slot: requests[uid].Slot,
 			})
 		} else {
 			res.Responses = append(res.Responses, &UserDeleteCharacterResult{
