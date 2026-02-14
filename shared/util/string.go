@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	specialCharPatternKorean   = regexp.MustCompile(`[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]`)
+	specialCharPatternKorean   = regexp.MustCompile(`[^가-힣a-zA-Z0-9]`)
 	specialCharPatternEnglish  = regexp.MustCompile(`[^a-zA-Z0-9]`)
 	specialCharPatternJapanese = regexp.MustCompile(`[^\p{Hiragana}\p{Katakana}\p{Han}a-zA-Z0-9]`)
 )
