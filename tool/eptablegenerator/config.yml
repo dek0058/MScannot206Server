@@ -1,0 +1,4 @@
+﻿package_name: table
+source_dir: ../../table
+dest_dir: ../../shared/table
+csv_dir: ../../data
