@@ -25,6 +25,9 @@ type UserCreateCharacterResult struct {
 	// 생성된 캐릭터 정보
 	Character *entity.Character `json:"character,omitempty"`
 
+	// 생성된 캐릭터의 장비 정보
+	Equips []*entity.CharacterEquip `json:"equips,omitempty"`
+
 	// 생성 오류 코드
 	ErrorCode string `json:"error_code,omitempty"`
 }

@@ -19,12 +19,12 @@ func TestRepository(t *testing.T) {
 		t.Fatalf("failed to load repository: %v", err)
 	}
 
-	_, ok := r.ItemTable.Get("1")
+	_, ok := r.Item.Get("1")
 	if !ok {
 		t.Log("item with key '1' not found in item table")
 	}
 
-	item, ok := r.ItemTable.Get("hair-43")
+	item, ok := r.Item.Get("hair-43")
 	if !ok {
 		t.Log("item with key 'hair-43' not found in item table")
 	} else {

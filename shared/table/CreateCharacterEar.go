@@ -71,8 +71,18 @@ func (t *CreateCharacterEarTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterEarTable) Get (key string) (*CreateCharacterEarRecord, bool) {
+func (t *CreateCharacterEarTable) Get (key string) (CreateCharacterEarRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterEarRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterEarTable) GetAll() []CreateCharacterEarRecord {
+	all := make([]CreateCharacterEarRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterEysAccTable() *CreateCharacterEysAccTable {
-	return &CreateCharacterEysAccTable{records: make(map[string]*CreateCharacterEysAccRecord,78)}
+	return &CreateCharacterEysAccTable{records: make(map[string]*CreateCharacterEysAccRecord,77)}
 }
 
 type CreateCharacterEysAccTable struct {
@@ -71,8 +71,18 @@ func (t *CreateCharacterEysAccTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterEysAccTable) Get (key string) (*CreateCharacterEysAccRecord, bool) {
+func (t *CreateCharacterEysAccTable) Get (key string) (CreateCharacterEysAccRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterEysAccRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterEysAccTable) GetAll() []CreateCharacterEysAccRecord {
+	all := make([]CreateCharacterEysAccRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

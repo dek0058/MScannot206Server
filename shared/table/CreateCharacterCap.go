@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterCapTable() *CreateCharacterCapTable {
-	return &CreateCharacterCapTable{records: make(map[string]*CreateCharacterCapRecord,20)}
+	return &CreateCharacterCapTable{records: make(map[string]*CreateCharacterCapRecord,19)}
 }
 
 type CreateCharacterCapTable struct {
@@ -71,8 +71,18 @@ func (t *CreateCharacterCapTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterCapTable) Get (key string) (*CreateCharacterCapRecord, bool) {
+func (t *CreateCharacterCapTable) Get (key string) (CreateCharacterCapRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterCapRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterCapTable) GetAll() []CreateCharacterCapRecord {
+	all := make([]CreateCharacterCapRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

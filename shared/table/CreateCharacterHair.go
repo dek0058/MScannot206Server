@@ -71,8 +71,18 @@ func (t *CreateCharacterHairTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterHairTable) Get (key string) (*CreateCharacterHairRecord, bool) {
+func (t *CreateCharacterHairTable) Get (key string) (CreateCharacterHairRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterHairRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterHairTable) GetAll() []CreateCharacterHairRecord {
+	all := make([]CreateCharacterHairRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

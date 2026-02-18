@@ -58,8 +58,18 @@ func (t *ItemTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *ItemTable) Get (key string) (*ItemRecord, bool) {
+func (t *ItemTable) Get (key string) (ItemRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return ItemRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *ItemTable) GetAll() []ItemRecord {
+	all := make([]ItemRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

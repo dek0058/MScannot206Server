@@ -71,8 +71,18 @@ func (t *CreateCharacterPantsTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterPantsTable) Get (key string) (*CreateCharacterPantsRecord, bool) {
+func (t *CreateCharacterPantsTable) Get (key string) (CreateCharacterPantsRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterPantsRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterPantsTable) GetAll() []CreateCharacterPantsRecord {
+	all := make([]CreateCharacterPantsRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

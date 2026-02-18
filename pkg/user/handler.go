@@ -1,20 +1,13 @@
 package user
 
 import (
-	"MScannot206/shared/entity"
-	"context"
 	"errors"
+	"math/rand/v2"
 )
 
-var ErrServerInfoServiceHandlerIsNil = errors.New("server info service handler is null")
+var ErrRandomServiceHandlerIsNil = errors.New("random service handler is null")
 
-type ServerInfoServiceHandler interface {
-	GetGameDBName() (string, error)
-	GetLogDBName() (string, error)
-}
-
-var ErrAuthServiceHandlerIsNil = errors.New("auth service handler is null")
-
-type AuthServiceHandler interface {
-	ValidateUserSessions(ctx context.Context, sessions []*entity.UserSession) ([]string, []string, error)
+// 랜덤 서비스 핸들러는 유저 서비스에서 랜덤 시드 정보를 얻기 위해 사용하는 핸들러입니다
+type RandomServiceHandler interface {
+	GetCharacterCreateSeed() *rand.Rand
 }

@@ -157,7 +157,7 @@ func (h *UserHandler) createCharacter(ctx context.Context, body json.RawMessage)
 		}
 	}
 
-	createdCharacters, failureUids, err := h.userService.CreateCharacterByUsers(ctx, func() []*user.UserCreateCharacter {
+	createCharacterResult, err := h.userService.CreateCharacterByUsers(ctx, func() []*user.UserCreateCharacter {
 		createInfos := make([]*user.UserCreateCharacter, 0, len(requests))
 		for _, info := range requests {
 			createInfos = append(createInfos, info)
@@ -170,24 +170,36 @@ func (h *UserHandler) createCharacter(ctx context.Context, body json.RawMessage)
 	}
 
 	for uid := range requests {
-		character, ok := createdCharacters[uid]
-		// 생성된 캐릭터가 없을 경우
+		result, ok := createCharacterResult[uid]
 		if !ok {
-			errorCode := user.USER_CREATE_CHARACTER_DB_WRITE_ERROR
-			if _, ok := failureUids[uid]; ok {
-				errorCode = failureUids[uid]
-			}
-
 			res.Responses = append(res.Responses, &UserCreateCharacterResult{
 				Uid:       uid,
-				ErrorCode: errorCode,
+				ErrorCode: user.USER_CREATE_CHARACTER_DB_WRITE_ERROR,
+			})
+			continue
+		}
+
+		if result.ErrorCode != "" {
+			res.Responses = append(res.Responses, &UserCreateCharacterResult{
+				Uid:       uid,
+				ErrorCode: result.ErrorCode,
 			})
 			continue
 		}
 
 		res.Responses = append(res.Responses, &UserCreateCharacterResult{
 			Uid:       uid,
-			Character: character,
+			Character: result.Character,
+			Equips: func() []*entity.CharacterEquip {
+				equips := make([]*entity.CharacterEquip, 0, len(result.Equips))
+				for equipType, index := range result.Equips {
+					equips = append(equips, &entity.CharacterEquip{
+						Type:  equipType,
+						Index: index,
+					})
+				}
+				return equips
+			}(),
 		})
 	}
 

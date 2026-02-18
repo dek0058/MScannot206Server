@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacter2HWeaponTable() *CreateCharacter2HWeaponTable {
-	return &CreateCharacter2HWeaponTable{records: make(map[string]*CreateCharacter2HWeaponRecord,40)}
+	return &CreateCharacter2HWeaponTable{records: make(map[string]*CreateCharacter2HWeaponRecord,39)}
 }
 
 type CreateCharacter2HWeaponTable struct {
@@ -71,8 +71,18 @@ func (t *CreateCharacter2HWeaponTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacter2HWeaponTable) Get (key string) (*CreateCharacter2HWeaponRecord, bool) {
+func (t *CreateCharacter2HWeaponTable) Get (key string) (CreateCharacter2HWeaponRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacter2HWeaponRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacter2HWeaponTable) GetAll() []CreateCharacter2HWeaponRecord {
+	all := make([]CreateCharacter2HWeaponRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

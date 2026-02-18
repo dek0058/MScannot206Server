@@ -1,0 +1,617 @@
+Index,ItemName,Bound,Male,Female
+hair-1033,검은색 토벤 헤어,TRUE,TRUE,FALSE
+hair-1753,파란색 토벤 헤어,TRUE,TRUE,FALSE
+hair-2844,노란색 토벤 헤어,TRUE,TRUE,FALSE
+hair-2935,갈색 토벤 헤어,TRUE,TRUE,FALSE
+hiar-3443,초록색 토벤 헤어,TRUE,TRUE,FALSE
+hair-5725,주황색 토벤 헤어,TRUE,TRUE,FALSE
+hair-5950,보라색 토벤 헤어,TRUE,TRUE,FALSE
+hair-5103,빨간색 토벤 헤어,TRUE,TRUE,FALSE
+hair-6515,갈색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-7101,파란색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-6665,빨간색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-6605,주황색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-6920,노란색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-6967,초록색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-7314,검은색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-6690,보라색 블링 토벤 헤어,TRUE,TRUE,FALSE
+hair-4362,노란색 더벅 헤어,TRUE,TRUE,FALSE
+hair-2117,갈색 더벅 헤어,TRUE,TRUE,FALSE
+hair-2045,초록색 더벅 헤어,TRUE,TRUE,FALSE
+hair-5832,파랑색 더벅 헤어,TRUE,TRUE,FALSE
+hair-2906,주황색 더벅 헤어,TRUE,TRUE,FALSE
+hair-5572,검은색 더벅 헤어,TRUE,TRUE,FALSE
+hair-3318,빨간색 더벅 헤어,TRUE,TRUE,FALSE
+hair-5822,보라색 더벅 헤어,TRUE,TRUE,FALSE
+hair-2430,빨간색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-1438,노란색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-2141,파란색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-6009,보라색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-4097,초록색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-4658,갈색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-6160,주황색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-2494,검은색 빡빡 헤어,TRUE,TRUE,TRUE
+hair-4804,노란색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-4784,갈색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-1071,주황색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-2106,빨간색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-5205,보라색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-3594,파란색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-2222,검은색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-4944,초록색 깜찍이 헤어,TRUE,FALSE,TRUE
+hair-3986,주황색 바람 헤어,TRUE,FALSE,TRUE
+hair-296,검은색 바람 헤어,TRUE,FALSE,TRUE
+hair-6104,빨간색 바람 헤어,TRUE,FALSE,TRUE
+hair-5886,파란색 바람 헤어,TRUE,FALSE,TRUE
+hair-3970,보라색 바람 헤어,TRUE,FALSE,TRUE
+hair-5945,초록색 바람 헤어,TRUE,FALSE,TRUE
+hair-3161,갈색 바람 헤어,TRUE,FALSE,TRUE
+hair-5657,노란색 바람 헤어,TRUE,FALSE,TRUE
+hair-2248,주황색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-4676,노란색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-4563,초록색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-3137,파란색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-832,빨간색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-2172,보라색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-1719,갈색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-1221,검은색 웨이브 헤어,TRUE,FALSE,TRUE
+hair-4907,파란색 땋은 헤어,TRUE,FALSE,TRUE
+hair-1350,보라색 땋은 헤어,TRUE,FALSE,TRUE
+hair-3202,검은색 땋은 헤어,TRUE,FALSE,TRUE
+hair-4648,갈색 땋은 헤어,TRUE,FALSE,TRUE
+hair-1781,빨간색 땋은 헤어,TRUE,FALSE,TRUE
+hair-5807,주황색 땋은 헤어,TRUE,FALSE,TRUE
+hair-3164,초록색 땋은 헤어,TRUE,FALSE,TRUE
+hair-3908,노란색 땋은 헤어,TRUE,FALSE,TRUE
+hair-1597,초록색 삐친 헤어,TRUE,FALSE,TRUE
+hair-2739,파란색 삐친 헤어,TRUE,FALSE,TRUE
+hair-1034,갈색 삐친 헤어,TRUE,FALSE,TRUE
+hair-5996,노란색 삐친 헤어,TRUE,FALSE,TRUE
+hair-2708,보라색 삐친 헤어,TRUE,FALSE,TRUE
+hair-2564,검은색 삐친 헤어,TRUE,FALSE,TRUE
+hair-6040,주황색 삐친 헤어,TRUE,FALSE,TRUE
+hair-1273,빨간색 삐친 헤어,TRUE,FALSE,TRUE
+hair-4376,갈색 단발 헤어,TRUE,FALSE,TRUE
+hair-2696,파란색 단발 헤어,TRUE,FALSE,TRUE
+hair-5263,노란색 단발 헤어,TRUE,FALSE,TRUE
+hair-507,보라색 단발 헤어,TRUE,FALSE,TRUE
+hair-2623,초록색 단발 헤어,TRUE,FALSE,TRUE
+hair-2647,주황색 단발 헤어,TRUE,FALSE,TRUE
+hair-3464,빨간색 단발 헤어,TRUE,FALSE,TRUE
+hair-915,검은색 단발 헤어,TRUE,FALSE,TRUE
+face-1197,빨간색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1570,노란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1237,하늘색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1800,검은색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-3211,초록색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-913,분홍색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2836,파란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-977,보라색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2219,보라색 자신적인 얼굴,TRUE,TRUE,TRUE
+face-710,노란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1764,초록색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-3405,빨간색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2072,하늘색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-547,분홍색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-3130,검은색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2070,파란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2250,검은색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2237,초록색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1758,파란색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1285,보라색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2970,분홍색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1366,갈색 신중한 얼굴,TRUE,TRUE,TRUE
+face-549,하늘색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1623,빨간색 신중한 얼굴,TRUE,TRUE,TRUE
+face-496,분홍색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-754,하늘색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-244,보라색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1754,빨간색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1496,파란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-2856,노란색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1513,초록색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-1489,검은색 도전적인 얼굴,TRUE,TRUE,TRUE
+face-676,빨간색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2802,파란색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2076,보라색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1336,검은색 신중한 얼굴,TRUE,TRUE,TRUE
+face-3458,분홍색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1187,하늘색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2379,초록색 신중한 얼굴,TRUE,TRUE,TRUE
+face-1927,노란색 신중한 얼굴,TRUE,TRUE,TRUE
+face-2753,빨간색 지적인 얼굴,TRUE,TRUE,TRUE
+face-789,보라색 지적인 얼굴,TRUE,TRUE,TRUE
+face-2051,노란색 지적인 얼굴,TRUE,TRUE,TRUE
+face-408,하늘색 지적인 얼굴,TRUE,TRUE,TRUE
+face-81,검은색 지적인 얼굴,TRUE,TRUE,TRUE
+face-3005,초록색 지적인 얼굴,TRUE,TRUE,TRUE
+face-2419,분홍색 지적인 얼굴,TRUE,TRUE,TRUE
+face-914,파란색 지적인 얼굴,TRUE,TRUE,TRUE
+cap-510,노란색 야구 모자,FALSE,TRUE,TRUE
+cap-1211,빨간색 야구 모자,FALSE,TRUE,TRUE
+cap-901,주황색 야구 모자,FALSE,TRUE,TRUE
+cap-1472,검은색 야구 모자,FALSE,TRUE,TRUE
+cap-486,파란색 야구 모자,FALSE,TRUE,TRUE
+cap-1874,초록색 캠핑 모자,FALSE,TRUE,TRUE
+cap-1325,분홍색 캠핑 모자,FALSE,TRUE,TRUE
+cap-1594,파란색 캠핑 모자,FALSE,TRUE,TRUE
+cap-1039,빨간색 두건,FALSE,TRUE,TRUE
+cap-1582,주황색 두건,FALSE,TRUE,TRUE
+cap-1575,파란색 두건,FALSE,TRUE,TRUE
+cap-1358,두건,FALSE,TRUE,TRUE
+cap-319,검은색 두건,FALSE,TRUE,TRUE
+cap-497,분홍색 두건,FALSE,TRUE,TRUE
+cap-94,회색 두건,FALSE,TRUE,TRUE
+cap-860,노란색 두건,FALSE,TRUE,TRUE
+cap-1285,초록색 두건,FALSE,TRUE,TRUE
+cap-252,보라색 두건,FALSE,TRUE,TRUE
+cap-1329,여행 모자,FALSE,TRUE,TRUE
+cape-448,빨간색 보자기,FALSE,TRUE,TRUE
+cape-139,파란색 책가방,FALSE,TRUE,TRUE
+cape-665,병아리 책가방,FALSE,TRUE,TRUE
+cape-888,개구리 책가방,FALSE,TRUE,TRUE
+cape-22,신문지,FALSE,TRUE,TRUE
+cape-491,길잃은 아기고양기,FALSE,TRUE,TRUE
+cape-526,거북이 등껍질,FALSE,TRUE,TRUE
+cape-633,다람곰 탐험단 배낭,FALSE,TRUE,TRUE
+cape-685,뭉실뭉실 꼬리,FALSE,TRUE,TRUE
+coat-445,하얀 반팔 면티,FALSE,TRUE,TRUE
+coat-42,회색 반팔 면티,FALSE,TRUE,TRUE
+coat-90,파란색 원라인 티셔츠,FALSE,TRUE,TRUE
+coat-250,주황색 스포츠 티셔츠,FALSE,TRUE,TRUE
+coat-14,RED 티셔츠,FALSE,TRUE,TRUE
+coat-470,하얀 면 나시,FALSE,TRUE,TRUE
+coat-553,화이트 티케T,FALSE,TRUE,TRUE
+coat-641,다크한 내복 상의,FALSE,TRUE,TRUE
+coat-644,신비한 내복 상의,FALSE,TRUE,TRUE
+coat-632,냉철한 내복 상의,FALSE,TRUE,TRUE
+coat-630,상큼한 내복 상의,FALSE,TRUE,TRUE
+coat-631,찬란한 내복 상의,FALSE,TRUE,TRUE
+coat-633,정열의 내복 상의,FALSE,TRUE,TRUE
+coat-303,레인보우 니트,FALSE,TRUE,TRUE
+coat-292,누더기 상의,FALSE,TRUE,TRUE
+coat-600,하트 슬리브리스,FALSE,TRUE,TRUE
+coat-240,노란 반팔 면티,FALSE,TRUE,TRUE
+coat-163,초록 반팔 면티,FALSE,TRUE,TRUE
+coat-491,빨간 줄무늬 티셔츠,FALSE,TRUE,TRUE
+coat-432,분홍 별무늬 티셔츠,FALSE,TRUE,TRUE
+coat-437,RED 티셔츠,FALSE,TRUE,TRUE
+coat-702,랄랄라 핑크티,FALSE,TRUE,TRUE
+coat-336,빨간 줄나시,FALSE,TRUE,TRUE
+coat-584,탱크탑,FALSE,TRUE,TRUE
+coat-411,핑크탑,FALSE,TRUE,TRUE
+coat-588,핑크프릴 파자마 상의,FALSE,TRUE,TRUE
+coat-47,핑크 프릴 반소매,FALSE,TRUE,TRUE
+coat-260,아이돌스타 리본탑,FALSE,TRUE,TRUE
+coat-225,블루 프릴 슬리브리스,FALSE,TRUE,TRUE
+coat-379,하트 슬리브리스,FALSE,TRUE,TRUE
+coat-541,옐로우 프릴 슬리브리스,FALSE,TRUE,TRUE
+pants-195,청색 면 반바지,FALSE,TRUE,TRUE
+pants-237,갈색 면 반바지,FALSE,TRUE,TRUE
+pants-173,평범한 청반바지,FALSE,TRUE,TRUE
+pants-330,카우보이 바지,FALSE,TRUE,TRUE
+pants-214,아이스 진,FALSE,TRUE,TRUE
+pants-41,위젯 별거없는 정장 바지,FALSE,TRUE,TRUE
+pants-513,워싱진,FALSE,TRUE,TRUE
+pants-493,찢어진 청바지,FALSE,TRUE,TRUE
+pants-442,화이트진,FALSE,TRUE,TRUE
+pants-394,스카이블루 빈티지진,FALSE,TRUE,TRUE
+pants-273,찢어진 라이트블루진,FALSE,TRUE,TRUE
+pants-137,찢어진 블랙진,FALSE,TRUE,TRUE
+pants-89,오션블루 워싱진,FALSE,TRUE,TRUE
+pants-412,바캉스 캉캉 팬츠,FALSE,TRUE,TRUE
+pants-521,랄랄라 도트 스커트,FALSE,TRUE,TRUE
+pants-446,플리츠 스커트,FALSE,TRUE,TRUE
+pants-485,청 주름 치마,FALSE,TRUE,TRUE
+pants-509,빨간 미니 스커트,FALSE,TRUE,TRUE
+pants-357,남색 미니 스커트,FALSE,TRUE,TRUE
+pants-475,파란 세일러 치마,FALSE,TRUE,TRUE
+pants-93,빨간 세일러 치마,FALSE,TRUE,TRUE
+pants-16,옐로우 아벨린 치마,FALSE,TRUE,TRUE
+pants-262,노란색 미미 스커트,FALSE,TRUE,TRUE
+pants-4,파란색 미미 스커트,FALSE,TRUE,TRUE
+pants-311,분홍색 미미 스커트,FALSE,TRUE,TRUE
+pants-302,랩 스커트,FALSE,TRUE,TRUE
+pants-153,그린 플리츠 스커트,FALSE,TRUE,TRUE
+pants-385,옐로우 버터플라이 스커트,FALSE,TRUE,TRUE
+pants-283,주름 호박치마,FALSE,TRUE,TRUE
+pants-115,데네브 스커트,FALSE,TRUE,TRUE
+pants-218,평범한 청치마,FALSE,TRUE,TRUE
+longcoat-1418,도넛 쇼핑백,FALSE,TRUE,TRUE
+longcoat-1461,붕어빵 봉투,FALSE,TRUE,TRUE
+longcoat-1521,하트 눈사람 퍼코트,FALSE,TRUE,TRUE
+longcoat-1598,바삭 튀김 옷,FALSE,TRUE,TRUE
+longcoat-1383,알이닭,FALSE,TRUE,TRUE
+longcoat-54,단감 옷,FALSE,TRUE,TRUE
+longcoat-327,하프물범 인형옷,FALSE,TRUE,TRUE
+longcoat-473,블랙빈 슈트,FALSE,TRUE,TRUE
+longcoat-188,핑크빈 슈트,FALSE,TRUE,TRUE
+longcoat-597,꿀벌옷,FALSE,TRUE,TRUE
+longcoat-1135,큐티카우 슈트,FALSE,TRUE,TRUE
+longcoat-888,큐티버크 옷,FALSE,TRUE,TRUE
+longcoat-1370,호돌이 인형옷,FALSE,TRUE,TRUE
+longcoat-1152,토마토 옷,FALSE,TRUE,TRUE
+longcoat-702,비누 버블,FALSE,TRUE,FALSE
+longcoat-1326,월묘 옷,FALSE,TRUE,TRUE
+longcoat-928,눈사람 옷,FALSE,TRUE,TRUE
+longcoat-1137,오리 인형옷,FALSE,TRUE,TRUE
+longcoat-861,골판지 박스,FALSE,TRUE,TRUE
+longcoat-531,종이 박스,FALSE,TRUE,TRUE
+longcoat-1186,재생지 박스,FALSE,TRUE,TRUE
+longcoat-1221,오렌지 타월,FALSE,TRUE,TRUE
+longcoat-233,목욕타월-노랑,FALSE,TRUE,TRUE
+longcoat-596,목욕 타월,FALSE,TRUE,TRUE
+longcoat-488,빨간색 수영복,FALSE,TRUE,TRUE
+longcoat-980,흰색 수영복,FALSE,TRUE,TRUE
+longcoat-823,빨간색 가운,FALSE,TRUE,TRUE
+longcoat-73,블루타월,FALSE,TRUE,FALSE
+longcoat-156,블랙 삼각 수영복,FALSE,TRUE,FALSE
+longcoat-1021,블루 삼각 수영복,FALSE,TRUE,FALSE
+longcoat-1328,남자 목욕 타월,FALSE,TRUE,FALSE
+longcoat-384,골판지 박스,FALSE,TRUE,TRUE
+longcoat-309,파란색 가운,FALSE,TRUE,TRUE
+longcoat-35,부르스 타이즈,FALSE,TRUE,TRUE
+longcoat-1047,흰색 검도복,FALSE,TRUE,TRUE
+longcoat-700,빨간색 검도복,FALSE,TRUE,TRUE
+longcoat-999,파란색 검도복,FALSE,TRUE,TRUE
+glove-87,노가다 목장갑,FALSE,TRUE,TRUE
+glove-287,검은새 노가다 목장갑,FALSE,TRUE,TRUE
+glove-347,갈색 노가다 목장갑,FALSE,TRUE,TRUE
+glove-368,보라색 노가다 목장갑,FALSE,TRUE,TRUE
+glove-153,파란색 노가다 목장갑,FALSE,TRUE,TRUE
+glove-342,빨간색 노가다 목장갑,FALSE,TRUE,TRUE
+glove-39,노란색 노가다 목장갑,FALSE,TRUE,TRUE
+glove-475,눈사람장갑,FALSE,TRUE,TRUE
+glove-307,브라운 레더 아머글로브,FALSE,TRUE,TRUE
+glove-42,하드레더 글로브,FALSE,TRUE,TRUE
+glove-319,브라운 바르비,FALSE,TRUE,TRUE
+glove-99,흰색 붕대,FALSE,TRUE,TRUE
+glove-382,갈색 붕대,FALSE,TRUE,TRUE
+glove-192,검은색 붕대,FALSE,TRUE,TRUE
+glove-333,가위손 장갑,FALSE,TRUE,TRUE
+glove-442,명품 클래식 시계,FALSE,TRUE,TRUE
+glove-481,하프물범 인형장갑,FALSE,TRUE,TRUE
+glove-483,비숑 장갑,FALSE,TRUE,TRUE
+glove-392,분홍색 펭귄 장갑,FALSE,TRUE,TRUE
+glove-485,파란색 펭귄 장갑,FALSE,TRUE,TRUE
+glove-486,부리부리 부엉 인형장갑,FALSE,TRUE,TRUE
+shoes-992,낭만 스니커즈,FALSE,TRUE,TRUE
+shoes-991,다람곰 탐험단 구두,FALSE,TRUE,TRUE
+shoes-422,후냥냥 니삭스,FALSE,TRUE,TRUE
+shoes-801,단호한 철퇴 구두,FALSE,TRUE,TRUE
+shoes-344,할로퀸 구두,FALSE,TRUE,TRUE
+shoes-989,봄 바람 운동화,FALSE,TRUE,TRUE
+shoes-1021,푸른 악몽 구두,FALSE,TRUE,TRUE
+shoes-967,보라 구두,FALSE,TRUE,TRUE
+shoes-971,요미 신발,FALSE,TRUE,TRUE
+shoes-566,쿨썸머 오리발,FALSE,TRUE,TRUE
+shoes-455,메이플 트렌디 슬립온,FALSE,TRUE,TRUE
+shoes-720,딸기 스니커즈,FALSE,TRUE,TRUE
+shoes-686,노랑장화,FALSE,TRUE,TRUE
+shoes-940,말랑크림 슈즈,FALSE,TRUE,TRUE
+shoes-431,환상 해변가 슈즈,FALSE,TRUE,TRUE
+shoes-625,시크릿 은월 부츠,FALSE,TRUE,TRUE
+shoes-303,뛰어! 운동화,FALSE,TRUE,TRUE
+shoes-49,펜살리르 배틀부츠,FALSE,TRUE,TRUE
+shoes-168,데네브 슈즈,FALSE,TRUE,TRUE
+shoes-906,무릉 무도관 활동화,FALSE,TRUE,TRUE
+shoes-785,베릴 부츠,FALSE,TRUE,TRUE
+shoes-270,말랑말랑한 신발,FALSE,TRUE,TRUE
+shoes-255,화이트 워커,FALSE,TRUE,TRUE
+shoes-151,아기고양이 슬리퍼,FALSE,TRUE,TRUE
+shoes-432,짝짝이 스니커즈,FALSE,TRUE,TRUE
+shoes-239,핑크장화,FALSE,TRUE,TRUE
+shoes-731,물컹물컹한 신발,FALSE,TRUE,TRUE
+shoes-240,한정판 비치샌들,FALSE,TRUE,TRUE
+shoes-488,탑 슬림 스니커즈,FALSE,TRUE,TRUE
+shoes-574,오렌지 체크캔버스,FALSE,TRUE,TRUE
+shoes-698,체크 스니커,FALSE,TRUE,TRUE
+shoes-649,그린 체크 스니커,FALSE,TRUE,TRUE
+shoes-499,레드 체크 스니커,FALSE,TRUE,TRUE
+shoes-3,브라운 우든크라그,FALSE,TRUE,TRUE
+shoes-250,브라운 스키디 샌들,FALSE,TRUE,TRUE
+shoes-143,브라운 래거 슬리퍼,FALSE,TRUE,TRUE
+shoes-266,폰라의 슬리퍼,FALSE,TRUE,TRUE
+shoes-382,꼬질꼬질한 고무신,FALSE,TRUE,TRUE
+shoes-269,검정색 고무신,FALSE,TRUE,TRUE
+shoes-520,꽃 고무신,FALSE,TRUE,TRUE
+shoes-651,꽃 고무신,FALSE,TRUE,TRUE
+shoes-741,흰색 고무신,FALSE,TRUE,TRUE
+shoes-104,파란색 고무 장화,FALSE,TRUE,TRUE
+shoes-29,노란색 고무 장화,FALSE,TRUE,TRUE
+shoes-516,빨간색 고무 장화,FALSE,TRUE,TRUE
+shoes-117,가죽 샌들,FALSE,TRUE,TRUE
+shoes-495,산타걸 부츠,FALSE,TRUE,TRUE
+shoes-263,산타보이 부츠,FALSE,TRUE,TRUE
+shoes-305,레이싱걸 부츠,FALSE,TRUE,TRUE
+faceaccessory-414,서커스 메이크업,TRUE,TRUE,TRUE
+faceaccessory-422,아일린 블러셔,TRUE,TRUE,TRUE
+faceaccessory-408,흑백영화 콧수염,TRUE,TRUE,TRUE
+faceaccessory-405,아이 추워,TRUE,TRUE,TRUE
+faceaccessory-421,트윙클 글리터,TRUE,TRUE,TRUE
+faceaccessory-268,자몽 생크림,TRUE,TRUE,TRUE
+faceaccessory-360,자체발광,TRUE,TRUE,TRUE
+faceaccessory-349,무지개 홍조,TRUE,TRUE,TRUE
+faceaccessory-229,예쁘게 웃어요,TRUE,TRUE,TRUE
+faceaccessory-181,태극 페인팅,TRUE,TRUE,TRUE
+faceaccessory-249,발그레 발그레,TRUE,TRUE,TRUE
+faceaccessory-371,오렌지 발그레,TRUE,TRUE,TRUE
+faceaccessory-412,홍조 깨비깨비,TRUE,TRUE,TRUE
+faceaccessory-413,견습 도사의 수염,TRUE,TRUE,TRUE
+faceaccessory-384,볼빨간 추위,TRUE,TRUE,TRUE
+faceaccessory-163,딸기 생크림,TRUE,TRUE,TRUE
+faceaccessory-206,인형 보라,TRUE,TRUE,TRUE
+faceaccessory-180,동글 홍조,TRUE,TRUE,TRUE
+faceaccessory-277,심연의 세례,TRUE,TRUE,TRUE
+faceaccessory-337,별나라 깨비깨비,TRUE,TRUE,TRUE
+faceaccessory-64,봄 구름 조각,TRUE,TRUE,TRUE
+faceaccessory-115,단감 홍조,TRUE,TRUE,TRUE
+faceaccessory-45,발그레 냥이 코,TRUE,TRUE,TRUE
+faceaccessory-260,응축된 힘의 결정석,TRUE,TRUE,TRUE
+faceaccessory-389,레인보우 페인팅,TRUE,TRUE,TRUE
+faceaccessory-461,뾰족 여우 수염,TRUE,TRUE,TRUE
+faceaccessory-184,흰 볼륨 컬 수염,TRUE,TRUE,TRUE
+faceaccessory-148,푸른 수염,TRUE,TRUE,TRUE
+faceaccessory-222,헤이아저씨 수염,TRUE,TRUE,TRUE
+faceaccessory-154,은빛 신사 수염,TRUE,TRUE,TRUE
+faceaccessory-13,볼륨 컬 수염,TRUE,TRUE,TRUE
+faceaccessory-135,울어버린 수염,TRUE,TRUE,TRUE
+faceaccessory-296,동글 수염,TRUE,TRUE,TRUE
+faceaccessory-248,암염의 눈물,TRUE,TRUE,TRUE
+faceaccessory-125,장난꾸러기 밴드,TRUE,TRUE,TRUE
+faceaccessory-140,가슴 두근 립,TRUE,TRUE,TRUE
+faceaccessory-112,손바닥 얼굴장식,TRUE,TRUE,TRUE
+faceaccessory-218,제너레이트 마크,TRUE,TRUE,TRUE
+faceaccessory-306,매우 반짝이는 코,TRUE,TRUE,TRUE
+faceaccessory-152,많이 반짝이는 코,TRUE,TRUE,TRUE
+faceaccessory-250,조금 반짝이는 코,TRUE,TRUE,TRUE
+faceaccessory-29,루돌프의 빛나는 코,TRUE,TRUE,TRUE
+faceaccessory-111,루돌프의 빨간코,TRUE,TRUE,TRUE
+faceaccessory-171,장난감 코,TRUE,TRUE,TRUE
+faceaccessory-278,플라워 타투,TRUE,TRUE,TRUE
+faceaccessory-295,아카이럼의 수염,TRUE,TRUE,TRUE
+faceaccessory-332,미스틱 얼굴장식,TRUE,TRUE,TRUE
+faceaccessory-342,발굴된 유물 장식,TRUE,TRUE,TRUE
+faceaccessory-31,발렌타인 달콤한 초코,TRUE,TRUE,TRUE
+faceaccessory-196,두근두근 첫사랑,TRUE,TRUE,TRUE
+faceaccessory-234,다크 프리미엄 심볼,TRUE,TRUE,TRUE
+faceaccessory-58,화이트 프리미엄 심볼,TRUE,TRUE,TRUE
+faceaccessory-224,얼음결정 페이스페인팅,TRUE,TRUE,TRUE
+faceaccessory-82,마족의 표식5,TRUE,TRUE,TRUE
+faceaccessory-18,마족의 표식4,TRUE,TRUE,TRUE
+faceaccessory-91,마족의 표식3,TRUE,TRUE,TRUE
+faceaccessory-55,마족의 표식1,TRUE,TRUE,TRUE
+faceaccessory-173,슈피겔만의 콧수염,TRUE,TRUE,TRUE
+faceaccessory-141,라이징 썬 페이스페인팅,TRUE,TRUE,TRUE
+faceaccessory-391,샤이니 레드 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-355,샤이니 블루 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-330,샤이니 그레이 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-156,레드 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-361,블루 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-122,그레이 워리어 심볼,TRUE,TRUE,TRUE
+faceaccessory-21,토끼풀 스티커,TRUE,TRUE,TRUE
+faceaccessory-390,나리 스티커,TRUE,TRUE,TRUE
+faceaccessory-300,달래 스티커,TRUE,TRUE,TRUE
+faceaccessory-285,스타 페이스 페인팅,TRUE,TRUE,TRUE
+faceaccessory-69,삐약삐약 얼굴장식,TRUE,TRUE,TRUE
+faceaccessory-124,인형핑크,TRUE,TRUE,TRUE
+faceaccessory-3,귀까지 빨개,TRUE,TRUE,TRUE
+faceaccessory-83,도톰한 입술,TRUE,TRUE,TRUE
+faceaccessory-397,식은땀,TRUE,TRUE,TRUE
+faceaccessory-66,메롱,TRUE,TRUE,TRUE
+faceaccessory-118,마일드핑크 립스틱,TRUE,TRUE,TRUE
+faceaccessory-396,힘센 피노키오 코,TRUE,TRUE,TRUE
+faceaccessory-74,반달 홍조,TRUE,TRUE,TRUE
+faceaccessory-381,절망,TRUE,TRUE,TRUE
+faceaccessory-395,분노,TRUE,TRUE,TRUE
+faceaccessory-86,커다란 흉터,TRUE,TRUE,TRUE
+faceaccessory-231,백작님 수염,TRUE,TRUE,TRUE
+faceaccessory-274,눈 흉터,TRUE,TRUE,TRUE
+faceaccessory-60,홍조,TRUE,TRUE,TRUE
+faceaccessory-243,관우 수염,TRUE,TRUE,TRUE
+faceaccessory-398,인디언 페인팅,TRUE,TRUE,TRUE
+faceaccessory-275,엘레강스 수염,TRUE,TRUE,TRUE
+faceaccessory-324,키스 마크,TRUE,TRUE,TRUE
+faceaccessory-85,산타 수염,TRUE,TRUE,TRUE
+faceaccessory-174,멍,TRUE,TRUE,TRUE
+faceaccessory-57,안면위장,TRUE,TRUE,TRUE
+faceaccessory-245,연지곤지,TRUE,TRUE,TRUE
+faceaccessory-227,빈디,TRUE,TRUE,TRUE
+faceaccessory-317,바람의 흉터,TRUE,TRUE,TRUE
+faceaccessory-186,아련한 메이크업,TRUE,TRUE,TRUE
+faceaccessory-126,주근깨,TRUE,TRUE,TRUE
+faceaccessory-358,하트마크,TRUE,TRUE,TRUE
+faceaccessory-170,차가운 메이크업,TRUE,TRUE,TRUE
+faceaccessory-56,야쿠자 흉터,TRUE,TRUE,TRUE
+faceaccessory-319,면도자국,TRUE,TRUE,TRUE
+faceaccessory-106,동그란 수염,TRUE,TRUE,TRUE
+faceaccessory-270,갈색 턱수염,TRUE,TRUE,TRUE
+eyeaccessory-168,낭만 동글이 안경,FALSE,TRUE,TRUE
+eyeaccessory-165,별의 계약자,FALSE,TRUE,TRUE
+eyeaccessory-72,동글이 안경,FALSE,TRUE,TRUE
+eyeaccessory-59,바나나 안경,FALSE,TRUE,TRUE
+eyeaccessory-118,개인정보 보호막대,FALSE,TRUE,TRUE
+eyeaccessory-30,3D 글래스,FALSE,TRUE,TRUE
+eyeaccessory-31,뭐요! 안대,FALSE,TRUE,TRUE
+eyeaccessory-171,견습 도사의 흉터,FALSE,TRUE,TRUE
+eyeaccessory-11,파풀라투스 마크,FALSE,TRUE,TRUE
+eyeaccessory-94,코야코야 안대,FALSE,TRUE,TRUE
+eyeaccessory-116,스카우터,TRUE,TRUE,TRUE
+eyeaccessory-126,페어리 마크,FALSE,TRUE,TRUE
+eyeaccessory-17,까만 선글래스,FALSE,TRUE,TRUE
+eyeaccessory-24,블랙빈 마크,FALSE,TRUE,TRUE
+eyeaccessory-14,아쿠아틱 레터 눈장식,FALSE,TRUE,TRUE
+eyeaccessory-98,에볼루션 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-27,외눈안대,FALSE,TRUE,TRUE
+eyeaccessory-105,카오스 핑크빈 마크,FALSE,TRUE,TRUE
+eyeaccessory-5,발굴된 유물 안경,FALSE,TRUE,TRUE
+eyeaccessory-137,세인트 세이버 고글,FALSE,TRUE,TRUE
+eyeaccessory-46,어눌한 팬더 장식,FALSE,TRUE,TRUE
+eyeaccessory-28,소공의 팬더 장식,FALSE,TRUE,TRUE
+eyeaccessory-2,엘븐 글래스,FALSE,TRUE,TRUE
+eyeaccessory-54,켄타의 물안경,FALSE,TRUE,TRUE
+eyeaccessory-95,여행자의 윙글래스,FALSE,TRUE,TRUE
+eyeaccessory-67,오닉스 드래곤 안경,FALSE,TRUE,TRUE
+eyeaccessory-40,미카엘라의 안경,FALSE,TRUE,TRUE
+eyeaccessory-160,미카엘의 안경,FALSE,TRUE,TRUE
+eyeaccessory-35,드래곤 안경,FALSE,TRUE,TRUE
+eyeaccessory-63,고고학자의 안경,FALSE,TRUE,TRUE
+eyeaccessory-18,가가 안경,FALSE,TRUE,TRUE
+eyeaccessory-51,금이 간 안경,FALSE,TRUE,TRUE
+eyeaccessory-65,옐로우 쉐이드,FALSE,TRUE,TRUE
+eyeaccessory-152,핑크 쉐이드,FALSE,TRUE,TRUE
+eyeaccessory-41,그린 쉐이드,FALSE,TRUE,TRUE
+eyeaccessory-139,오렌지 쉐이드,FALSE,TRUE,TRUE
+eyeaccessory-15,화이트 쉐이드,FALSE,TRUE,TRUE
+eyeaccessory-38,빅 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-99,플랫 미니 글라스,FALSE,TRUE,TRUE
+eyeaccessory-97,블랙 썬그라스,FALSE,TRUE,TRUE
+eyeaccessory-109,밀키레드 글라스,FALSE,TRUE,TRUE
+eyeaccessory-45,핑크색 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-77,스타일리쉬 레이벤 안경,FALSE,TRUE,TRUE
+eyeaccessory-42,미스틱퍼플 글라스,FALSE,TRUE,TRUE
+eyeaccessory-112,레이저 안경,FALSE,TRUE,TRUE
+eyeaccessory-108,빨간 반무테 안경,FALSE,TRUE,TRUE
+eyeaccessory-13,빈티지 스타일 안경,FALSE,TRUE,TRUE
+eyeaccessory-111,초록 뿔테 안경,FALSE,TRUE,TRUE
+eyeaccessory-32,눈가리개,FALSE,TRUE,TRUE
+eyeaccessory-142,모범생 안경,FALSE,TRUE,TRUE
+eyeaccessory-26,붕대,FALSE,TRUE,TRUE
+eyeaccessory-115,스카우터,FALSE,TRUE,TRUE
+eyeaccessory-121,패션 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-128,모노클,FALSE,TRUE,TRUE
+eyeaccessory-58,주황색 떙글이 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-114,보라색 땡글이 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-76,무테안경,FALSE,TRUE,TRUE
+eyeaccessory-117,그린 스포츠고글,FALSE,TRUE,TRUE
+eyeaccessory-84,오렌지 스포츠고글,FALSE,TRUE,TRUE
+eyeaccessory-123,괴인 안경,FALSE,TRUE,TRUE
+eyeaccessory-37,홈즈 안경,FALSE,TRUE,TRUE
+eyeaccessory-136,위생 안경,FALSE,TRUE,TRUE
+eyeaccessory-47,레드 메탈 고글,FALSE,TRUE,TRUE
+eyeaccessory-135,샐러리맨안경,FALSE,TRUE,TRUE
+eyeaccessory-33,머스커레이드,FALSE,TRUE,TRUE
+eyeaccessory-85,퍼플 레이벤 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-156,블루 레이벤 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-90,블랙 레이벤 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-140,브라운 레이벤 선글라스,FALSE,TRUE,TRUE
+eyeaccessory-93,주황색 뿔테 안경,FALSE,TRUE,TRUE
+eyeaccessory-149,초록색 뿔테 안경,FALSE,TRUE,TRUE
+eyeaccessory-157,파란색 뿔테 안경,FALSE,TRUE,TRUE
+eyeaccessory-127,빨간색 뿔테 안경,FALSE,TRUE,TRUE
+eyeaccessory-79,초록색 안경,FALSE,TRUE,TRUE
+eyeaccessory-134,노란색 안경,FALSE,TRUE,TRUE
+eyeaccessory-88,파란색 안경,FALSE,TRUE,TRUE
+eyeaccessory-50,주황색 안경,FALSE,TRUE,TRUE
+earaccessory-42,추 귀고리,FALSE,TRUE,TRUE
+earaccessory-31,한쪽 은 귀고리,FALSE,TRUE,TRUE
+earaccessory-18,사파이어 귀고리,FALSE,TRUE,TRUE
+earaccessory-51,자수정 귀고리,FALSE,TRUE,TRUE
+earaccessory-100,금 링 귀고리,FALSE,TRUE,TRUE
+earaccessory-112,번개 귀고리,FALSE,TRUE,TRUE
+earaccessory-113,에메랄드 귀고리,FALSE,TRUE,TRUE
+earaccessory-40,캣츠 아이,FALSE,TRUE,TRUE
+earaccessory-103,옐로우 스퀘어,FALSE,TRUE,TRUE
+earaccessory-91,별 귀고리,FALSE,TRUE,TRUE
+earaccessory-13,블루 문,FALSE,TRUE,TRUE
+earaccessory-87,해골 귀고리,FALSE,TRUE,TRUE
+earaccessory-64,빨간하트 귀고리,FALSE,TRUE,TRUE
+earaccessory-117,분홍꽃 귀고리,FALSE,TRUE,TRUE
+earaccessory-111,메탈실버 이어링,FALSE,TRUE,TRUE
+earaccessory-58,메탈하트 이어링,FALSE,TRUE,TRUE
+earaccessory-27,장미꽃 귀고리,FALSE,TRUE,TRUE
+onehandedweapon-1426,표고버섯,FALSE,TRUE,TRUE
+onehandedweapon-1411,독버섯,FALSE,TRUE,TRUE
+onehandedweapon-1454,하트 완드,FALSE,TRUE,TRUE
+onehandedweapon-283,아이언 대거,FALSE,TRUE,TRUE
+onehandedweapon-1453,사각 강철 야삽,FALSE,TRUE,TRUE
+onehandedweapon-1416,철근 해머,FALSE,TRUE,TRUE
+onehandedweapon-1173,사파이어 스태프,FALSE,TRUE,TRUE
+onehandedweapon-1029,페트병,FALSE,TRUE,TRUE
+onehandedweapon-1279,프라이팬,FALSE,TRUE,TRUE
+onehandedweapon-1227,뚜러,FALSE,TRUE,TRUE
+onehandedweapon-1017,007 가방,FALSE,TRUE,TRUE
+onehandedweapon-1159,쇠파이프,FALSE,TRUE,TRUE
+onehandedweapon-1295,몽둥이,FALSE,TRUE,TRUE
+onehandedweapon-1079,죽도,FALSE,TRUE,TRUE
+onehandedweapon-1120,붉은 채찍,FALSE,TRUE,TRUE
+onehandedweapon-1310,톱,FALSE,TRUE,TRUE
+onehandedweapon-512,고목나무 스태프,FALSE,TRUE,TRUE
+onehandedweapon-803,자쿰의 나뭇가지,FALSE,TRUE,TRUE
+onehandedweapon-340,우드 완드,FALSE,TRUE,TRUE
+onehandedweapon-496,세계의 돼지도감,FALSE,TRUE,TRUE
+onehandedweapon-579,빨간 벽돌,FALSE,TRUE,TRUE
+onehandedweapon-729,삼각 강철 야삽,FALSE,TRUE,TRUE
+onehandedweapon-361,가죽 핸드백,FALSE,TRUE,TRUE
+onehandedweapon-804,막대 사탕,FALSE,TRUE,TRUE
+onehandedweapon-665,신문지 칼,FALSE,TRUE,TRUE
+onehandedweapon-846,연두색 우산,FALSE,TRUE,TRUE
+onehandedweapon-630,빨강 우산,FALSE,TRUE,TRUE
+onehandedweapon-476,하늘색 우산,FALSE,TRUE,TRUE
+onehandedweapon-955,노란색 우산,FALSE,TRUE,TRUE
+onehandedweapon-773,베이지 우산,FALSE,TRUE,TRUE
+onehandedweapon-346,피코피코해머,FALSE,TRUE,TRUE
+twohandedweapon-1463,메이플 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-1346,실버 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-1159,스카이 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-1181,골든 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-776,슈퍼 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-477,블러드 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-617,다크 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-920,아쿠아 스노우보드,FALSE,TRUE,TRUE
+twohandedweapon-1086,서핑보드,FALSE,TRUE,TRUE
+twohandedweapon-1348,검은색 서핑보드,FALSE,TRUE,TRUE
+twohandedweapon-1058,황금색 서핑보드,FALSE,TRUE,TRUE
+twohandedweapon-793,초록색 서핑보드,FALSE,TRUE,TRUE
+twohandedweapon-728,빨간색 서핑보드,FALSE,TRUE,TRUE
+twohandedweapon-1201,지저분한 대걸레,FALSE,TRUE,TRUE
+twohandedweapon-1242,흰색 대걸레,FALSE,TRUE,TRUE
+twohandedweapon-651,남색 대걸레,FALSE,TRUE,TRUE
+twohandedweapon-803,노란 대걸레,FALSE,TRUE,TRUE
+twohandedweapon-1199,스키 그린,FALSE,TRUE,TRUE
+twohandedweapon-598,스키 스카이,FALSE,TRUE,TRUE
+twohandedweapon-540,스키 오렌지,FALSE,TRUE,TRUE
+twohandedweapon-696,스키 레드,FALSE,TRUE,TRUE
+twohandedweapon-1442,낚시대,FALSE,TRUE,TRUE
+twohandedweapon-1407,죽창,FALSE,TRUE,TRUE
+twohandedweapon-282,스틸 너클,FALSE,TRUE,TRUE
+twohandedweapon-1132,냉동참치,FALSE,TRUE,TRUE
+twohandedweapon-653,사케,FALSE,TRUE,TRUE
+twohandedweapon-1020,물고기 작살,FALSE,TRUE,TRUE
+twohandedweapon-1160,강철구 망치,FALSE,TRUE,TRUE
+twohandedweapon-1210,환목검,FALSE,TRUE,TRUE
+twohandedweapon-756,빅해머,FALSE,TRUE,TRUE
+twohandedweapon-546,곡괭이,FALSE,TRUE,TRUE
+twohandedweapon-851,몽키 스페너,FALSE,TRUE,TRUE
+twohandedweapon-782,사각 망치,FALSE,TRUE,TRUE
+twohandedweapon-709,나무 망치,FALSE,TRUE,TRUE
+twohandedweapon-637,쇠 도끼,FALSE,TRUE,TRUE
+twohandedweapon-748,알루미늄 야구 방망이,FALSE,TRUE,TRUE
+twohandedweapon-904,나무 야구 방망이,FALSE,TRUE,TRUE
+twohandedweapon-1555,목검,FALSE,TRUE,TRUE
+twohandedweapon-666,참마도,FALSE,TRUE,TRUE
+shield-76,냄비 뚜껑,FALSE,TRUE,TRUE
+shield-44,사각 나무 방패,FALSE,TRUE,TRUE
+subweapon-53,무명도,FALSE,TRUE,TRUE
+ear-5,하이 레프 귀,TRUE,TRUE,TRUE
+ear-6,인간 귀,TRUE,TRUE,TRUE
+ear-10,우드 레프 귀,TRUE,TRUE,TRUE
+ear-12,엘프 귀,TRUE,TRUE,TRUE
+body-1,뽀송 꽃잎 피부,TRUE,TRUE,TRUE
+body-2,고져스 피부,TRUE,TRUE,TRUE
+body-3,크림 피부,TRUE,TRUE,TRUE
+body-4,헬시 피부,TRUE,TRUE,TRUE
+body-5,밀키 피부,TRUE,TRUE,TRUE
+body-6,엘프 피부,TRUE,TRUE,TRUE
+body-7,태닝 피부,TRUE,TRUE,TRUE
+body-8,홍조 꽃잎 피부,TRUE,TRUE,TRUE
+body-9,스산 피부,TRUE,TRUE,TRUE
+body-10,노블레스 피부,TRUE,TRUE,TRUE
+body-11,데모닉 피부,TRUE,TRUE,TRUE
+body-12,창백 피부,TRUE,TRUE,TRUE
+body-13,뽀송 라벤더 피부,TRUE,TRUE,TRUE
+body-14,은구슬 피부,TRUE,TRUE,TRUE
+body-15,금구슬 피부,TRUE,TRUE,TRUE
+body-16,홍조 라벤더 피부,TRUE,TRUE,TRUE
+body-17,동구슬 피부,TRUE,TRUE,TRUE
+body-18,옥구슬 피부,TRUE,TRUE,TRUE

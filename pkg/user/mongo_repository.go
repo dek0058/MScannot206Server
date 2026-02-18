@@ -145,14 +145,14 @@ func (r *UserMongoRepository) InsertUserByUids(ctx context.Context, uids []strin
 
 	type userDocument struct {
 		*entity.User `bson:",inline"`
-		CreatedAt    time.Time
+		CreatedAt    int64 `bson:"created_at"`
 	}
 
 	for i, uid := range uids {
 		newUsers[i] = entity.NewUser(uid)
 		doc := userDocument{
 			User:      newUsers[i],
-			CreatedAt: now,
+			CreatedAt: now.UnixMilli(),
 		}
 		writeModels[i] = mongo.NewInsertOneModel().SetDocument(doc)
 	}
@@ -230,7 +230,7 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 
 		doc := &entity.CharacterName{
 			Name:      info.Name,
-			CreatedAt: time.Now().UTC(),
+			CreatedAt: time.Now().UTC().UnixMilli(),
 		}
 		charNameModels[i] = mongo.NewInsertOneModel().SetDocument(doc)
 	}
@@ -261,8 +261,9 @@ func (r *UserMongoRepository) CreateCharacters(ctx context.Context, infos []*Use
 
 	for i, info := range createInfos {
 		newCharacter := &entity.Character{
-			Slot: info.Slot,
-			Name: info.Name,
+			Slot:   info.Slot,
+			Name:   info.Name,
+			Gender: info.Gender,
 		}
 
 		update := bson.D{

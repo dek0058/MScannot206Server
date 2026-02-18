@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterShoesTable() *CreateCharacterShoesTable {
-	return &CreateCharacterShoesTable{records: make(map[string]*CreateCharacterShoesRecord,50)}
+	return &CreateCharacterShoesTable{records: make(map[string]*CreateCharacterShoesRecord,49)}
 }
 
 type CreateCharacterShoesTable struct {
@@ -71,8 +71,18 @@ func (t *CreateCharacterShoesTable) Load(csvPath string) error {
 	return nil
 }
 
-func (t *CreateCharacterShoesTable) Get (key string) (*CreateCharacterShoesRecord, bool) {
+func (t *CreateCharacterShoesTable) Get (key string) (CreateCharacterShoesRecord, bool) {
 	rec, ok := t.records[key]
-	return rec, ok
+	if !ok {
+		return CreateCharacterShoesRecord{}, false
+	}
+	return *rec, true
 }
 
+func (t *CreateCharacterShoesTable) GetAll() []CreateCharacterShoesRecord {
+	all := make([]CreateCharacterShoesRecord, 0, len(t.records))
+	for _, rec := range t.records {
+		all = append(all, *rec)
+	}
+	return all
+}

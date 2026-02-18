@@ -31,6 +31,9 @@ type UserCreateCharacterInfo struct {
 
 	// 생성할 캐릭터 이름
 	Name string `json:"name"`
+
+	// 생성할 캐릭터 성별 (1: 남성, 2: 여성)
+	Gender int `json:"gender"`
 }
 
 // 캐릭터 생성 요청

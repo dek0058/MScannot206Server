@@ -6,11 +6,13 @@ import (
 	"MScannot206/pkg/auth/session"
 	"MScannot206/pkg/channel"
 	"MScannot206/pkg/login"
+	"MScannot206/pkg/random"
 	"MScannot206/pkg/serverinfo"
 	"MScannot206/pkg/user"
 	"MScannot206/shared/config"
 	"MScannot206/shared/server"
 	"MScannot206/shared/service"
+	"MScannot206/shared/table"
 	"context"
 	"errors"
 	"flag"
@@ -72,39 +74,47 @@ func setupConfig(
 	return errs
 }
 
-func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error {
+func setupServices(server *server.WebServer, cfg *config.WebServerConfig, tableRepo *table.Repository) error {
 	var errs error
 
+	// 서비스 생성
+
 	// 서버정보 서비스
-	serverInfo_service, err := serverinfo.NewServerInfoService(server, cfg.ServerName, cfg.MongoEnvDBName)
+	serverInfoService, err := serverinfo.NewServerInfoService(server, cfg.ServerName, cfg.MongoEnvDBName)
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("서버정보 서비스 생성 오류")
 	}
 
+	randomService, err := random.NewRandomService()
+	if err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("랜덤 서비스 생성 오류")
+	}
+
 	// 인증 서비스
-	auth_service, err := auth.NewAuthService()
+	authService, err := auth.NewAuthService()
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("인증 서비스 생성 오류")
 	}
 
 	// 로그인 서비스
-	login_service, err := login.NewLoginService()
+	loginService, err := login.NewLoginService()
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("로그인 서비스 생성 오류")
 	}
 
 	// 유저 서비스
-	user_service, err := user.NewUserService()
+	userService, err := user.NewUserService(tableRepo)
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("유저 서비스 생성 오류")
 	}
 
 	// 채널 서비스
-	channel_service, err := channel.NewChannelService()
+	channelService, err := channel.NewChannelService()
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("채널 서비스 생성 오류")
@@ -114,7 +124,10 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		return errs
 	}
 
-	gameDBName, err := serverInfo_service.GetGameDBName()
+	// 레포지토리 생성
+	err = nil
+
+	gameDBName, err := serverInfoService.GetGameDBName()
 	if err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("게임 DB 이름 조회 오류")
@@ -138,25 +151,41 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 		log.Error().Err(err).Msg("채널 레포지토리 생성 오류")
 	}
 
-	// Register Handlers
+	if errs != nil {
+		return errs
+	}
+
+	// 핸들러 바인드
 	errs = nil
 
-	if err := auth_service.SetRepositories(sessionRepo); err != nil {
+	if err := userService.SetHandlers(randomService); err != nil {
+		errs = errors.Join(errs, err)
+		log.Error().Err(err).Msg("유저 서비스 핸들러 설정 오류")
+	}
+
+	if errs != nil {
+		return errs
+	}
+
+	// 레포지토리 바인드
+	err = nil
+
+	if err := authService.SetRepositories(sessionRepo); err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("인증 서비스 레포지토리 설정 오류")
 	}
 
-	if err := login_service.SetRepositories(userRepo); err != nil {
+	if err := loginService.SetRepositories(userRepo); err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("로그인 서비스 레포지토리 설정 오류")
 	}
 
-	if err := user_service.SetRepositories(userRepo); err != nil {
+	if err := userService.SetRepositories(tableRepo, userRepo); err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("유저 서비스 레포지토리 설정 오류")
 	}
 
-	if err := channel_service.SetRepositories(channelRepo); err != nil {
+	if err := channelService.SetRepositories(channelRepo); err != nil {
 		errs = errors.Join(errs, err)
 		log.Error().Err(err).Msg("채널 서비스 레포지토리 설정 오류")
 	}
@@ -168,11 +197,12 @@ func setupServices(server *server.WebServer, cfg *config.WebServerConfig) error 
 	// Add Services
 	errs = nil
 	for _, svc := range []service.Service{
-		serverInfo_service,
-		auth_service,
-		user_service,
-		login_service,
-		channel_service,
+		serverInfoService,
+		randomService,
+		authService,
+		userService,
+		loginService,
+		channelService,
 	} {
 		if err := server.AddService(svc); err != nil {
 			errs = errors.Join(errs, err)
@@ -208,8 +238,25 @@ func run(ctx context.Context, cfg *config.WebServerConfig) error {
 		panic(err)
 	}
 
+	// 데이터 테이블 로드
+	tableRepo := &table.Repository{}
+	dataPath := cfg.DataTablePath
+	if !filepath.IsAbs(dataPath) {
+		executablePath, err := os.Executable()
+		if err != nil {
+			log.Err(err).Msg("실행 파일 경로 조회 오류")
+			panic(err)
+		}
+		dataPath = filepath.Join(filepath.Dir(executablePath), dataPath)
+	}
+
+	if err := tableRepo.Load(dataPath); err != nil {
+		log.Err(err).Msg("데이터 테이블 로드 오류")
+		panic(err)
+	}
+
 	// 서비스 등록
-	if err := setupServices(web_server, cfg); err != nil {
+	if err := setupServices(web_server, cfg, tableRepo); err != nil {
 		log.Err(err).Msg("서비스 설정 오류")
 		panic(err)
 	}
