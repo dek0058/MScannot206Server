@@ -7,7 +7,6 @@ import (
 	"MScannot206/shared/types"
 	"context"
 	"errors"
-	"maps"
 )
 
 func NewUserService(tableRepo *table.Repository) (*UserService, error) {
@@ -112,35 +111,40 @@ func (s *UserService) CreateCharacterByUsers(ctx context.Context, createInfos []
 		return map[string]UserCreateCharacterResult{}, ErrRandomServiceHandlerIsNil
 	}
 
-	createdCharacters, failureUids, err := s.userRepo.CreateCharacters(ctx, createInfos)
+	ret := make(map[string]UserCreateCharacterResult, len(createInfos))
+	params := make([]*UserCreateCharacter, 0, len(createInfos))
+	for _, info := range createInfos {
+		result := UserCreateCharacterResult{}
+		switch info.Gender {
+		case types.GenderType_Male:
+			result.Equips = s.createCharacterView.GetMale(s.randomServiceHandler.GetCharacterCreateSeed())
+		case types.GenderType_Female:
+			result.Equips = s.createCharacterView.GetFemale(s.randomServiceHandler.GetCharacterCreateSeed())
+		default:
+			result.ErrorCode = USER_CREATE_CHARACTER_GENDER_INVALID_ERROR
+		}
+		ret[info.Uid] = result
+		if result.ErrorCode == "" {
+			params = append(params, info)
+		}
+	}
+
+	createdCharacters, failureUids, err := s.userRepo.CreateCharacters(ctx, params)
 	if err != nil {
 		return map[string]UserCreateCharacterResult{}, err
 	}
 
-	ret := make(map[string]UserCreateCharacterResult, len(createInfos))
-	for _, info := range createInfos {
-		if _, ok := failureUids[info.Uid]; ok {
-			ret[info.Uid] = UserCreateCharacterResult{
-				ErrorCode: failureUids[info.Uid],
-			}
-			continue
+	for uid, character := range createdCharacters {
+		if result, ok := ret[uid]; ok {
+			result.Character = character
+			ret[uid] = result
 		}
+	}
 
-		equips := make(map[types.CharacterEquipType]string, types.CharacterEquipCount)
-		switch info.Gender {
-		case types.GenderType_Male:
-			maps.Copy(equips, s.createCharacterView.GetMale(s.randomServiceHandler.GetCharacterCreateSeed()))
-
-		case types.GenderType_Female:
-			maps.Copy(equips, s.createCharacterView.GetFemale(s.randomServiceHandler.GetCharacterCreateSeed()))
-
-		default:
-			continue
-		}
-
-		ret[info.Uid] = UserCreateCharacterResult{
-			Character: createdCharacters[info.Uid],
-			Equips:    equips,
+	for uid, failureCode := range failureUids {
+		if result, ok := ret[uid]; ok {
+			result.ErrorCode = failureCode
+			ret[uid] = result
 		}
 	}
 

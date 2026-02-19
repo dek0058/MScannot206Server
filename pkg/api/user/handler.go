@@ -111,9 +111,10 @@ func (h *UserHandler) createCharacter(ctx context.Context, body json.RawMessage)
 		})
 
 		requests[entry.Uid] = &user.UserCreateCharacter{
-			Uid:  entry.Uid,
-			Slot: entry.Slot,
-			Name: entry.Name,
+			Uid:    entry.Uid,
+			Slot:   entry.Slot,
+			Name:   entry.Name,
+			Gender: entry.Gender,
 		}
 	}
 

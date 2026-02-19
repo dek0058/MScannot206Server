@@ -8,6 +8,7 @@ import (
 
 // character
 const USER_CHARACTER_LOAD_ERROR = "USER_CHARACTER_LOAD_ERROR"
+const USER_CHARACTER_LOAD_NEED_LOGIN_ERROR = "USER_CHARACTER_LOAD_NEED_LOGIN_ERROR"
 
 // character create
 const USER_CHECK_CHARACTER_NAME_UNKNOWN_ERROR = "USER_CHECK_CHARACTER_NAME_UNKNOWN_ERROR"
@@ -21,6 +22,7 @@ const USER_CREATE_CHARACTER_NAME_MIN_LENGTH_ERROR = "USER_CREATE_CHARACTER_NAME_
 const USER_CREATE_CHARACTER_NAME_MAX_LENGTH_ERROR = "USER_CREATE_CHARACTER_NAME_MAX_LENGTH_ERROR"
 const USER_CREATE_CHARACTER_NAME_SPECIAL_CHAR_ERROR = "USER_CREATE_CHARACTER_NAME_SPECIAL_CHAR_ERROR"
 const USER_CREATE_CHARACTER_DB_WRITE_ERROR = "USER_CREATE_CHARACTER_DB_WRITE_ERROR"
+const USER_CREATE_CHARACTER_GENDER_INVALID_ERROR = "USER_CREATE_CHARACTER_GENDER_INVALID_ERROR"
 
 // character delete
 const USER_DELETE_CHARACTER_UNKNOWN_ERROR = "USER_DELETE_CHARACTER_UNKNOWN_ERROR"
@@ -34,6 +36,7 @@ func init() {
 
 	// character
 	shared.RegisterError(USER_CHARACTER_LOAD_ERROR, "캐릭터를 불러오지 못합니다")
+	shared.RegisterError(USER_CHARACTER_LOAD_NEED_LOGIN_ERROR, "캐릭터를 불러오기 위해 로그인이 필요합니다")
 
 	// character create
 	shared.RegisterError(USER_CHECK_CHARACTER_NAME_UNKNOWN_ERROR, "캐릭터 이름 확인 중 알 수 없는 오류가 발생하였습니다")
@@ -47,6 +50,7 @@ func init() {
 	shared.RegisterError(USER_CREATE_CHARACTER_NAME_MAX_LENGTH_ERROR, fmt.Sprintf("캐릭터 이름은 최대 %d자 이하여야 합니다", def.MaxCharacterNameLength))
 	shared.RegisterError(USER_CREATE_CHARACTER_NAME_SPECIAL_CHAR_ERROR, "캐릭터 이름에 사용할 수 없는 문자가 포함되어 있습니다")
 	shared.RegisterError(USER_CREATE_CHARACTER_DB_WRITE_ERROR, "캐릭터 생성 중 데이터베이스 쓰기 오류가 발생하였습니다")
+	shared.RegisterError(USER_CREATE_CHARACTER_GENDER_INVALID_ERROR, "잘못된 성별입니다")
 
 	// character delete
 	shared.RegisterError(USER_DELETE_CHARACTER_UNKNOWN_ERROR, "캐릭터 삭제 중 알 수 없는 오류가 발생하였습니다")
