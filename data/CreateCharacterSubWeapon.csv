@@ -1,4 +1,4 @@
-Index,Name,MaleProb,FemaleProb
-shield-76,냄비 뚜껑,1,1
-shield-44,사각 나무 방패,1,1
-subweapon-53,무명도,1,1
+Index,Name,SubType,MaleProb,FemaleProb
+shield-76,냄비 뚜껑,shield,1,1
+shield-44,사각 나무 방패,shield,1,1
+subweapon-53,무명도,subweapon,1,1

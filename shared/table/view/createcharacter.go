@@ -3,6 +3,7 @@ package view
 import (
 	"MScannot206/shared/table"
 	"MScannot206/shared/types"
+	"maps"
 	"math/rand/v2"
 )
 
@@ -79,9 +80,7 @@ func (v CreateCharacterView) GetMale(rng *rand.Rand) map[types.CharacterEquipTyp
 	}
 
 	if clots, ok := v.CoatView.GetMale(rng); ok {
-		for equipType, index := range clots {
-			ret[equipType] = index
-		}
+		maps.Copy(ret, clots)
 	}
 
 	if glove, ok := v.GloveView.GetMale(rng); ok {
@@ -105,9 +104,7 @@ func (v CreateCharacterView) GetMale(rng *rand.Rand) map[types.CharacterEquipTyp
 	}
 
 	if weapons, ok := v.WeaponView.GetMale(rng); ok {
-		for equipType, index := range weapons {
-			ret[equipType] = index
-		}
+		maps.Copy(ret, weapons)
 	}
 
 	if ear, ok := v.EarView.GetMale(rng); ok {
@@ -141,9 +138,7 @@ func (v CreateCharacterView) GetFemale(rng *rand.Rand) map[types.CharacterEquipT
 	}
 
 	if clots, ok := v.CoatView.GetFemale(rng); ok {
-		for equipType, index := range clots {
-			ret[equipType] = index
-		}
+		maps.Copy(ret, clots)
 	}
 
 	if glove, ok := v.GloveView.GetFemale(rng); ok {
@@ -167,9 +162,7 @@ func (v CreateCharacterView) GetFemale(rng *rand.Rand) map[types.CharacterEquipT
 	}
 
 	if weapons, ok := v.WeaponView.GetFemale(rng); ok {
-		for equipType, index := range weapons {
-			ret[equipType] = index
-		}
+		maps.Copy(ret, weapons)
 	}
 
 	if ear, ok := v.EarView.GetFemale(rng); ok {

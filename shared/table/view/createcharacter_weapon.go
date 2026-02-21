@@ -95,7 +95,7 @@ func (v CreateCharacterWeaponTableView) GetMale(rng *rand.Rand) (map[types.Chara
 
 			pickedRecord, err := weightedPicker.Pick()
 			if err == nil {
-				ret[types.CharacterEquipType_SubWeapon] = pickedRecord.Index
+				ret[types.CharacterEquipType(pickedRecord.SubType)] = pickedRecord.Index
 			}
 		}
 	}
@@ -144,7 +144,7 @@ func (v CreateCharacterWeaponTableView) GetFemale(rng *rand.Rand) (map[types.Cha
 
 			pickedRecord, err := weightedPicker.Pick()
 			if err == nil {
-				ret[types.CharacterEquipType_SubWeapon] = pickedRecord.Index
+				ret[types.CharacterEquipType(pickedRecord.SubType)] = pickedRecord.Index
 			}
 		}
 	}

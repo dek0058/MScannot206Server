@@ -4,7 +4,7 @@ package types
 type CharacterEquipType string
 
 // 캐릭터 장비 타입 개수
-const CharacterEquipCount = 17
+const CharacterEquipCount = 18
 
 // 캐릭터 장비 슬롯 개수
 const CharacterEquipSlotCount = 15
@@ -56,6 +56,9 @@ const (
 
 	// 보조 무기
 	CharacterEquipType_SubWeapon = CharacterEquipType("subweapon")
+
+	// 방패
+	CharacterEquipType_Shield = CharacterEquipType("shield")
 
 	// 귀
 	CharacterEquipType_Ear = CharacterEquipType("ear")

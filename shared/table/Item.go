@@ -10,7 +10,7 @@ import (
 )
 
 func NewItemTable() *ItemTable {
-	return &ItemTable{records: make(map[string]*ItemRecord,616)}
+	return &ItemTable{records: make(map[string]*ItemRecord,632)}
 }
 
 type ItemTable struct {

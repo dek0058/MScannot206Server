@@ -23,6 +23,8 @@ type CreateCharacterSubWeaponRecord struct {
 
 	Name string
 
+	SubType string
+
 	MaleProb float64
 
 	FemaleProb float64
@@ -46,15 +48,16 @@ func (t *CreateCharacterSubWeaponTable) Load(csvPath string) error {
 		rec := &CreateCharacterSubWeaponRecord{}
 		rec.Index = record[0]
 		rec.Name = record[1]
+		rec.SubType = record[2]
 		{
-			floatVal, err := strconv.ParseFloat(record[2], 64)
+			floatVal, err := strconv.ParseFloat(record[3], 64)
 			if err != nil {
 				return err
 			}
 			rec.MaleProb = floatVal
 		}
 		{
-			floatVal, err := strconv.ParseFloat(record[3], 64)
+			floatVal, err := strconv.ParseFloat(record[4], 64)
 			if err != nil {
 				return err
 			}
