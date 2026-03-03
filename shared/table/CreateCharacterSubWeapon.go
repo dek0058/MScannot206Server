@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterSubWeaponTable() *CreateCharacterSubWeaponTable {
-	return &CreateCharacterSubWeaponTable{records: make(map[string]*CreateCharacterSubWeaponRecord,3)}
+	return &CreateCharacterSubWeaponTable{records: make(map[string]*CreateCharacterSubWeaponRecord,101)}
 }
 
 type CreateCharacterSubWeaponTable struct {
@@ -22,8 +22,6 @@ type CreateCharacterSubWeaponRecord struct {
 	Index string
 
 	Name string
-
-	SubType string
 
 	MaleProb float64
 
@@ -48,16 +46,15 @@ func (t *CreateCharacterSubWeaponTable) Load(csvPath string) error {
 		rec := &CreateCharacterSubWeaponRecord{}
 		rec.Index = record[0]
 		rec.Name = record[1]
-		rec.SubType = record[2]
 		{
-			floatVal, err := strconv.ParseFloat(record[3], 64)
+			floatVal, err := strconv.ParseFloat(record[2], 64)
 			if err != nil {
 				return err
 			}
 			rec.MaleProb = floatVal
 		}
 		{
-			floatVal, err := strconv.ParseFloat(record[4], 64)
+			floatVal, err := strconv.ParseFloat(record[3], 64)
 			if err != nil {
 				return err
 			}

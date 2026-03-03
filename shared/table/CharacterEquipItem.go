@@ -11,7 +11,7 @@ import (
 )
 
 func NewCharacterEquipItemTable() *CharacterEquipItemTable {
-	return &CharacterEquipItemTable{records: make(map[string]*CharacterEquipItemRecord,616)}
+	return &CharacterEquipItemTable{records: make(map[string]*CharacterEquipItemRecord,20908)}
 }
 
 type CharacterEquipItemTable struct {
@@ -20,8 +20,6 @@ type CharacterEquipItemTable struct {
 
 type CharacterEquipItemRecord struct {
 	Index string
-
-	ItemName string
 
 	Bound bool
 
@@ -47,23 +45,22 @@ func (t *CharacterEquipItemTable) Load(csvPath string) error {
 	for _, record := range records[1:] {
 		rec := &CharacterEquipItemRecord{}
 		rec.Index = record[0]
-		rec.ItemName = record[1]
 		{
-			boolVal, err := strconv.ParseBool(record[2])
+			boolVal, err := strconv.ParseBool(record[1])
 			if err != nil {
 				return err
 			}
 			rec.Bound = boolVal
 		}
 		{
-			boolVal, err := strconv.ParseBool(record[3])
+			boolVal, err := strconv.ParseBool(record[2])
 			if err != nil {
 				return err
 			}
 			rec.Male = boolVal
 		}
 		{
-			boolVal, err := strconv.ParseBool(record[4])
+			boolVal, err := strconv.ParseBool(record[3])
 			if err != nil {
 				return err
 			}

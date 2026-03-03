@@ -10,7 +10,7 @@ import (
 )
 
 func NewItemTable() *ItemTable {
-	return &ItemTable{records: make(map[string]*ItemRecord,632)}
+	return &ItemTable{records: make(map[string]*ItemRecord,20908)}
 }
 
 type ItemTable struct {
@@ -24,7 +24,11 @@ type ItemRecord struct {
 
 	ItemName string
 
+	ItemDesc string
+
 	RUID string
+
+	Icon string
 }
 
 func (t *ItemTable) Load(csvPath string) error {
@@ -46,7 +50,9 @@ func (t *ItemTable) Load(csvPath string) error {
 		rec.Index = record[0]
 		rec.Category = record[1]
 		rec.ItemName = record[2]
-		rec.RUID = record[3]
+		rec.ItemDesc = record[3]
+		rec.RUID = record[4]
+		rec.Icon = record[5]
 		_, ok := t.records[rec.Index]
 		if ok {
 			log.Printf("Duplicate key '%v' found in CSV, skipping record.\n", rec.Index)

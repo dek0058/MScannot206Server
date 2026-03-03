@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterCapTable() *CreateCharacterCapTable {
-	return &CreateCharacterCapTable{records: make(map[string]*CreateCharacterCapRecord,19)}
+	return &CreateCharacterCapTable{records: make(map[string]*CreateCharacterCapRecord,1717)}
 }
 
 type CreateCharacterCapTable struct {

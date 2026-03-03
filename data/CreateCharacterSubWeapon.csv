@@ -1,4 +1,102 @@
-Index,Name,SubType,MaleProb,FemaleProb
-shield-76,냄비 뚜껑,shield,1,1
-shield-44,사각 나무 방패,shield,1,1
-subweapon-53,무명도,subweapon,1,1
+Index,Name,MaleProb,FemaleProb
+shield-92,강철 방패,1,1
+shield-20,빨간 삼각 방패,1,1
+shield-17,크로스 실드,1,1
+shield-44,사각 나무 방패,1,1
+shield-24,해골 방패,1,1
+shield-87,우드 버클러,1,1
+shield-78,미스릴 버클러,1,1
+shield-93,배틀 실드,1,1
+shield-76,냄비 뚜껑,1,1
+shield-60,우드 레전드 실드,1,1
+shield-90,실버 레전드 실드,1,1
+shield-32,아다만티움 레전드 실드,1,1
+shield-42,스틸 타워 실드,1,1
+shield-3,미스릴 타워 실드,1,1
+shield-54,아다만티움 타워 실드,1,1
+shield-21,스틸 에인션트 실드,1,1
+shield-47,실버 에인션트 실드,1,1
+shield-58,골드 에인션트 실드,1,1
+shield-2,시클루전 리스트,1,1
+shield-38,님블 리스트,1,1
+shield-57,주르건 리스트,1,1
+shield-63,미스틱 실드,1,1
+shield-61,팔레트,1,1
+shield-9,스틸 아퀼라 실드,1,1
+shield-74,실버 아퀼라 실드,1,1
+shield-83,골드 아퀼라 실드,1,1
+shield-66,브론즈 칼칸,1,1
+shield-30,실버 칼칸,1,1
+shield-27,골드 칼칸,1,1
+shield-80,에스터 실드,1,1
+shield-26,메이플 실드,1,1
+shield-14,무당벌레 방패,1,1
+shield-46,샌드쿠키 방패,1,1
+shield-82,클로버 방패,1,1
+shield-73,치우천왕 방패,1,1
+shield-4,그린 호플론,1,1
+shield-68,바이올렛 호플론,1,1
+shield-12,블루 호플론,1,1
+shield-25,눈꽃 방패,1,1
+shield-70,겔러해드 실드,1,1
+shield-62,하트 미니 실드,1,1
+shield-5,메이플 매지션 실드,1,1
+shield-72,메이플 워리어 실드,1,1
+shield-77,메이플 시브즈 실드,1,1
+shield-52,타임리스 프렐류드,1,1
+shield-59,타임리스 카이트 실드,1,1
+shield-45,타임리스 리스트,1,1
+shield-31,블루 드래곤 실드,1,1
+shield-81,메이플걸 방패,1,1
+shield-6,데이모스 워리어 실드,1,1
+shield-13,데이모스 다크니스 실드,1,1
+shield-41,데이모스 세이지 실드,1,1
+shield-97,빛의 기사 방패,1,1
+shield-79,수호의 소울실드,1,1
+shield-29,긍지의 소울실드,1,1
+shield-19,용맹의 소울실드,1,1
+shield-40,정의의 소울실드,1,1
+shield-43,블랙 소울실드,1,1
+shield-75,메이플 트레져 소울실드,1,1
+shield-18,인내의 포스실드,1,1
+shield-37,의지의 포스실드,1,1
+shield-22,권능의 포스실드,1,1
+shield-69,극한의 포스실드,1,1
+shield-10,블랙 포스실드,1,1
+shield-53,메이플 트레져 포스실드,1,1
+shield-67,루인 포스실드,1,1
+subweapon-53,무명도,1,1
+subweapon-27,지천도,1,1
+subweapon-37,의천도,1,1
+subweapon-72,패왕도,1,1
+subweapon-5,아슈켈론,1,1
+subweapon-12,천무도,1,1
+subweapon-18,용화도,1,1
+subweapon-9,만혈도,1,1
+subweapon-7,유성도,1,1
+subweapon-24,용연도,1,1
+subweapon-11,청월도,1,1
+subweapon-3,타임리스 코션,1,1
+subweapon-1,설지도,1,1
+subweapon-21,메이플 블레이드,1,1
+subweapon-23,메이플 듀크,1,1
+subweapon-19,메이플 크릿트,1,1
+subweapon-13,메이플 파이롭 블레이드,1,1
+subweapon-30,홍화청매도,1,1
+subweapon-67,레이븐혼 섀도우블레이드,1,1
+subweapon-47,월성도,1,1
+subweapon-49,네크로 블레이드,1,1
+subweapon-61,파프니르 래피드엣지,1,1
+subweapon-48,스칼렛 블레이드,1,1
+subweapon-69,마이스터 블레이드,1,1
+subweapon-77,레드 블레이드,1,1
+subweapon-41,블랙 블레이드,1,1
+subweapon-63,11주년 세인트 블레이드,1,1
+subweapon-29,자쿰의 포이즈닉 블레이드,1,1
+subweapon-44,쟈이힌 블레이드,1,1
+subweapon-73,우트가르드 블레이드,1,1
+subweapon-65,앱솔랩스 블레이드,1,1
+subweapon-59,메이플 트레져 블레이드,1,1
+subweapon-36,아케인셰이드 블레이드,1,1
+subweapon-81,핑크 소울링,1,1
+subweapon-80,옥타코어 컨트롤러,1,1

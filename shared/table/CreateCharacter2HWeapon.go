@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacter2HWeaponTable() *CreateCharacter2HWeaponTable {
-	return &CreateCharacter2HWeaponTable{records: make(map[string]*CreateCharacter2HWeaponRecord,39)}
+	return &CreateCharacter2HWeaponTable{records: make(map[string]*CreateCharacter2HWeaponRecord,655)}
 }
 
 type CreateCharacter2HWeaponTable struct {

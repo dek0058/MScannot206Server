@@ -1,32 +1,1340 @@
 Index,Name,MaleProb,FemaleProb
-onehandedweapon-1426,표고버섯,0.01,0.01
-onehandedweapon-1411,독버섯,0.01,0.01
-onehandedweapon-1454,하트 완드,0.01,0.01
-onehandedweapon-283,아이언 대거,0.01,0.01
-onehandedweapon-1453,사각 강철 야삽,0.01,0.01
-onehandedweapon-1416,철근 해머,0.01,0.01
-onehandedweapon-1173,사파이어 스태프,0.01,0.01
-onehandedweapon-1029,페트병,0.01,0.01
-onehandedweapon-1279,프라이팬,0.01,0.01
-onehandedweapon-1227,뚜러,0.01,0.01
-onehandedweapon-1017,007 가방,0.01,0.01
-onehandedweapon-1159,쇠파이프,0.01,0.01
-onehandedweapon-1295,몽둥이,0.01,0.01
-onehandedweapon-1079,죽도,0.01,0.01
-onehandedweapon-1120,붉은 채찍,0.01,0.01
-onehandedweapon-1310,톱,0.01,0.01
-onehandedweapon-512,고목나무 스태프,0.01,0.01
-onehandedweapon-803,자쿰의 나뭇가지,0.01,0.01
-onehandedweapon-340,우드 완드,0.01,0.01
-onehandedweapon-496,세계의 돼지도감,0.01,0.01
-onehandedweapon-579,빨간 벽돌,0.01,0.01
-onehandedweapon-729,삼각 강철 야삽,0.01,0.01
-onehandedweapon-361,가죽 핸드백,0.01,0.01
-onehandedweapon-804,막대 사탕,0.01,0.01
-onehandedweapon-665,신문지 칼,0.01,0.01
-onehandedweapon-846,연두색 우산,0.01,0.01
-onehandedweapon-630,빨강 우산,0.01,0.01
-onehandedweapon-476,하늘색 우산,0.01,0.01
-onehandedweapon-955,노란색 우산,0.01,0.01
-onehandedweapon-773,베이지 우산,0.01,0.01
-onehandedweapon-346,피코피코해머,0.01,0.01
+onehandedweapon-1395,플레인,1,1
+onehandedweapon-1118,골드 샤인,1,1
+onehandedweapon-883,데코어 플레인,1,1
+onehandedweapon-1360,발렌티어,1,1
+onehandedweapon-1191,샤프 슬레이버,1,1
+onehandedweapon-378,라이트윙 세이지,1,1
+onehandedweapon-453,듀얼 샤이닝스타,1,1
+onehandedweapon-1062,글림 골드윙,1,1
+onehandedweapon-1212,크레센트,1,1
+onehandedweapon-1513,드래곤 샤이닝로드,1,1
+onehandedweapon-775,타임리스 데드엔드,1,1
+onehandedweapon-1412,엘리고스 블러디 샤이닝로드,1,1
+onehandedweapon-1440,드래곤테일 타나토스,1,1
+onehandedweapon-925,알마 반 레온 글로리어,1,1
+onehandedweapon-718,템페스트 샤이닝 로드,1,1
+onehandedweapon-418,얼티밋 샤이닝 로드,1,1
+onehandedweapon-1210,파프니르 마나크래들,1,1
+onehandedweapon-377,스칼렛 타나토스,1,1
+onehandedweapon-884,10주년 블랙 샤이닝로드,1,1
+onehandedweapon-982,10주년 화이트 샤이닝로드,1,1
+onehandedweapon-1399,혼돈의 포션,1,1
+onehandedweapon-838,마이스터 타나토스,1,1
+onehandedweapon-380,레볼루션 샤이닝로드,1,1
+onehandedweapon-601,꽃분홍 튜브,1,1
+onehandedweapon-502,11주년 세인트 샤이닝로드,1,1
+onehandedweapon-1384,자쿰의 포이즈닉 샤이닝로드,1,1
+onehandedweapon-1265,쟈이힌 샤이닝로드,1,1
+onehandedweapon-892,우트가르드 샤이닝로드,1,1
+onehandedweapon-893,앱솔랩스 샤이닝로드,1,1
+onehandedweapon-836,메이플 트레져 샤이닝 로드,1,1
+onehandedweapon-1141,아케인셰이드 샤이닝로드,1,1
+onehandedweapon-714,봉인된 제네시스 샤이닝로드,1,1
+onehandedweapon-1569,딤 게이저,1,1
+onehandedweapon-1612,험블 스팅,1,1
+onehandedweapon-1617,페일 로버,1,1
+onehandedweapon-1613,아이러닉 반타,1,1
+onehandedweapon-1581,리틀 후드럼,1,1
+onehandedweapon-1622,블러드라인즈,1,1
+onehandedweapon-1563,크림슨 마우트,1,1
+onehandedweapon-1577,레버너스 레이,1,1
+onehandedweapon-1583,드래곤 켈란,1,1
+onehandedweapon-1565,자쿰의 포이즈닉 브레스 슈터,1,1
+onehandedweapon-1574,브히제르 칼리그,1,1
+onehandedweapon-1603,네크로 브레스 슈터,1,1
+onehandedweapon-1631,쟈이힌 브레스 슈터,1,1
+onehandedweapon-1621,로얄 반 레온 브레스 슈터,1,1
+onehandedweapon-1590,우트가르드 브레스 슈터,1,1
+onehandedweapon-1630,팔콘윙 스플렌디드 네로,1,1
+onehandedweapon-1602,파프니르 나이트체이서,1,1
+onehandedweapon-1596,앱솔랩스 브레스 슈터,1,1
+onehandedweapon-1572,아케인셰이드 브레스 슈터,1,1
+onehandedweapon-1610,마이스터 모르스,1,1
+onehandedweapon-1578,블랙 브레스 슈터,1,1
+onehandedweapon-1616,봉인된 제네시스 브레스 슈터,1,1
+onehandedweapon-304,퍼플 헤이즈,1,1
+onehandedweapon-148,핑크 헤이즈,1,1
+onehandedweapon-277,퍼플 해츨링,1,1
+onehandedweapon-34,제이드 해츨링,1,1
+onehandedweapon-270,핑크 웜헤드,1,1
+onehandedweapon-139,레드 웜헤드,1,1
+onehandedweapon-31,제이드 웜헤드,1,1
+onehandedweapon-231,그린 드래곤소울,1,1
+onehandedweapon-311,제이드웜,1,1
+onehandedweapon-27,아이언 드래곤,1,1
+onehandedweapon-65,타임리스 퍼플드래곤,1,1
+onehandedweapon-146,베파르 블러드문,1,1
+onehandedweapon-48,샤크투스 소울드링커,1,1
+onehandedweapon-253,코라 반 레온 화이트웜,1,1
+onehandedweapon-259,템페스트 소울슈터,1,1
+onehandedweapon-249,얼티밋 소울슈터,1,1
+onehandedweapon-246,파프니르 엔젤릭슈터,1,1
+onehandedweapon-6,스칼렛 엔젤릭슈터,1,1
+onehandedweapon-286,10주년 블랙 소울슈터,1,1
+onehandedweapon-222,10주년 화이트 소울슈터,1,1
+onehandedweapon-155,마이스터 엔젤릭슈터,1,1
+onehandedweapon-49,레볼루션 소울슈터,1,1
+onehandedweapon-125,11주년 세인트 소울슈터,1,1
+onehandedweapon-85,자쿰의 포이즈닉 소울슈터,1,1
+onehandedweapon-16,쟈이힌 드래곤소울,1,1
+onehandedweapon-119,우트가르드 드래곤소울,1,1
+onehandedweapon-69,앱솔랩스 소울슈터,1,1
+onehandedweapon-284,메이플 트레져 소울슈터,1,1
+onehandedweapon-104,아케인셰이드 소울슈터,1,1
+onehandedweapon-250,봉인된 제네시스 소울슈터,1,1
+onehandedweapon-1072,블루 리벤저,1,1
+onehandedweapon-624,딤 메모리,1,1
+onehandedweapon-834,이터널 원더러,1,1
+onehandedweapon-990,플럼 새드니스,1,1
+onehandedweapon-790,카디날 오멘,1,1
+onehandedweapon-1323,블랜드 엣지,1,1
+onehandedweapon-345,나이트메어,1,1
+onehandedweapon-371,크루얼 벤전스,1,1
+onehandedweapon-1386,프림 배가본드,1,1
+onehandedweapon-1256,드래곤 레이지,1,1
+onehandedweapon-680,타임리스 그림시커,1,1
+onehandedweapon-687,아가레스 블러디 크림즌 조디악,1,1
+onehandedweapon-870,라이온하트 페인풀 데스티니,1,1
+onehandedweapon-910,막스 반 레온 블러드퓨리,1,1
+onehandedweapon-726,얼티밋 그림시커,1,1
+onehandedweapon-1383,파프니르 데스브링어,1,1
+onehandedweapon-352,스칼렛 데스브링어,1,1
+onehandedweapon-916,10주년 블랙 데빌소드,1,1
+onehandedweapon-952,10주년 화이트 데빌소드,1,1
+onehandedweapon-1028,마이스터 데스브링어,1,1
+onehandedweapon-649,레볼루션 데몬소드,1,1
+onehandedweapon-897,11주년 세인트 데빌소드,1,1
+onehandedweapon-358,자쿰의 포이즈닉 데스페라도,1,1
+onehandedweapon-398,쟈이힌 데스페라도,1,1
+onehandedweapon-1406,우트가르드 데스페라도,1,1
+onehandedweapon-1091,앱솔랩스 데스페라도,1,1
+onehandedweapon-582,메이플 트레져 데빌소드,1,1
+onehandedweapon-520,아케인셰이드 데스페라도,1,1
+onehandedweapon-1303,봉인된 제네시스 데스페라도,1,1
+onehandedweapon-1202,어시메트리 혼,1,1
+onehandedweapon-360,릿지 커터,1,1
+onehandedweapon-863,러프 바이올렛,1,1
+onehandedweapon-583,매크럴 나이프,1,1
+onehandedweapon-1271,다이어드,1,1
+onehandedweapon-385,압셍트 톡신,1,1
+onehandedweapon-1420,크림슨 스컬,1,1
+onehandedweapon-1373,피쉬핀,1,1
+onehandedweapon-1037,드래곤 에너지 스컬,1,1
+onehandedweapon-392,타임리스 샤프트헤드,1,1
+onehandedweapon-1300,베파르 블러디 만티코어,1,1
+onehandedweapon-1491,샤크투스 퀸스폴링,1,1
+onehandedweapon-1387,코라 반 레온 에너지체인,1,1
+onehandedweapon-598,얼티밋 샤프트헤드,1,1
+onehandedweapon-906,파프니르 스플릿엣지,1,1
+onehandedweapon-325,스칼렛 스플릿엣지,1,1
+onehandedweapon-1209,10주년 블랙 체인소드,1,1
+onehandedweapon-591,10주년 화이트 체인소드,1,1
+onehandedweapon-505,마이스터 스플릿엣지,1,1
+onehandedweapon-492,레볼루션 체인소드,1,1
+onehandedweapon-860,11주년 세인트 체인소드,1,1
+onehandedweapon-1130,자쿰의 포이즈닉 에너지소드,1,1
+onehandedweapon-368,쟈이힌 에너지체인,1,1
+onehandedweapon-1333,앱솔랩스 에너지소드,1,1
+onehandedweapon-1008,메이플 트레져 체인소드,1,1
+onehandedweapon-500,아케인셰이드 에너지체인,1,1
+onehandedweapon-760,봉인된 제네시스 에너지체인,1,1
+onehandedweapon-70,프로토 ESP리미터,1,1
+onehandedweapon-89,트라이얼 ESP리미터,1,1
+onehandedweapon-163,퍼스트 ESP리미터,1,1
+onehandedweapon-318,웰플랜 ESP리미터,1,1
+onehandedweapon-129,인게이징 ESP리미터,1,1
+onehandedweapon-134,테크니컬 ESP리미터,1,1
+onehandedweapon-105,매드 ESP리미터,1,1
+onehandedweapon-183,다이몬의 ESP리미터,1,1
+onehandedweapon-144,드래곤 ESP리미터,1,1
+onehandedweapon-67,브히제르 ESP리미터,1,1
+onehandedweapon-271,쟈이힌 ESP리미터,1,1
+onehandedweapon-278,우트가르드 ESP리미터,1,1
+onehandedweapon-24,자쿰의 ESP리미터,1,1
+onehandedweapon-42,네크로 ESP리미터,1,1
+onehandedweapon-279,로얄 반 레온 ESP리미터,1,1
+onehandedweapon-313,드래곤테일 ESP리미터,1,1
+onehandedweapon-108,파프니르 ESP리미터,1,1
+onehandedweapon-225,앱솔랩스 ESP리미터,1,1
+onehandedweapon-295,블랙 ESP리미터,1,1
+onehandedweapon-180,마이스터 ESP리미터,1,1
+onehandedweapon-294,아케인셰이드 ESP리미터,1,1
+onehandedweapon-289,봉인된 제네시스 ESP리미터,1,1
+onehandedweapon-1217,데 매르큐리오,1,1
+onehandedweapon-507,데 베누스,1,1
+onehandedweapon-1532,데 티에라,1,1
+onehandedweapon-354,데 마르티,1,1
+onehandedweapon-515,데 호비테르,1,1
+onehandedweapon-1370,데 사토르노,1,1
+onehandedweapon-1462,데 우라노,1,1
+onehandedweapon-659,데 네프투노,1,1
+onehandedweapon-1250,드래곤 체인,1,1
+onehandedweapon-1471,브히제르 체인,1,1
+onehandedweapon-468,네크로 체인,1,1
+onehandedweapon-1419,쟈이힌 체인,1,1
+onehandedweapon-1274,로얄 반 레온 체인,1,1
+onehandedweapon-1043,우트가르드 체인,1,1
+onehandedweapon-479,레이븐혼 체인,1,1
+onehandedweapon-1324,파프니르 체인,1,1
+onehandedweapon-1432,앱솔랩스 체인,1,1
+onehandedweapon-1193,아케인셰이드 체인,1,1
+onehandedweapon-1057,마이스터 체인,1,1
+onehandedweapon-1126,블랙 체인,1,1
+onehandedweapon-503,자쿰의 포이즈닉 체인,1,1
+onehandedweapon-1123,봉인된 제네시스 체인,1,1
+onehandedweapon-1351,루나 매직 건틀렛,1,1
+onehandedweapon-818,마티스 매직 건틀렛,1,1
+onehandedweapon-1056,머큐리 매직 건틀렛,1,1
+onehandedweapon-629,로비스 매직 건틀렛,1,1
+onehandedweapon-698,베네리스 매직 건틀렛,1,1
+onehandedweapon-749,사투르니 매직 건틀렛,1,1
+onehandedweapon-724,솔리스 매직 건틀렛,1,1
+onehandedweapon-956,페리아스 매직 건틀렛,1,1
+onehandedweapon-936,드래곤 매직 건틀렛,1,1
+onehandedweapon-758,브히제르 매직 건틀렛,1,1
+onehandedweapon-614,네크로 매직 건틀렛,1,1
+onehandedweapon-1216,쟈이힌 매직 건틀렛,1,1
+onehandedweapon-822,로얄 반 레온 매직 건틀렛,1,1
+onehandedweapon-1478,우트가르드 매직 건틀렛,1,1
+onehandedweapon-1121,드래곤테일 매직 건틀렛,1,1
+onehandedweapon-879,파프니르 매직 건틀렛,1,1
+onehandedweapon-968,앱솔랩스 매직 건틀렛,1,1
+onehandedweapon-491,아케인셰이드 매직 건틀렛,1,1
+onehandedweapon-447,마이스터 매직 건틀렛,1,1
+onehandedweapon-451,블랙 매직 건틀렛,1,1
+onehandedweapon-1198,자쿰의 포이즈닉 매직 건틀렛,1,1
+onehandedweapon-367,봉인된 제네시스 매직 건틀렛,1,1
+onehandedweapon-1593,흑운선,1,1
+onehandedweapon-1589,소선,1,1
+onehandedweapon-1628,천지선,1,1
+onehandedweapon-1598,폭풍선,1,1
+onehandedweapon-1576,우선,1,1
+onehandedweapon-1564,뇌선,1,1
+onehandedweapon-1611,태극선,1,1
+onehandedweapon-1614,태평선,1,1
+onehandedweapon-1571,용익선,1,1
+onehandedweapon-1580,자쿰의 독선,1,1
+onehandedweapon-1594,브히제르 파선,1,1
+onehandedweapon-1592,네크로 영선,1,1
+onehandedweapon-1588,쟈이힌 위선,1,1
+onehandedweapon-1544,로얄 반 레온 호선,1,1
+onehandedweapon-1546,우트가르드 거선,1,1
+onehandedweapon-1559,레이븐혼 각선,1,1
+onehandedweapon-1557,파프니르 용선,1,1
+onehandedweapon-1625,앱솔랩스 괴선,1,1
+onehandedweapon-1615,아케인셰이드 초선,1,1
+onehandedweapon-1555,마이스터 명품선,1,1
+onehandedweapon-1540,블랙 흑선,1,1
+onehandedweapon-1618,봉인된 제네시스 창세선,1,1
+onehandedweapon-1073,검,1,1
+onehandedweapon-1310,톱,1,1
+onehandedweapon-644,바이킹 소드,1,1
+onehandedweapon-1270,일룬,1,1
+onehandedweapon-868,커틀러스,1,1
+onehandedweapon-1255,사브르,1,1
+onehandedweapon-589,쿠크리,1,1
+onehandedweapon-642,카알 대검,1,1
+onehandedweapon-984,글라디우스,1,1
+onehandedweapon-481,트라우스,1,1
+onehandedweapon-1438,쥬얼 쿠아다라,1,1
+onehandedweapon-671,네오코라,1,1
+onehandedweapon-1430,레드 카타나,1,1
+onehandedweapon-1120,붉은 채찍,1,1
+onehandedweapon-733,낡은 글라디우스,1,1
+onehandedweapon-1272,영웅의 글라디우스,1,1
+onehandedweapon-955,노란색 우산,1,1
+onehandedweapon-476,하늘색 우산,1,1
+onehandedweapon-851,아츠,1,1
+onehandedweapon-373,이름없는검(사무라이검),1,1
+onehandedweapon-655,메이플 소드,1,1
+onehandedweapon-346,피코피코해머,1,1
+onehandedweapon-1079,죽도,1,1
+onehandedweapon-798,프라우테,1,1
+onehandedweapon-665,신문지 칼,1,1
+onehandedweapon-630,빨강 우산,1,1
+onehandedweapon-1391,검정 우산,1,1
+onehandedweapon-846,연두색 우산,1,1
+onehandedweapon-1180,연보라 우산,1,1
+onehandedweapon-773,베이지 우산,1,1
+onehandedweapon-528,메이플 켈트 소드,1,1
+onehandedweapon-328,칠성검,1,1
+onehandedweapon-1002,메이플 1000일 깃발,1,1
+onehandedweapon-1404,트럼펫,1,1
+onehandedweapon-341,광선채찍,1,1
+onehandedweapon-362,스파타,1,1
+onehandedweapon-1185,메이플 우산,1,1
+onehandedweapon-1104,드래곤 카라벨라,1,1
+onehandedweapon-1192,화염의 카타나,1,1
+onehandedweapon-821,메이플 글로리 소드,1,1
+onehandedweapon-1381,메이플 1500일 깃발,1,1
+onehandedweapon-850,메이플 꼬마전구,1,1
+onehandedweapon-487,타임리스 엑서큐서너스,1,1
+onehandedweapon-1034,초코 쇼트케이크,1,1
+onehandedweapon-1296,돼지치기 막대,1,1
+onehandedweapon-837,메이플 파이롭 소드,1,1
+onehandedweapon-1529,막스 반 레온 세이버,1,1
+onehandedweapon-539,마녀의 빗자루,1,1
+onehandedweapon-1327,라이온하트 커틀러스,1,1
+onehandedweapon-646,아가레스 블러디 피어,1,1
+onehandedweapon-713,날렵한 스티지 채찍,1,1
+onehandedweapon-885,광포한 스티지 채찍,1,1
+onehandedweapon-473,분노한 스티지 채찍,1,1
+onehandedweapon-1134,메이플 베릴 브링어,1,1
+onehandedweapon-1147,메이플 래티넘 브링어,1,1
+onehandedweapon-1240,메이플 이올렛 글라디우스,1,1
+onehandedweapon-1497,네크로 피어,1,1
+onehandedweapon-1231,샤이닝 소울 칼리버,1,1
+onehandedweapon-1215,토끼 찹쌀떡,1,1
+onehandedweapon-240,뚱한 미니빈,1,1
+onehandedweapon-449,신비의 서,1,1
+onehandedweapon-1257,화염여우,1,1
+onehandedweapon-316,금강불괴 병아리,1,1
+onehandedweapon-672,바니바니,1,1
+onehandedweapon-835,라피스라소드,1,1
+onehandedweapon-828,템페스트 글라디우스,1,1
+onehandedweapon-542,얼티밋 글라디우스,1,1
+onehandedweapon-937,파프니르 미스틸테인,1,1
+onehandedweapon-1012,스칼렛 글라디우스,1,1
+onehandedweapon-913,10주년 블랙 소드,1,1
+onehandedweapon-1508,10주년 화이트 소드,1,1
+onehandedweapon-742,초승달 블레이드,1,1
+onehandedweapon-1222,마이스터 글라디우스,1,1
+onehandedweapon-1392,레볼루션 소드,1,1
+onehandedweapon-848,용기의 날개,1,1
+onehandedweapon-1520,11주년 세인트 소드,1,1
+onehandedweapon-1504,자쿰의 포이즈닉 소드,1,1
+onehandedweapon-816,쟈이힌 세이버,1,1
+onehandedweapon-1135,우트가르드 세이버,1,1
+onehandedweapon-855,여기있어! 손전등,1,1
+onehandedweapon-480,앱솔랩스 세이버,1,1
+onehandedweapon-1166,아케인셰이드 세이버,1,1
+onehandedweapon-889,봉인된 제네시스 세이버,1,1
+onehandedweapon-1065,양날 도끼,1,1
+onehandedweapon-1036,전투 도끼,1,1
+onehandedweapon-1249,낫,1,1
+onehandedweapon-344,미스릴 도끼,1,1
+onehandedweapon-747,손 도끼,1,1
+onehandedweapon-1319,파이어 잭,1,1
+onehandedweapon-689,당커,1,1
+onehandedweapon-793,블루 카운터,1,1
+onehandedweapon-504,벅,1,1
+onehandedweapon-76,호크헤드,1,1
+onehandedweapon-320,미하일,1,1
+onehandedweapon-544,리프 엑스,1,1
+onehandedweapon-1039,훌라후프,1,1
+onehandedweapon-865,붓,1,1
+onehandedweapon-404,그림붓,1,1
+onehandedweapon-826,비펜니스,1,1
+onehandedweapon-765,토마호크,1,1
+onehandedweapon-697,드래곤 엑스,1,1
+onehandedweapon-440,메이플 스틸 엑스,1,1
+onehandedweapon-1081,타임리스 버디슈,1,1
+onehandedweapon-964,메이플 파이롭 엑스,1,1
+onehandedweapon-388,라이온하트 챔피온엑스,1,1
+onehandedweapon-1393,아가레스 블러디 헤드,1,1
+onehandedweapon-1409,메이플 베릴 어비스,1,1
+onehandedweapon-1228,메이플 래티넘 어비스,1,1
+onehandedweapon-429,라피스라엑스,1,1
+onehandedweapon-711,막스 반 레온 엑스,1,1
+onehandedweapon-1090,네크로 헤드,1,1
+onehandedweapon-608,메이플 이올렛 카운터,1,1
+onehandedweapon-896,템페스트 카운터,1,1
+onehandedweapon-694,얼티밋 카운터,1,1
+onehandedweapon-588,파프니르 트윈클리버,1,1
+onehandedweapon-643,스칼렛 워클리버,1,1
+onehandedweapon-1151,10주년 블랙 엑스,1,1
+onehandedweapon-457,10주년 화이트 엑스,1,1
+onehandedweapon-1082,마이스터 워클리버,1,1
+onehandedweapon-797,레볼루션 엑스,1,1
+onehandedweapon-510,11주년 세인트 엑스,1,1
+onehandedweapon-1032,자쿰의 포이즈닉 엑스,1,1
+onehandedweapon-1444,쟈이힌 엑스,1,1
+onehandedweapon-1477,우트가르드 엑스,1,1
+onehandedweapon-395,앱솔랩스 엑스,1,1
+onehandedweapon-634,아케인셰이드 엑스,1,1
+onehandedweapon-869,봉인된 제네시스 엑스,1,1
+onehandedweapon-751,메이스,1,1
+onehandedweapon-707,망치,1,1
+onehandedweapon-781,강철 메이스,1,1
+onehandedweapon-804,막대 사탕,1,1
+onehandedweapon-563,퓨전 메이스,1,1
+onehandedweapon-1295,몽둥이,1,1
+onehandedweapon-1159,쇠파이프,1,1
+onehandedweapon-361,가죽 핸드백,1,1
+onehandedweapon-1017,007 가방,1,1
+onehandedweapon-1227,뚜러,1,1
+onehandedweapon-1453,사각 강철 야삽,1,1
+onehandedweapon-729,삼각 강철 야삽,1,1
+onehandedweapon-579,빨간 벽돌,1,1
+onehandedweapon-1162,워해머,1,1
+onehandedweapon-12,호스맨즈,1,1
+onehandedweapon-140,젝커,1,1
+onehandedweapon-623,너클메이스,1,1
+onehandedweapon-777,타무스,1,1
+onehandedweapon-1402,스튬,1,1
+onehandedweapon-1385,모던스튬,1,1
+onehandedweapon-895,검은색 튜브,1,1
+onehandedweapon-366,빨간색 꽃무늬 튜브,1,1
+onehandedweapon-891,파란색 꽃무늬 튜브,1,1
+onehandedweapon-997,보라색 튜브,1,1
+onehandedweapon-845,구명 튜브,1,1
+onehandedweapon-738,파노 튜브,1,1
+onehandedweapon-1279,프라이팬,1,1
+onehandedweapon-595,골든해머,1,1
+onehandedweapon-1184,루인해머,1,1
+onehandedweapon-496,세계의 돼지도감,1,1
+onehandedweapon-1416,철근 해머,1,1
+onehandedweapon-1075,도깨비 방망이,1,1
+onehandedweapon-621,배틀해머,1,1
+onehandedweapon-928,드래곤 메이스,1,1
+onehandedweapon-1174,메이플 해버크 해머,1,1
+onehandedweapon-974,타임리스 알라르간도,1,1
+onehandedweapon-877,메이플 파이롭 해머,1,1
+onehandedweapon-1493,라이온하트 배틀해머,1,1
+onehandedweapon-1442,아가레스 블러디 해머,1,1
+onehandedweapon-901,메이플 베릴 스타시커,1,1
+onehandedweapon-1523,메이플 래티넘 스타시커,1,1
+onehandedweapon-1408,둠드 셉터,1,1
+onehandedweapon-336,디그너티 셉터,1,1
+onehandedweapon-996,어서러티 셉터,1,1
+onehandedweapon-606,데몬 베인,1,1
+onehandedweapon-730,이블 베인,1,1
+onehandedweapon-814,라피스라해머,1,1
+onehandedweapon-342,막스 반 레온 해머,1,1
+onehandedweapon-1003,네크로 해머,1,1
+onehandedweapon-862,메이플 이올렛 골든해머,1,1
+onehandedweapon-322,롤리스타,1,1
+onehandedweapon-605,템페스트 골든해머,1,1
+onehandedweapon-587,얼티밋 골든해머,1,1
+onehandedweapon-374,파프니르 골디언해머,1,1
+onehandedweapon-731,스칼렛 워해머,1,1
+onehandedweapon-688,10주년 블랙 메이스,1,1
+onehandedweapon-746,10주년 화이트 메이스,1,1
+onehandedweapon-1405,크리스탈 크러셔,1,1
+onehandedweapon-890,마이스터 워해머,1,1
+onehandedweapon-1051,레볼루션 메이스,1,1
+onehandedweapon-303,쇼크웨이브 라이플,1,1
+onehandedweapon-690,11주년 세인트 메이스,1,1
+onehandedweapon-866,자쿰의 포이즈닉 해머,1,1
+onehandedweapon-656,쟈이힌 해머,1,1
+onehandedweapon-921,우트가르드 해머,1,1
+onehandedweapon-696,앱솔랩스 비트해머,1,1
+onehandedweapon-941,메이플 트레져 메이스,1,1
+onehandedweapon-454,아케인셰이드 해머,1,1
+onehandedweapon-1276,봉인된 제네시스 해머,1,1
+onehandedweapon-177,삼각 자마다르,1,1
+onehandedweapon-64,반월 자마다르,1,1
+onehandedweapon-207,삼지 자마다르,1,1
+onehandedweapon-37,신기타,1,1
+onehandedweapon-110,쌍지단도,1,1
+onehandedweapon-52,도루코 대거,1,1
+onehandedweapon-142,필드 대거,1,1
+onehandedweapon-33,후루츠 대거,1,1
+onehandedweapon-238,넙치검,1,1
+onehandedweapon-169,카스,1,1
+onehandedweapon-283,아이언 대거,1,1
+onehandedweapon-172,베즐러드,1,1
+onehandedweapon-3,리프 크로,1,1
+onehandedweapon-236,스팅어,1,1
+onehandedweapon-159,게파트,1,1
+onehandedweapon-46,게타,1,1
+onehandedweapon-90,차,1,1
+onehandedweapon-57,스네이크,1,1
+onehandedweapon-247,칸디네,1,1
+onehandedweapon-98,금강저,1,1
+onehandedweapon-160,태극부채,1,1
+onehandedweapon-1029,페트병,1,1
+onehandedweapon-192,카타르,1,1
+onehandedweapon-174,용천권,1,1
+onehandedweapon-1451,무사도,1,1
+onehandedweapon-132,메이플 바그나,1,1
+onehandedweapon-13,커세어,1,1
+onehandedweapon-126,바키트,1,1
+onehandedweapon-1414,쌍고검,1,1
+onehandedweapon-971,부채,1,1
+onehandedweapon-314,드래곤 토네일,1,1
+onehandedweapon-332,크리스마스 트리,1,1
+onehandedweapon-190,드래곤 칸자르,1,1
+onehandedweapon-83,드래곤 크리스,1,1
+onehandedweapon-15,골드 트윈 나이프,1,1
+onehandedweapon-36,블러드 대거,1,1
+onehandedweapon-319,메이플 다크메이트,1,1
+onehandedweapon-107,메이플 아수라 대거,1,1
+onehandedweapon-224,타임리스 페스카즈,1,1
+onehandedweapon-309,타임리스 킬릭,1,1
+onehandedweapon-188,나겔링,1,1
+onehandedweapon-20,설천도,1,1
+onehandedweapon-120,메이플 파이롭 하프문,1,1
+onehandedweapon-275,녹스 반 레온 대거,1,1
+onehandedweapon-151,레이븐혼 바젤라드,1,1
+onehandedweapon-213,핼파스 블러디 슬레이어,1,1
+onehandedweapon-220,날렵한 도적의 비수,1,1
+onehandedweapon-287,광포한 도적의 비수,1,1
+onehandedweapon-41,분노한 도적의 비수,1,1
+onehandedweapon-30,메이플 베릴 바마나,1,1
+onehandedweapon-263,메이플 래티넘 바마나,1,1
+onehandedweapon-217,일성도,1,1
+onehandedweapon-78,메이플 이올렛 칸자르,1,1
+onehandedweapon-66,네크로 슬레이어,1,1
+onehandedweapon-153,네크로 페스카즈,1,1
+onehandedweapon-280,템페스트 칸자르,1,1
+onehandedweapon-17,얼티밋 칸자르,1,1
+onehandedweapon-32,파프니르 다마스커스,1,1
+onehandedweapon-95,스칼렛 카타르,1,1
+onehandedweapon-185,10주년 블랙 커터,1,1
+onehandedweapon-168,10주년 화이트 커터,1,1
+onehandedweapon-254,단오 18반,1,1
+onehandedweapon-164,마이스터 카타르,1,1
+onehandedweapon-264,레볼루션 커터,1,1
+onehandedweapon-182,레드 커터,1,1
+onehandedweapon-184,11주년 세인트 커터,1,1
+onehandedweapon-216,자쿰의 포이즈닉 대거,1,1
+onehandedweapon-117,쟈이힌 대거,1,1
+onehandedweapon-915,우트가르드 대거,1,1
+onehandedweapon-1359,앱솔랩스 슬래셔,1,1
+onehandedweapon-458,메이플 트레져 커터,1,1
+onehandedweapon-1064,아케인셰이드 대거,1,1
+onehandedweapon-1052,노비스 케인,1,1
+onehandedweapon-638,아이언 케인,1,1
+onehandedweapon-788,노블 스틱,1,1
+onehandedweapon-495,크루아 칸느,1,1
+onehandedweapon-1084,루주 웨이,1,1
+onehandedweapon-416,아르칸시엘,1,1
+onehandedweapon-667,트위스티드,1,1
+onehandedweapon-455,오리엔탈 로얄케인,1,1
+onehandedweapon-1489,비쥬 칸느,1,1
+onehandedweapon-604,란에이,1,1
+onehandedweapon-546,마제스티 케인,1,1
+onehandedweapon-428,팬텀 오리지날티,1,1
+onehandedweapon-1353,셀레스쳘 케인,1,1
+onehandedweapon-673,앙쥬 데쉬,1,1
+onehandedweapon-953,드래곤 펄만시,1,1
+onehandedweapon-1176,타임리스 페르소나,1,1
+onehandedweapon-1499,핼파스 블러디 제스터,1,1
+onehandedweapon-1010,레이븐혼 크림슨 케인,1,1
+onehandedweapon-1165,녹스 반 레온 케인,1,1
+onehandedweapon-1297,<저스티스> 메이플 케일리,1,1
+onehandedweapon-1524,메이플 베릴 케인,1,1
+onehandedweapon-420,메이플 이올렛 아르칸시엘,1,1
+onehandedweapon-961,네크로 제스터,1,1
+onehandedweapon-861,템페스트 아르칸시엘,1,1
+onehandedweapon-421,얼티밋 아르칸시엘,1,1
+onehandedweapon-537,파프니르 클레르시엘,1,1
+onehandedweapon-721,스칼렛 페르소나,1,1
+onehandedweapon-433,10주년 블랙 케인,1,1
+onehandedweapon-1098,10주년 화이트 케인,1,1
+onehandedweapon-806,마이스터 페르소나,1,1
+onehandedweapon-329,레볼루션 케인,1,1
+onehandedweapon-423,11주년 세인트 케인,1,1
+onehandedweapon-674,자쿰의 포이즈닉 케인,1,1
+onehandedweapon-524,쟈이힌 케인,1,1
+onehandedweapon-710,우트가르드 케인,1,1
+onehandedweapon-972,앱솔랩스 핀쳐케인,1,1
+onehandedweapon-1487,메이플 트레져 케인,1,1
+onehandedweapon-1413,아케인셰이드 케인,1,1
+onehandedweapon-1468,봉인된 제네시스 케인,1,1
+onehandedweapon-1437,페어리 완드,1,1
+onehandedweapon-1235,위저드 완드,1,1
+onehandedweapon-407,메탈 완드,1,1
+onehandedweapon-597,미스릴 완드,1,1
+onehandedweapon-782,아이스 완드,1,1
+onehandedweapon-340,우드 완드,1,1
+onehandedweapon-979,하드우드 완드,1,1
+onehandedweapon-1461,크로미,1,1
+onehandedweapon-550,마기코라스,1,1
+onehandedweapon-593,다이몬의 완드,1,1
+onehandedweapon-856,우선,1,1
+onehandedweapon-386,크리스탈 완드,1,1
+onehandedweapon-1105,이블테일러,1,1
+onehandedweapon-1060,피닉스 완드,1,1
+onehandedweapon-858,가로등,1,1
+onehandedweapon-1348,드래곤 완드,1,1
+onehandedweapon-1454,하트 완드,1,1
+onehandedweapon-1251,메이플 샤이니 완드,1,1
+onehandedweapon-1044,타임리스 엔릴 티어,1,1
+onehandedweapon-803,자쿰의 나뭇가지,1,1
+onehandedweapon-815,딸기맛 소프트 완드,1,1
+onehandedweapon-1102,메이플 파이롭 완드,1,1
+onehandedweapon-880,알마 반 레온 완드,1,1
+onehandedweapon-1021,드래곤테일 아크완드,1,1
+onehandedweapon-347,엘리고스 블러디 완드,1,1
+onehandedweapon-945,메이플 베릴 파르마,1,1
+onehandedweapon-619,메이플 래티넘 파르마,1,1
+onehandedweapon-393,유니언 완드,1,1
+onehandedweapon-1001,메이플 이올렛 더블윙,1,1
+onehandedweapon-1356,네크로 완드,1,1
+onehandedweapon-772,와이즈 매지션 완드,1,1
+onehandedweapon-988,템페스트 더블윙,1,1
+onehandedweapon-1172,얼티밋 더블윙,1,1
+onehandedweapon-820,파프니르 마나테이커,1,1
+onehandedweapon-1379,스칼렛 이블완드,1,1
+onehandedweapon-1156,10주년 블랙 완드,1,1
+onehandedweapon-951,10주년 화이트 완드,1,1
+onehandedweapon-628,마이스터 이블완드,1,1
+onehandedweapon-441,레볼루션 완드,1,1
+onehandedweapon-572,지혜의 날개,1,1
+onehandedweapon-1307,11주년 세인트 완드,1,1
+onehandedweapon-978,자쿰의 포이즈닉 완드,1,1
+onehandedweapon-1458,쟈이힌 완드,1,1
+onehandedweapon-887,우트가르드 완드,1,1
+onehandedweapon-376,앱솔랩스 스펠링완드,1,1
+onehandedweapon-954,메이플 트레져 완드,1,1
+onehandedweapon-654,아케인셰이드 완드,1,1
+onehandedweapon-1343,봉인된 제네시스 완드,1,1
+onehandedweapon-1586,산호 가지 지팡이,1,1
+onehandedweapon-853,나무 스태프,1,1
+onehandedweapon-615,아크 스태프,1,1
+onehandedweapon-664,위저드 스태프,1,1
+onehandedweapon-1173,사파이어 스태프,1,1
+onehandedweapon-512,고목나무 스태프,1,1
+onehandedweapon-1401,에메랄드 스태프,1,1
+onehandedweapon-575,쏜즈,1,1
+onehandedweapon-569,이블윙즈,1,1
+onehandedweapon-717,케이그,1,1
+onehandedweapon-484,메이플 스태프,1,1
+onehandedweapon-1415,레이든 스태프,1,1
+onehandedweapon-755,황금 링 지팡이,1,1
+onehandedweapon-1220,메이플 라마 스태프,1,1
+onehandedweapon-554,손가지장,1,1
+onehandedweapon-1411,독버섯,1,1
+onehandedweapon-1426,표고버섯,1,1
+onehandedweapon-739,써클윈드 스태프,1,1
+onehandedweapon-1514,페탈 스태프,1,1
+onehandedweapon-1233,홀 스태프,1,1
+onehandedweapon-957,블루마린,1,1
+onehandedweapon-986,드래곤 스태프,1,1
+onehandedweapon-705,메이플 위덤 스태프,1,1
+onehandedweapon-1355,타임리스 에아스 핸드,1,1
+onehandedweapon-1534,레바테인,1,1
+onehandedweapon-715,베인윙즈,1,1
+onehandedweapon-799,메이플 파이롭 스태프,1,1
+onehandedweapon-430,레볼루션 스태프,1,1
+onehandedweapon-1465,알마 반 레온 스태프,1,1
+onehandedweapon-1063,드래곤테일 워스태프,1,1
+onehandedweapon-523,엘리고스 블러디 로드,1,1
+onehandedweapon-650,날렵한 크로우 스태프,1,1
+onehandedweapon-535,광포한 크로우 스태프,1,1
+onehandedweapon-1167,분노한 크로우 스태프,1,1
+onehandedweapon-1459,메이플 베릴 사라스,1,1
+onehandedweapon-900,메이플 래티넘 사라스,1,1
+onehandedweapon-389,유니언 스태프,1,1
+onehandedweapon-1016,네크로 로드,1,1
+onehandedweapon-1503,메이플 이올렛 페인킬러,1,1
+onehandedweapon-580,오닉스드래곤 스태프,1,1
+onehandedweapon-627,레지스탕스 스태프,1,1
+onehandedweapon-1473,템페스트 페인킬러,1,1
+onehandedweapon-1186,얼티밋 페인킬러,1,1
+onehandedweapon-769,파프니르 마나크라운,1,1
+onehandedweapon-1308,스칼렛 배틀스태프,1,1
+onehandedweapon-1480,10주년 블랙 스태프,1,1
+onehandedweapon-759,10주년 화이트 스태프,1,1
+onehandedweapon-1358,백의의 서,1,1
+onehandedweapon-935,흑마법의 서,1,1
+onehandedweapon-1428,마이스터 배틀스태프,1,1
+onehandedweapon-875,레볼루션 코라스,1,1
+onehandedweapon-683,레드 스태프,1,1
+onehandedweapon-878,변질된 알리샤의 스태프,1,1
+onehandedweapon-732,알리샤의 광휘,1,1
+onehandedweapon-1225,11주년 세인트 스태프,1,1
+onehandedweapon-1374,자쿰의 포이즈닉 스태프,1,1
+onehandedweapon-871,쟈이힌 스태프,1,1
+onehandedweapon-657,우트가르드 스태프,1,1
+onehandedweapon-783,앱솔랩스 스펠링스태프,1,1
+onehandedweapon-419,메이플 트레져 스태프,1,1
+onehandedweapon-812,아케인셰이드 스태프,1,1
+onehandedweapon-1204,봉인된 제네시스 스태프,1,1
+onehandedweapon-1712,듀얼 베이시스,1,1
+onehandedweapon-1634,엘비쉬 듀얼보우건,1,1
+onehandedweapon-1733,네이쳐 바인,1,1
+onehandedweapon-1715,더블 윙,1,1
+onehandedweapon-1747,릴리 프라이드,1,1
+onehandedweapon-1641,아르젠트,1,1
+onehandedweapon-1633,문 글로리,1,1
+onehandedweapon-1710,실피드 스카이아,1,1
+onehandedweapon-1719,래티나,1,1
+onehandedweapon-1717,타임리스 피오니,1,1
+onehandedweapon-1713,이포스 블러디 듀얼보우건,1,1
+onehandedweapon-1721,메이플 베릴 듀얼보우건,1,1
+onehandedweapon-1743,네크로 듀얼보우건,1,1
+onehandedweapon-1725,파프니르 듀얼윈드윙,1,1
+onehandedweapon-1727,스칼렛 이글윙,1,1
+onehandedweapon-1707,10주년 화이트 더블윙,1,1
+onehandedweapon-1744,마이스터 이글윙,1,1
+onehandedweapon-1705,11주년 세인트 더블윙,1,1
+onehandedweapon-1709,앱솔랩스 듀얼보우건,1,1
+onehandedweapon-1783,플레인 캐논,1,1
+onehandedweapon-1820,아이언 봄버,1,1
+onehandedweapon-1759,아트럴리,1,1
+onehandedweapon-1801,레인지 로버,1,1
+onehandedweapon-1809,드레드넛,1,1
+onehandedweapon-1810,플라멘 베르퍼,1,1
+onehandedweapon-1750,헬크래쉬,1,1
+onehandedweapon-1767,라이노,1,1
+onehandedweapon-1749,크뤼소스,1,1
+onehandedweapon-1776,피하트 슈톨츠,1,1
+onehandedweapon-1784,타임리스 셀베이션,1,1
+onehandedweapon-1825,베파르 블러디 이그니스,1,1
+onehandedweapon-1775,샤크투스 플람,1,1
+onehandedweapon-1766,코라 반 레온 시즈건,1,1
+onehandedweapon-1816,레전드 메이플 구스타프,1,1
+onehandedweapon-1769,메이플 베릴 캐논,1,1
+onehandedweapon-1814,얼티밋 크래쉬,1,1
+onehandedweapon-1813,파프니르 러스터캐논,1,1
+onehandedweapon-1805,스칼렛 크래쉬,1,1
+onehandedweapon-1802,10주년 화이트 캐논,1,1
+onehandedweapon-1787,마이스터 크래쉬,1,1
+onehandedweapon-1791,쟈이힌 시즈건,1,1
+onehandedweapon-1795,우트가르드 시즈건,1,1
+onehandedweapon-1792,메이플 트레져 캐논,1,1
+onehandedweapon-1799,아케인셰이드 시즈건,1,1
+onehandedweapon-1785,봉인된 제네시스 시즈건,1,1
+onehandedweapon-1892,핸드 버스터,1,1
+onehandedweapon-1887,핸드 크래셔,1,1
+onehandedweapon-1893,블로우 밤,1,1
+onehandedweapon-1875,자이언트 핸드,1,1
+onehandedweapon-1874,타우러스,1,1
+onehandedweapon-1877,오우거 그립,1,1
+onehandedweapon-1885,기간틱 건틀렛,1,1
+onehandedweapon-1867,타이탄 암즈,1,1
+onehandedweapon-1889,발로르 펀치,1,1
+onehandedweapon-1879,브히제르 수르트,1,1
+onehandedweapon-1871,쟈이힌 예거,1,1
+onehandedweapon-1881,우트가르드 흐림두르스,1,1
+onehandedweapon-1876,자쿰의 포워르,1,1
+onehandedweapon-1895,네크로 기가스,1,1
+onehandedweapon-1896,로얄 반 레온 이미르,1,1
+onehandedweapon-1890,라이온하트 발로르,1,1
+onehandedweapon-1899,파프니르 빅 마운틴,1,1
+onehandedweapon-1883,앱솔랩스 파일 갓,1,1
+onehandedweapon-1886,블랙 건틀렛 리볼버,1,1
+onehandedweapon-1873,마이스터 티탄,1,1
+onehandedweapon-1868,아케인셰이드 엘라하,1,1
+onehandedweapon-1894,봉인된 제네시스 엘라하,1,1
+onehandedweapon-1966,광선단검,1,1
+onehandedweapon-1976,꽃다발,1,1
+onehandedweapon-1981,나무 새총,1,1
+onehandedweapon-1973,플라스틱 새총,1,1
+onehandedweapon-1993,천사 요술봉,1,1
+onehandedweapon-2008,노란색 지팡이 막대사탕,1,1
+onehandedweapon-2007,빨간색 지팡이 막대사탕,1,1
+onehandedweapon-1989,초록색 지팡이 막대사탕,1,1
+onehandedweapon-1960,선물 보따리,1,1
+onehandedweapon-1969,호랑이발 장갑,1,1
+onehandedweapon-2024,주황색 뿅망치,1,1
+onehandedweapon-2004,분홍색 뿅망치,1,1
+onehandedweapon-1975,조리용 뒤집개,1,1
+onehandedweapon-2006,작은 곰인형,1,1
+onehandedweapon-1994,잠자리채,1,1
+onehandedweapon-2014,피크닉 바구니,1,1
+onehandedweapon-2001,핑크래빗,1,1
+onehandedweapon-1971,바닐라 아이스크림,1,1
+onehandedweapon-1986,푹신한 베개,1,1
+onehandedweapon-1967,달콤한 막대사탕,1,1
+onehandedweapon-1996,광선검,1,1
+onehandedweapon-1965,도너츠,1,1
+onehandedweapon-1968,흰토끼발 아대,1,1
+onehandedweapon-1983,커피포트,1,1
+onehandedweapon-1963,별자리 세트 아대,1,1
+onehandedweapon-2025,별자리 세트 검,1,1
+onehandedweapon-1974,마이크,1,1
+onehandedweapon-2005,응가 막대,1,1
+onehandedweapon-2015,해바라기,1,1
+onehandedweapon-2002,눈꽃 막대,1,1
+onehandedweapon-1970,때밀이 수건,1,1
+onehandedweapon-2013,눈사람 아대,1,1
+onehandedweapon-1977,핸드폰,1,1
+onehandedweapon-1980,고구려 활,1,1
+onehandedweapon-1961,왕손바닥 장갑,1,1
+onehandedweapon-1991,선인장,1,1
+onehandedweapon-2023,투지의 불꽃,1,1
+onehandedweapon-1992,신성한 불꽃,1,1
+onehandedweapon-2011,캔버스 토드백,1,1
+onehandedweapon-2018,응원수건1,1,1
+onehandedweapon-2016,응원수건2,1,1
+onehandedweapon-1964,응원수건3,1,1
+onehandedweapon-1972,스포츠 밴드,1,1
+onehandedweapon-2009,광선 대검,1,1
+onehandedweapon-1997,선녀 부채,1,1
+onehandedweapon-1987,광선검 블루,1,1
+onehandedweapon-2026,광선검 그린,1,1
+onehandedweapon-2017,광선검 퍼플,1,1
+onehandedweapon-2020,손가락 장갑,1,1
+onehandedweapon-1999,바람개비,1,1
+onehandedweapon-1979,개구리 아대,1,1
+onehandedweapon-1985,꼬꼬닭,1,1
+onehandedweapon-2019,빨간색 연필,1,1
+onehandedweapon-2010,등밀이 솔,1,1
+onehandedweapon-1998,깃털봉,1,1
+onehandedweapon-2022,호박 지팡이,1,1
+onehandedweapon-1995,동키동키,1,1
+onehandedweapon-2000,피자프라이팬,1,1
+onehandedweapon-2027,크리스마스 벨,1,1
+onehandedweapon-1962,초콜릿 단지,1,1
+onehandedweapon-1978,거대한 롤리팝,1,1
+onehandedweapon-2012,여의봉,1,1
+onehandedweapon-2021,웡키의 나뭇잎,1,1
+onehandedweapon-1990,레드 로즈,1,1
+onehandedweapon-2378,야누스의 검,1,1
+onehandedweapon-2625,샤키엘의 검,1,1
+onehandedweapon-2652,물개쿠션(흰색),1,1
+onehandedweapon-2592,저팔계 무기,1,1
+onehandedweapon-2607,내 친구 야옹이,1,1
+onehandedweapon-2447,하트 지팡이,1,1
+onehandedweapon-2573,강철주먹 아대,1,1
+onehandedweapon-2415,코브라 스태프,1,1
+onehandedweapon-2588,얼음 눈꽃반지,1,1
+onehandedweapon-2133,샬랄라 요술봉,1,1
+onehandedweapon-2654,부러진 검,1,1
+onehandedweapon-2036,괴물손 아대,1,1
+onehandedweapon-2353,타니아 소드,1,1
+onehandedweapon-2231,머큐리 소드,1,1
+onehandedweapon-2557,사신의 검,1,1
+onehandedweapon-2064,레인보우 스타,1,1
+onehandedweapon-2608,자칼,1,1
+onehandedweapon-2306,코알라 인형,1,1
+onehandedweapon-2280,내 친구 JY,1,1
+onehandedweapon-2164,크리스마스 트리반지,1,1
+onehandedweapon-2707,내 친구 SH,1,1
+onehandedweapon-2161,하늘색 구름베개,1,1
+onehandedweapon-2631,다크 세라핌,1,1
+onehandedweapon-2337,까칠한 오리씨,1,1
+onehandedweapon-2684,아이돌스타 롤리팝,1,1
+onehandedweapon-2084,핑크 세라핌,1,1
+onehandedweapon-2678,레인보우 세이버,1,1
+onehandedweapon-2574,메이플걸 완드,1,1
+onehandedweapon-2712,날아라 파랑새!,1,1
+onehandedweapon-2568,아기코끼리 잠보,1,1
+onehandedweapon-2546,할로윈 테디,1,1
+onehandedweapon-2587,블리자드 스틱,1,1
+onehandedweapon-2464,플루토 레전드 홀,1,1
+onehandedweapon-2047,더키 튜브,1,1
+onehandedweapon-2254,레인보우 브러쉬,1,1
+onehandedweapon-2683,돌고래 인형,1,1
+onehandedweapon-2209,루돌프,1,1
+onehandedweapon-2072,바니 우산,1,1
+onehandedweapon-2288,미하일의 수호,1,1
+onehandedweapon-2171,오즈의 수호,1,1
+onehandedweapon-2223,이리나의 수호,1,1
+onehandedweapon-2359,로얄 레인보우 우산,1,1
+onehandedweapon-2218,컴퓨터용 수성 싸인펜,1,1
+onehandedweapon-2183,배틀메이지 스태프,1,1
+onehandedweapon-2371,와일드헌터 크로스보우,1,1
+onehandedweapon-2552,로얄 마린 깃발,1,1
+onehandedweapon-2530,엘리자베스 부채,1,1
+onehandedweapon-2367,가을 여행자 가방,1,1
+onehandedweapon-2066,러블리 초코스틱,1,1
+onehandedweapon-2052,퍼니펀치 요요,1,1
+onehandedweapon-2179,꽃바람 파초선,1,1
+onehandedweapon-2452,꽃비 내리는 봄날,1,1
+onehandedweapon-2575,레인보우 스파클,1,1
+onehandedweapon-2176,오렌지 세라핌,1,1
+onehandedweapon-2643,헤븐즈 세라핌,1,1
+onehandedweapon-2526,스텔라 세라핌,1,1
+onehandedweapon-2409,다이나믹 세라핌,1,1
+onehandedweapon-2383,블러디루비 세이버,1,1
+onehandedweapon-2701,트와일라잇 세이버,1,1
+onehandedweapon-2228,애플그린 세이버,1,1
+onehandedweapon-2170,다크마그네타 세이버,1,1
+onehandedweapon-2155,솔리드블랙 세이버,1,1
+onehandedweapon-2613,옴브라 루체 세이버,1,1
+onehandedweapon-2589,핑크엔젤 주사기,1,1
+onehandedweapon-2222,딸기가 좋아,1,1
+onehandedweapon-2131,은하수 별무리,1,1
+onehandedweapon-2511,크리스탈 판타지아,1,1
+onehandedweapon-2204,라이트닝 소울,1,1
+onehandedweapon-2060,모자 속 토끼,1,1
+onehandedweapon-2273,오르카의 토끼인형,1,1
+onehandedweapon-2063,포츈 플래쉬,1,1
+onehandedweapon-2031,스노우 플레이크,1,1
+onehandedweapon-2672,쇼콜라티에 스틱,1,1
+onehandedweapon-2028,매직허브 티스푼,1,1
+onehandedweapon-2065,헌터 호크,1,1
+onehandedweapon-2197,내 친구 핑크빈,1,1
+onehandedweapon-2395,크리스탈 샤인,1,1
+onehandedweapon-2417,드래곤 슬레이브,1,1
+onehandedweapon-2713,곰돌이는 재간둥이,1,1
+onehandedweapon-2039,로즈 수피아,1,1
+onehandedweapon-2103,아이리스 수피아,1,1
+onehandedweapon-2169,아틀란티스,1,1
+onehandedweapon-2436,할로윈 레오퍼드 우산,1,1
+onehandedweapon-2411,금빛 성배,1,1
+onehandedweapon-2201,백만장자 스틱,1,1
+onehandedweapon-2305,아롱아롱 미리내,1,1
+onehandedweapon-2680,램프의 요정,1,1
+onehandedweapon-2629,네오 라이트 세이버,1,1
+onehandedweapon-2642,별빛 하트 요술봉,1,1
+onehandedweapon-2174,꿈꾸는 사탕 베개,1,1
+onehandedweapon-2435,당근의 제왕,1,1
+onehandedweapon-2410,도깨비불,1,1
+onehandedweapon-2623,스타일리쉬 아이언,1,1
+onehandedweapon-2620,GM노리의 주사기,1,1
+onehandedweapon-2178,샐리맨더,1,1
+onehandedweapon-2674,야구배트,1,1
+onehandedweapon-2241,인형사의 약속,1,1
+onehandedweapon-2244,명탐정의 돋보기,1,1
+onehandedweapon-2595,해달과 함께,1,1
+onehandedweapon-2606,아스트라피,1,1
+onehandedweapon-2377,파도 물개 쿠션,1,1
+onehandedweapon-2124,RED 페인트통,1,1
+onehandedweapon-2470,페어리 피코,1,1
+onehandedweapon-2153,불꽃놀이 부채,1,1
+onehandedweapon-2461,효심 깊은 병아리,1,1
+onehandedweapon-2427,반짝반짝 친구들,1,1
+onehandedweapon-2460,민트 쇼콜라티에 스틱,1,1
+onehandedweapon-2349,구름 솜사탕,1,1
+onehandedweapon-2737,사르르 초코퐁듀 스틱,1,1
+onehandedweapon-2399,자유로운 영혼,1,1
+onehandedweapon-2523,어둠의 소악마 무기,1,1
+onehandedweapon-2160,암염의 집행자,1,1
+onehandedweapon-2287,달콤살벌 스네이크,1,1
+onehandedweapon-2569,이블 스컬,1,1
+onehandedweapon-2628,어딜 덤비냥,1,1
+onehandedweapon-2309,셀레네,1,1
+onehandedweapon-2752,오늘도 한 보따리,1,1
+onehandedweapon-2748,동백꽃 흩날리며,1,1
+onehandedweapon-2751,화홍,1,1
+onehandedweapon-2633,포니의 구리구리 당근,1,1
+onehandedweapon-2350,반짝반짝 복주머니,1,1
+onehandedweapon-2391,플라워 댄스,1,1
+onehandedweapon-2556,별에서 온 지팡이,1,1
+onehandedweapon-2303,프로즌 하트,1,1
+onehandedweapon-2515,살랑살랑 대나무,1,1
+onehandedweapon-2188,주인공의 왕홀,1,1
+onehandedweapon-2315,핑크 앤티크,1,1
+onehandedweapon-2641,청연,1,1
+onehandedweapon-2206,맑은날 무지개,1,1
+onehandedweapon-2082,통통 토마토,1,1
+onehandedweapon-2666,요리의 완성,1,1
+onehandedweapon-2735,실로폰 멜로디,1,1
+onehandedweapon-2423,그림자 호롱,1,1
+onehandedweapon-2454,샤르르 캔디,1,1
+onehandedweapon-2366,찰칵 포토제닉,1,1
+onehandedweapon-2207,베이비 쪽쪽이,1,1
+onehandedweapon-2708,훌라훌라 펭순이,1,1
+onehandedweapon-2681,이슬 초롱,1,1
+onehandedweapon-2130,퍼펙트 베이비,1,1
+onehandedweapon-2651,감감 무슨감,1,1
+onehandedweapon-2237,치어팡팡,1,1
+onehandedweapon-2527,복숭아 트리오,1,1
+onehandedweapon-2682,위험한 약병,1,1
+onehandedweapon-2736,무서운 왕손바닥,1,1
+onehandedweapon-2069,귀부인의 검정 부채,1,1
+onehandedweapon-2582,스위트 포크 케익,1,1
+onehandedweapon-2126,크리스마스 눈사람,1,1
+onehandedweapon-2129,보송보송 눈토끼,1,1
+onehandedweapon-2724,천하제일 제설삽,1,1
+onehandedweapon-2644,맹수 길들이기,1,1
+onehandedweapon-2634,러브초코 바구니,1,1
+onehandedweapon-2715,랄랄라 금붕어 낚시채,1,1
+onehandedweapon-2467,당고 브라더스,1,1
+onehandedweapon-2376,큐티 멍뭉이,1,1
+onehandedweapon-2136,꿈꾸는 민들레,1,1
+onehandedweapon-2443,락앤롤 기타,1,1
+onehandedweapon-2658,플라잉 로맨스,1,1
+onehandedweapon-2602,살랑 하늘 대나무,1,1
+onehandedweapon-2276,오르카 졸려,1,1
+onehandedweapon-2311,민트냥 티타임,1,1
+onehandedweapon-2653,레인보우 쉘,1,1
+onehandedweapon-2389,어흥! 호야,1,1
+onehandedweapon-2114,치즈 캐롯 스틱,1,1
+onehandedweapon-2645,마린 스트라이프 우산,1,1
+onehandedweapon-2398,더키 캔디바,1,1
+onehandedweapon-2593,환상연화,1,1
+onehandedweapon-2596,미스터리 다이스,1,1
+onehandedweapon-2437,투데이 제이,1,1
+onehandedweapon-2167,마스터 타임,1,1
+onehandedweapon-2487,블루버드,1,1
+onehandedweapon-2172,벚꽃 칼,1,1
+onehandedweapon-2123,농부님 영광의 달걀스틱,1,1
+onehandedweapon-2570,그 때 최신 핸드폰,1,1
+onehandedweapon-2532,블러디 메르헨,1,1
+onehandedweapon-2346,자쿰의 팔,1,1
+onehandedweapon-2424,메이플 좀비즈,1,1
+onehandedweapon-2301,하드 캐리어,1,1
+onehandedweapon-2238,블루 마린의 학구열,1,1
+onehandedweapon-2205,감자칩이냐옹!,1,1
+onehandedweapon-2421,엘프 왕의 듀얼보우건,1,1
+onehandedweapon-2648,폴암의 마하,1,1
+onehandedweapon-2439,빛과 어둠의 샤이닝로드,1,1
+onehandedweapon-2700,잊혀진 영웅의 너클,1,1
+onehandedweapon-2512,쁘띠 엘프여왕,1,1
+onehandedweapon-2159,쁘띠 루미너스,1,1
+onehandedweapon-2058,쁘띠 잊혀진 영웅,1,1
+onehandedweapon-2711,쁘띠 에반,1,1
+onehandedweapon-2154,쁘띠 아란,1,1
+onehandedweapon-2420,쁘띠 팬텀,1,1
+onehandedweapon-2319,아기 오리 크로스백,1,1
+onehandedweapon-2598,원숭이 바나나,1,1
+onehandedweapon-2747,뮤즈 크리스탈,1,1
+onehandedweapon-2382,쁘띠 데미안,1,1
+onehandedweapon-2563,쁘띠 알리샤,1,1
+onehandedweapon-2618,장난꾸러기 깜장님,1,1
+onehandedweapon-2565,동백검,1,1
+onehandedweapon-2343,생명의 물병,1,1
+onehandedweapon-2250,스트로베리 봉봉,1,1
+onehandedweapon-2755,슈퍼스타M,1,1
+onehandedweapon-2339,페어리 플로라,1,1
+onehandedweapon-2698,메이플 노블 로드,1,1
+onehandedweapon-2264,애교 폭발 멍뭉이,1,1
+onehandedweapon-2347,용마제구검,1,1
+onehandedweapon-2685,포롱이 부채,1,1
+onehandedweapon-2481,천상묵화,1,1
+onehandedweapon-2749,곰돌이 쫑긋 튜브,1,1
+onehandedweapon-2659,아이스크림 주세요,1,1
+onehandedweapon-2086,파이브 라이트 스틱,1,1
+onehandedweapon-2480,이슬 양산,1,1
+onehandedweapon-2285,분필은 사랑을 싣고,1,1
+onehandedweapon-2211,그림자 검,1,1
+onehandedweapon-2050,메이플M 플레이폰,1,1
+onehandedweapon-2087,죽음의 키읔,1,1
+onehandedweapon-2290,삼둥이 피그,1,1
+onehandedweapon-2740,좀비 곰돌이,1,1
+onehandedweapon-2068,강령술사,1,1
+onehandedweapon-2194,반짝반짝 호박별,1,1
+onehandedweapon-2733,슈가젤리 발바닥,1,1
+onehandedweapon-2387,그대만 있다면,1,1
+onehandedweapon-2679,토끼 눈사람,1,1
+onehandedweapon-2043,메이플 5000일 깃발,1,1
+onehandedweapon-2313,성좌의 장미,1,1
+onehandedweapon-2753,얼음누각,1,1
+onehandedweapon-2116,달빛 램프,1,1
+onehandedweapon-2466,포숑 은방울꽃,1,1
+onehandedweapon-2268,개구디노,1,1
+onehandedweapon-2227,내 친구 아기 까치,1,1
+onehandedweapon-2539,책가방 속 러브레터,1,1
+onehandedweapon-2392,달콤 바게트,1,1
+onehandedweapon-2425,시그너스의 수호,1,1
+onehandedweapon-2251,체리캔디,1,1
+onehandedweapon-2344,햄찌 잡아라!,1,1
+onehandedweapon-2190,이슬비 우산,1,1
+onehandedweapon-2048,스파클링 다이아몬드,1,1
+onehandedweapon-2554,메이플 갤럭시 레이저건,1,1
+onehandedweapon-2067,차원의 사서,1,1
+onehandedweapon-2282,바나나 우유,1,1
+onehandedweapon-2741,당근 빨대,1,1
+onehandedweapon-2664,푸른바다 수국,1,1
+onehandedweapon-2220,수박 한조각,1,1
+onehandedweapon-2132,몽실 곰사탕,1,1
+onehandedweapon-2325,깨물 도넛 튜브,1,1
+onehandedweapon-2212,생선의 지배자,1,1
+onehandedweapon-2269,비치발리볼,1,1
+onehandedweapon-2757,피의 서약,1,1
+onehandedweapon-2626,입술 위 하트,1,1
+onehandedweapon-2401,부들부들,1,1
+onehandedweapon-2312,매혹 플루트,1,1
+onehandedweapon-2551,유기농 쌀밥,1,1
+onehandedweapon-2745,딸기 피트니스 줄넘기,1,1
+onehandedweapon-2754,나도 데려가!,1,1
+onehandedweapon-2477,파티의 왕홀,1,1
+onehandedweapon-2566,호박 지팡이,1,1
+onehandedweapon-2524,달달 포근,1,1
+onehandedweapon-2255,단호한 철퇴,1,1
+onehandedweapon-2750,바니 마커펜,1,1
+onehandedweapon-2272,눈보드레,1,1
+onehandedweapon-2217,빛의 바다,1,1
+onehandedweapon-2295,아라매화,1,1
+onehandedweapon-2676,눈동구리,1,1
+onehandedweapon-2243,인빈시블 블레이드,1,1
+onehandedweapon-2730,메이플블리츠X 전략가의 전장,1,1
+onehandedweapon-2695,황금 콩떡이,1,1
+onehandedweapon-2673,꼬마 크레용,1,1
+onehandedweapon-2576,방울방울 무지개,1,1
+onehandedweapon-2108,칠흑의 날개,1,1
+onehandedweapon-2049,예그리나,1,1
+onehandedweapon-2046,다람이 봄비,1,1
+onehandedweapon-2531,테니스 라켓,1,1
+onehandedweapon-2732,봄꽃 사슴,1,1
+onehandedweapon-2433,안이뿌덩,1,1
+onehandedweapon-2321,메이플 트렌디 태블릿,1,1
+onehandedweapon-2230,캔디 엔젤,1,1
+onehandedweapon-2434,숟가락 탈옥범,1,1
+onehandedweapon-2416,비숑 팡팡,1,1
+onehandedweapon-2516,앙트완 회중시계,1,1
+onehandedweapon-2373,절대각도,1,1
+onehandedweapon-2198,살랑 강아지풀,1,1
+onehandedweapon-2259,애옹이 도시락,1,1
+onehandedweapon-2647,메이플 연합 깃발,1,1
+onehandedweapon-2277,화이트 더키 튜브,1,1
+onehandedweapon-2394,무한성단,1,1
+onehandedweapon-2537,파도검,1,1
+onehandedweapon-2270,스우의 애착인형,1,1
+onehandedweapon-2054,연합 사령관 윙 소드,1,1
+onehandedweapon-2632,진실의 빛,1,1
+onehandedweapon-2457,새벽 초롱,1,1
+onehandedweapon-2671,새장 속 영혼,1,1
+onehandedweapon-2393,여제의 품격,1,1
+onehandedweapon-2697,하트 다이어리,1,1
+onehandedweapon-2694,콩닭콩닭,1,1
+onehandedweapon-2275,사령채찍,1,1
+onehandedweapon-2661,무영도,1,1
+onehandedweapon-2384,크롬 덤벨,1,1
+onehandedweapon-2450,눈송이 캔디,1,1
+onehandedweapon-2362,카멜리아 티타임,1,1
+onehandedweapon-2622,빵빵 곰돌벨,1,1
+onehandedweapon-2431,웡키출동,1,1
+onehandedweapon-2125,공격해도돼지,1,1
+onehandedweapon-2236,푸른 석양의 검,1,1
+onehandedweapon-2699,수정 지휘봉,1,1
+onehandedweapon-2545,소원가득 크로스백,1,1
+onehandedweapon-2165,커스드 보우,1,1
+onehandedweapon-2430,불맛 삼지창,1,1
+onehandedweapon-2408,봄빛 요술봉,1,1
+onehandedweapon-2355,고르곤 바스톤,1,1
+onehandedweapon-2456,마스터 어드벤처러 소드,1,1
+onehandedweapon-2035,드림래빗,1,1
+onehandedweapon-2158,핑크빈 우산,1,1
+onehandedweapon-2600,벚꽃 우산,1,1
+onehandedweapon-2548,여명의 빛,1,1
+onehandedweapon-2284,망각의 등불,1,1
+onehandedweapon-2202,별의 기록서,1,1
+onehandedweapon-2271,구르미 꿈베개,1,1
+onehandedweapon-2742,언제나 바다,1,1
+onehandedweapon-2232,크림소다 크러시,1,1
+onehandedweapon-2219,글로리온 의장검,1,1
+onehandedweapon-2721,하보크 대검,1,1
+onehandedweapon-2342,개구리 연못,1,1
+onehandedweapon-2298,하늘 꽃나비,1,1
+onehandedweapon-2105,용맹 백호,1,1
+onehandedweapon-2187,시크릿 패스포트,1,1
+onehandedweapon-2585,아기곰 밤산책,1,1
+onehandedweapon-2449,매직 워드,1,1
+onehandedweapon-2691,문라이트 램프,1,1
+onehandedweapon-2561,램프의 요정 웡키,1,1
+onehandedweapon-2107,퐁퐁 메이플,1,1
+onehandedweapon-2667,크로스 캠핑 머그,1,1
+onehandedweapon-2663,음악대 지휘봉,1,1
+onehandedweapon-2514,마법 박쥐,1,1
+onehandedweapon-2621,웨이브의 야광봉,1,1
+onehandedweapon-2728,이그나이트,1,1
+onehandedweapon-2294,핑크빈 허그 쿠션,1,1
+onehandedweapon-2327,체스퀸 하트,1,1
+onehandedweapon-2109,눈수정 지팡이,1,1
+onehandedweapon-2649,차가운 봉인,1,1
+onehandedweapon-2716,강아지 쿠션,1,1
+onehandedweapon-2474,그랜드 마스터 소드,1,1
+onehandedweapon-2571,요정 웡키의 야광 나뭇잎,1,1
+onehandedweapon-2386,커플 메이커,1,1
+onehandedweapon-2448,커플 브레이커,1,1
+onehandedweapon-2348,낭만 폼폼꽃,1,1
+onehandedweapon-2471,핑크빈의 맛있는 고기,1,1
+onehandedweapon-2121,햇살 여우 친구들,1,1
+onehandedweapon-2248,흑백영화 지팡이,1,1
+onehandedweapon-2536,에메랄드의 시,1,1
+onehandedweapon-2115,선향묵화,1,1
+onehandedweapon-2624,꿈꾸는 여행가,1,1
+onehandedweapon-2324,포도알의 마법,1,1
+onehandedweapon-2542,캔디 클라우드,1,1
+onehandedweapon-2361,산호의 노래,1,1
+onehandedweapon-2619,버블데블 건,1,1
+onehandedweapon-2719,신선의 반딧불,1,1
+onehandedweapon-2405,대나무 검,1,1
+onehandedweapon-2604,오로라 왈츠,1,1
+onehandedweapon-2239,블록 친구들,1,1
+onehandedweapon-2638,통통 비치볼,1,1
+onehandedweapon-2455,행운 가득 클로버,1,1
+onehandedweapon-2078,높이높이 링,1,1
+onehandedweapon-2181,저택의 품격,1,1
+onehandedweapon-2354,뭉게뭉게 구름 풍선,1,1
+onehandedweapon-2163,카리아인 스태프,1,1
+onehandedweapon-2572,미스터리 클럽,1,1
+onehandedweapon-2314,미궁의 연무,1,1
+onehandedweapon-2210,홀로그램 레이저 검,1,1
+onehandedweapon-2351,제일 무서워,1,1
+onehandedweapon-2029,푸른 악몽 한 송이,1,1
+onehandedweapon-2242,예티 마이크,1,1
+onehandedweapon-2388,따스한 마음,1,1
+onehandedweapon-2577,단팥 붕어빵,1,1
+onehandedweapon-2396,달콤 스프링클,1,1
+onehandedweapon-2617,실버벨,1,1
+onehandedweapon-2739,다람곰 카메라,1,1
+onehandedweapon-2258,오래된 비밀,1,1
+onehandedweapon-2365,흑단 부채,1,1
+onehandedweapon-2627,몽글 딸기 포크,1,1
+onehandedweapon-2074,은하 별 나비,1,1
+onehandedweapon-2079,플로르 피에스타,1,1
+onehandedweapon-2559,피어난 이슬,1,1
+onehandedweapon-2192,얌냠 핫도그,1,1
+onehandedweapon-2473,오르골의 열쇠,1,1
+onehandedweapon-2381,드림스타,1,1
+onehandedweapon-2300,솔로부대 용사의 창,1,1
+onehandedweapon-2731,커플부대 용사의 검,1,1
+onehandedweapon-2156,츄릅 매듭팔찌,1,1
+onehandedweapon-2106,마스코트 블랑,1,1
+onehandedweapon-2189,스윗레터 만년필,1,1
+onehandedweapon-2692,쁘띠 봄빛 우비,1,1
+onehandedweapon-2438,블루밍 포레스트 무기,1,1
+onehandedweapon-2662,봄 바람개비,1,1
+onehandedweapon-2208,퓨어 로즈 머들러,1,1
+onehandedweapon-2400,퐁당 핑크 도넛,1,1
+onehandedweapon-2445,달콤 펭귄 아이스,1,1
+onehandedweapon-2614,상큼 펭귄 아이스,1,1
+onehandedweapon-2580,푸른 밤 별빛,1,1
+onehandedweapon-2686,포근냥 쿠션,1,1
+onehandedweapon-2286,작은 방울,1,1
+onehandedweapon-2426,어둠의 추격자 브레스 슈터,1,1
+onehandedweapon-2317,운명의 데스티니,1,1
+onehandedweapon-2727,헤네시스 채집가,1,1
+onehandedweapon-2196,소원의 팔찌,1,1
+onehandedweapon-2302,해바라기 큰송이,1,1
+onehandedweapon-2656,납작 복숭아,1,1
+onehandedweapon-2173,장난감 마술봉,1,1
+onehandedweapon-2584,외로운 꼬마곰,1,1
+onehandedweapon-2549,감동의 화살,1,1
+onehandedweapon-2591,도로시 완드,1,1
+onehandedweapon-2605,천년의 약속,1,1
+onehandedweapon-2403,서바이버 뱅글,1,1
+onehandedweapon-2579,팡팡 생일폭죽,1,1
+onehandedweapon-2390,하트달랑 빗자루,1,1
+onehandedweapon-2175,돌의 정령 응원봉,1,1
+onehandedweapon-2615,달려달려! 멍뭉카,1,1
+onehandedweapon-2279,올곧은 마음,1,1
+onehandedweapon-2609,오늘은 내가 락스타!,1,1
+onehandedweapon-2033,별의 긍지,1,1
+onehandedweapon-2320,한밤 수묵,1,1
+onehandedweapon-2357,탱글탱글 슬라임,1,1
+onehandedweapon-2714,첫번째 팬미팅,1,1
+onehandedweapon-2639,별빛 나팔,1,1
+onehandedweapon-2247,별사탕 북,1,1
+onehandedweapon-2705,룬 스타 컴팩트,1,1
+onehandedweapon-2077,눈꽃보송 도토리,1,1
+onehandedweapon-2062,붉은 고요,1,1
+onehandedweapon-2603,푸른 수정의 부름,1,1
+onehandedweapon-2693,문 슬레이어,1,1
+onehandedweapon-2249,메이플 스마트폰,1,1
+onehandedweapon-2345,크라운 셉터,1,1
+onehandedweapon-2118,우주 여행 중!,1,1
+onehandedweapon-2326,헤카테의 보물 사냥법,1,1
+onehandedweapon-2299,달빛의 사인검,1,1
+onehandedweapon-2482,빅토리안 만년필,1,1
+onehandedweapon-2233,블랙 아이스,1,1
+onehandedweapon-2451,별빛 은하수,1,1
+onehandedweapon-2706,매혹의 향기,1,1
+onehandedweapon-2122,설야의 흑호,1,1
+onehandedweapon-2544,여신의 가호 무기,1,1
+onehandedweapon-2252,사슬 결계,1,1
+onehandedweapon-2328,별구슬 지팡이,1,1
+onehandedweapon-2374,별빛 악단 지휘봉,1,1
+onehandedweapon-2356,곰나잇 곰인형,1,1
+onehandedweapon-2729,저지먼트,1,1
+onehandedweapon-2112,끝없는 탐구,1,1
+onehandedweapon-2224,예술의 혼,1,1
+onehandedweapon-2744,파도 선율,1,1
+onehandedweapon-2704,꼬마 트라이앵글,1,1
+onehandedweapon-2278,깡총 리본아트,1,1
+onehandedweapon-2340,튀김의 성물,1,1
+onehandedweapon-2045,새싹반 병아리,1,1
+onehandedweapon-2341,악몽 진주,1,1
+onehandedweapon-2718,악몽 시계,1,1
+onehandedweapon-2044,꽃잎 약속,1,1
+onehandedweapon-2191,하트비트 홈런,1,1
+onehandedweapon-2226,해와 달의 기사 검,1,1
+onehandedweapon-2636,바람의 기사 활,1,1
+onehandedweapon-2316,불의 기사 완드,1,1
+onehandedweapon-2528,어둠의 기사 표창,1,1
+onehandedweapon-2722,번개의 기사 너클,1,1
+onehandedweapon-2261,해변의 파티 폭죽,1,1
+onehandedweapon-2265,파핑 스쿱,1,1
+onehandedweapon-2296,어둠의 흉터,1,1
+onehandedweapon-2688,하이퍼 버닝 소드,1,1
+onehandedweapon-2586,기억 수집가,1,1
+onehandedweapon-2522,모래사장 장난감,1,1
+onehandedweapon-2453,홀로그램 레이저 검 Ver.2,1,1
+onehandedweapon-2660,암흑 감시자,1,1
+onehandedweapon-2329,은반의 장미,1,1
+onehandedweapon-2213,캔디 타이핑,1,1
+onehandedweapon-2040,미드나잇 코코넛 워터,1,1
+onehandedweapon-2703,진 천사와 꿈나라,1,1
+onehandedweapon-2186,진 악마와 꿈나라,1,1
+onehandedweapon-2370,스파이럴 펑크,1,1
+onehandedweapon-2463,은하 꽃울림,1,1
+onehandedweapon-2199,나는 회복약 블루,1,1
+onehandedweapon-2419,나는 회복약 핑크,1,1
+onehandedweapon-2759,훈민정음,1,1
+onehandedweapon-2558,야옹 사탕 바구니,1,1
+onehandedweapon-2338,황금 곡괭이,1,1
+onehandedweapon-2193,다이아 곡괭이,1,1
+onehandedweapon-2117,반짝반짝 UFO,1,1
+onehandedweapon-2318,겨울여우 솜펀치,1,1
+onehandedweapon-2182,거대 포크,1,1
+onehandedweapon-2469,내 친구 웡키,1,1
+onehandedweapon-2304,슈가 크러쉬,1,1
+onehandedweapon-2670,폼폼 뜨개질,1,1
+onehandedweapon-2687,포롱요정 지팡이,1,1
+onehandedweapon-2291,해머 오브 토드,1,1
+onehandedweapon-2157,멀리멀리 망원경,1,1
+onehandedweapon-2185,하트체크 백,1,1
+onehandedweapon-2429,세레니티 프레이어,1,1
+onehandedweapon-2380,앱실론 친위대 차크람,1,1
+onehandedweapon-2518,핑크빈 치킨팝,1,1
+onehandedweapon-2567,아이스 멜로디,1,1
+onehandedweapon-2369,네온 다이아 링,1,1
+onehandedweapon-2292,정예 기사단 쌍검,1,1
+onehandedweapon-2677,콩콩 쿠키커터,1,1
+onehandedweapon-2541,시공의 틈새,1,1
+onehandedweapon-2462,스트로베리 포크,1,1
+onehandedweapon-2234,메이프릴 케인,1,1
+onehandedweapon-2203,루더스 토이카,1,1
+onehandedweapon-2293,오르비스 큐피드,1,1
+onehandedweapon-2308,메이플 우산,1,1
+onehandedweapon-2042,아쿠아 스노우보드,1,1
+onehandedweapon-2513,골든 스노우보드,1,1
+onehandedweapon-2599,블러드 스노우보드,1,1
+onehandedweapon-2725,돌의 정령 구출작전,1,1
+onehandedweapon-2458,주니어 네키 무기,1,1
+onehandedweapon-2056,하트냥이 그릇,1,1
+onehandedweapon-2709,빛의 오브제,1,1
+onehandedweapon-2323,치카푸카 양치 시간,1,1
+onehandedweapon-2057,천공의 깃펜,1,1
+onehandedweapon-2535,오늘도 나이스 샷,1,1
+onehandedweapon-2553,찰떡 아리 나뭇잎,1,1
+onehandedweapon-2669,바삭 멍뭉이 쿠키,1,1
+onehandedweapon-2216,러버블 플레이,1,1
+onehandedweapon-2640,산뜻한 소망,1,1
+onehandedweapon-2717,동그란 소원,1,1
+onehandedweapon-2041,한여름밤 꽃 바구니,1,1
+onehandedweapon-2034,프렌치 깜이,1,1
+onehandedweapon-2307,꿈의 핸들,1,1
+onehandedweapon-2135,글로리 데이 기타,1,1
+onehandedweapon-2266,블랙 캣 기타,1,1
+onehandedweapon-2444,꿈의 데뷔,1,1
+onehandedweapon-2478,고요한 순간,1,1
+onehandedweapon-2385,미나르 바람개비,1,1
+onehandedweapon-2630,옐로우 더키,1,1
+onehandedweapon-2665,핑크 더키,1,1
+onehandedweapon-2104,포근 곰 식빵,1,1
+onehandedweapon-2597,황금 꿀단지,1,1
+onehandedweapon-2414,다이아 꿀단지,1,1
+onehandedweapon-2081,미스틱 로즈 소울,1,1
+onehandedweapon-2441,유령 분장 사탕 바구니,1,1
+onehandedweapon-2646,캔디 마법사의 빗자루,1,1
+onehandedweapon-2472,주황토끼 팡팡,1,1
+onehandedweapon-2635,약속의 시간,1,1
+onehandedweapon-2262,달콤한 가을,1,1
+onehandedweapon-2675,좀비버섯의 복수,1,1
+onehandedweapon-2442,페어리 래빗,1,1
+onehandedweapon-2246,모험가 히어로 소드,1,1
+onehandedweapon-2260,모험가 팔라딘 해머,1,1
+onehandedweapon-2406,모험가 다크나이트 스피어,1,1
+onehandedweapon-2726,모험가 비숍 완드,1,1
+onehandedweapon-2166,모험가 썬콜 스태프,1,1
+onehandedweapon-2310,모험가 보우마스터 활,1,1
+onehandedweapon-2543,모험가 신궁 석궁,1,1
+onehandedweapon-2177,모험가 패스파인더 활,1,1
+onehandedweapon-2690,모험가 듀얼블레이드 단검,1,1
+onehandedweapon-2540,모험가 섀도어 단검,1,1
+onehandedweapon-2517,모험가 캐논슈터 포탄,1,1
+onehandedweapon-2281,모험가 바이퍼 너클,1,1
+onehandedweapon-2459,모험가 캡틴 건,1,1
+onehandedweapon-2529,시크릿 마스커레이드,1,1
+onehandedweapon-2053,빼꼼! 도치와 여행,1,1
+onehandedweapon-2120,크앙! 고슴도치,1,1
+onehandedweapon-2083,하이퍼 타키온,1,1
+onehandedweapon-2689,오늘의 주인곰,1,1
+onehandedweapon-2253,무도회의 주인공,1,1
+onehandedweapon-2360,스우의 털실 토끼,1,1
+onehandedweapon-2073,눈 오리 메이커,1,1
+onehandedweapon-2485,곰플루언서,1,1
+onehandedweapon-2364,소원을 이룬 청룡,1,1
+onehandedweapon-2422,고독한 날갯짓,1,1
+onehandedweapon-2119,꿈틀꿈틀 꿈사과,1,1

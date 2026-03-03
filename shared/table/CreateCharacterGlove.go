@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterGloveTable() *CreateCharacterGloveTable {
-	return &CreateCharacterGloveTable{records: make(map[string]*CreateCharacterGloveRecord,21)}
+	return &CreateCharacterGloveTable{records: make(map[string]*CreateCharacterGloveRecord,273)}
 }
 
 type CreateCharacterGloveTable struct {

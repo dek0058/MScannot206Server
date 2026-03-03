@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterEysAccTable() *CreateCharacterEysAccTable {
-	return &CreateCharacterEysAccTable{records: make(map[string]*CreateCharacterEysAccRecord,77)}
+	return &CreateCharacterEysAccTable{records: make(map[string]*CreateCharacterEysAccRecord,136)}
 }
 
 type CreateCharacterEysAccTable struct {

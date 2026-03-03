@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterFaceTable() *CreateCharacterFaceTable {
-	return &CreateCharacterFaceTable{records: make(map[string]*CreateCharacterFaceRecord,48)}
+	return &CreateCharacterFaceTable{records: make(map[string]*CreateCharacterFaceRecord,4217)}
 }
 
 type CreateCharacterFaceTable struct {

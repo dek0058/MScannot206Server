@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterHairTable() *CreateCharacterHairTable {
-	return &CreateCharacterHairTable{records: make(map[string]*CreateCharacterHairRecord,80)}
+	return &CreateCharacterHairTable{records: make(map[string]*CreateCharacterHairRecord,8441)}
 }
 
 type CreateCharacterHairTable struct {

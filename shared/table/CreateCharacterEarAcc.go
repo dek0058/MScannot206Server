@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterEarAccTable() *CreateCharacterEarAccTable {
-	return &CreateCharacterEarAccTable{records: make(map[string]*CreateCharacterEarAccRecord,17)}
+	return &CreateCharacterEarAccTable{records: make(map[string]*CreateCharacterEarAccRecord,94)}
 }
 
 type CreateCharacterEarAccTable struct {

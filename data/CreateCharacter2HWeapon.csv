@@ -1,40 +1,656 @@
 Index,Name,MaleProb,FemaleProb
-twohandedweapon-1463,메이플 스노우보드,1,1
-twohandedweapon-1346,실버 스노우보드,1,1
-twohandedweapon-1159,스카이 스노우보드,1,1
-twohandedweapon-1181,골든 스노우보드,1,1
-twohandedweapon-776,슈퍼 스노우보드,1,1
-twohandedweapon-477,블러드 스노우보드,1,1
-twohandedweapon-617,다크 스노우보드,1,1
-twohandedweapon-920,아쿠아 스노우보드,1,1
-twohandedweapon-1086,서핑보드,1,1
-twohandedweapon-1348,검은색 서핑보드,1,1
-twohandedweapon-1058,황금색 서핑보드,1,1
-twohandedweapon-793,초록색 서핑보드,1,1
-twohandedweapon-728,빨간색 서핑보드,1,1
+twohandedweapon-1003,양손검,1,1
+twohandedweapon-743,목검,1,1
+twohandedweapon-1258,왕푸,1,1
+twohandedweapon-547,호검,1,1
+twohandedweapon-624,청운검,1,1
+twohandedweapon-666,참마도,1,1
+twohandedweapon-503,하이랜더,1,1
+twohandedweapon-695,쟈드,1,1
+twohandedweapon-898,클러디,1,1
+twohandedweapon-904,나무 야구 방망이,1,1
+twohandedweapon-748,알루미늄 야구 방망이,1,1
+twohandedweapon-1433,그리스,1,1
+twohandedweapon-731,그륜힐,1,1
+twohandedweapon-1198,일본지도,1,1
+twohandedweapon-928,체온계,1,1
+twohandedweapon-1204,그레이트 로헨,1,1
+twohandedweapon-507,라 투핸더,1,1
+twohandedweapon-871,다이와 칼,1,1
+twohandedweapon-1210,환목검,1,1
+twohandedweapon-531,참화도,1,1
+twohandedweapon-977,드래곤 클레이모어,1,1
+twohandedweapon-631,메이플 소울 로헨,1,1
+twohandedweapon-1333,타임리스 니플하임,1,1
+twohandedweapon-248,베인스워드,1,1
+twohandedweapon-932,아스카론,1,1
+twohandedweapon-1113,메이플 파이롭 로헨,1,1
+twohandedweapon-960,막스 반 레온 스워드,1,1
+twohandedweapon-474,라이온하트 배틀시미터,1,1
+twohandedweapon-1378,아가레스 블러디 투핸더,1,1
+twohandedweapon-1176,메이플 베릴 베다,1,1
+twohandedweapon-1188,메이플 래티넘 베다,1,1
+twohandedweapon-1477,네크로 투핸더,1,1
+twohandedweapon-860,메이플 이올렛 클레이모어,1,1
+twohandedweapon-944,강인한 전사의 투핸드소드,1,1
+twohandedweapon-804,내 친구 범고래,1,1
+twohandedweapon-714,초코바나나,1,1
+twohandedweapon-819,사신의 낫,1,1
+twohandedweapon-694,템페스트 클레이모어,1,1
+twohandedweapon-913,카이저의 수련대검,1,1
+twohandedweapon-597,저주받은 카이세리움,1,1
+twohandedweapon-689,얼티밋 클레이모어,1,1
+twohandedweapon-516,파프니르 페니텐시아,1,1
+twohandedweapon-811,스칼렛 클레이모어,1,1
+twohandedweapon-1232,10주년 블랙 투핸드소드,1,1
+twohandedweapon-1155,10주년 화이트 투핸드소드,1,1
+twohandedweapon-801,마이스터 클레이모어,1,1
+twohandedweapon-1371,카이세리온,1,1
+twohandedweapon-862,레볼루션 투핸드소드,1,1
+twohandedweapon-529,용맹의 날개,1,1
+twohandedweapon-953,레드 투핸드소드,1,1
+twohandedweapon-1262,류드의 검,1,1
+twohandedweapon-1321,11주년 세인트 투핸드소드,1,1
+twohandedweapon-922,자쿰의 포이즈닉 투핸드소드,1,1
+twohandedweapon-1187,쟈이힌 투핸드소드,1,1
+twohandedweapon-1153,우트가르드 투핸드소드,1,1
+twohandedweapon-1178,앱솔랩스 브로드세이버,1,1
+twohandedweapon-470,메이플 트레져 투핸드소드,1,1
+twohandedweapon-1449,아야메의 화철포,1,1
+twohandedweapon-1451,카스미기리노 카타나,1,1
+twohandedweapon-1085,아케인셰이드 투핸드소드,1,1
+twohandedweapon-1037,봉인된 제네시스 투핸드소드,1,1
+twohandedweapon-1567,에넷 카니스,1,1
+twohandedweapon-1570,페룸 아퀼라,1,1
+twohandedweapon-1568,옵시딕 코버스,1,1
+twohandedweapon-1569,루베스 라체르타,1,1
+twohandedweapon-1571,다마스크 에쿠스,1,1
+twohandedweapon-1572,자피르 파시스,1,1
+twohandedweapon-1575,아시믹 카프라,1,1
+twohandedweapon-1577,크루소 아푸스,1,1
+twohandedweapon-1579,드래곤 우르사,1,1
+twohandedweapon-1578,자쿰의 포이즈닉 제하르,1,1
+twohandedweapon-1574,브히제르 타루스,1,1
+twohandedweapon-1573,네크로 차크람,1,1
+twohandedweapon-1576,쟈이힌 루퍼스,1,1
+twohandedweapon-1583,로얄 반 레온 차크람,1,1
+twohandedweapon-1580,우트가르드 세투스,1,1
+twohandedweapon-1581,레이븐혼 차크람,1,1
+twohandedweapon-1586,파프니르 차크람,1,1
+twohandedweapon-1584,앱솔랩스 차크람,1,1
+twohandedweapon-1582,아케인셰이드 차크람,1,1
+twohandedweapon-1585,마이스터 하이드라,1,1
+twohandedweapon-1587,블랙 크샤마,1,1
+twohandedweapon-1590,봉인된 제네시스 이클립스,1,1
+twohandedweapon-1591,하이 펠릭스,1,1
+twohandedweapon-1053,양손 도끼,1,1
+twohandedweapon-637,쇠 도끼,1,1
+twohandedweapon-900,강철 도끼,1,1
+twohandedweapon-990,라이징,1,1
+twohandedweapon-1217,니암,1,1
+twohandedweapon-501,버드빌,1,1
+twohandedweapon-1183,버크,1,1
+twohandedweapon-885,샤이닝,1,1
+twohandedweapon-979,크로노,1,1
+twohandedweapon-784,헬리오스,1,1
+twohandedweapon-800,클로니안 엑스,1,1
+twohandedweapon-929,메이플 투핸디드 엑스,1,1
+twohandedweapon-751,철제 도끼,1,1
+twohandedweapon-1337,타바르,1,1
+twohandedweapon-1280,드래곤 배틀엑스,1,1
+twohandedweapon-613,메이플 데몬엑스,1,1
+twohandedweapon-896,타임리스 타바르진,1,1
+twohandedweapon-949,라이온하트 배틀엑스,1,1
+twohandedweapon-1004,아가레스 블러디 기간틱,1,1
+twohandedweapon-621,메이플 베릴 아발란체,1,1
+twohandedweapon-1366,메이플 래티넘 아발란체,1,1
+twohandedweapon-1387,네크로 기간틱,1,1
+twohandedweapon-1362,메이플 이올렛 버터플라이,1,1
+twohandedweapon-489,템페스트 버터플라이,1,1
+twohandedweapon-847,얼티밋 버터플라이,1,1
+twohandedweapon-856,파프니르 배틀클리버,1,1
+twohandedweapon-672,스칼렛 배틀엑스,1,1
+twohandedweapon-799,10주년 블랙 투핸드엑스,1,1
+twohandedweapon-952,10주년 화이트 투핸드엑스,1,1
+twohandedweapon-1062,마이스터 배틀엑스,1,1
+twohandedweapon-1341,레볼루션 투핸드엑스,1,1
+twohandedweapon-588,11주년 세인트 투핸드엑스,1,1
+twohandedweapon-1051,자쿰의 포이즈닉 투핸드엑스,1,1
+twohandedweapon-1399,쟈이힌 투핸드엑스,1,1
+twohandedweapon-634,우트가르드 투핸드엑스,1,1
+twohandedweapon-1268,앱솔랩스 브로드엑스,1,1
+twohandedweapon-1140,로얄 반 레온 투핸드엑스,1,1
+twohandedweapon-523,메이플 트레져 투핸드엑스,1,1
+twohandedweapon-972,아케인셰이드 투핸드엑스,1,1
+twohandedweapon-735,봉인된 제네시스 투핸드엑스,1,1
+twohandedweapon-709,나무 망치,1,1
+twohandedweapon-907,미스릴 모울,1,1
+twohandedweapon-1160,강철구 망치,1,1
+twohandedweapon-782,사각 망치,1,1
+twohandedweapon-851,몽키 스페너,1,1
+twohandedweapon-846,골든 모울,1,1
+twohandedweapon-546,곡괭이,1,1
+twohandedweapon-1110,타이탄,1,1
+twohandedweapon-756,빅해머,1,1
+twohandedweapon-1081,플루튬,1,1
+twohandedweapon-1330,호프만,1,1
+twohandedweapon-653,사케(일본주),1,1
+twohandedweapon-557,크롬,1,1
+twohandedweapon-1123,레오마이트,1,1
+twohandedweapon-453,메이플 빅 모울,1,1
+twohandedweapon-1286,골든 스미스해머,1,1
+twohandedweapon-559,드래곤 플레임,1,1
+twohandedweapon-1127,메이플 벨제트,1,1
+twohandedweapon-490,타임리스 벨로체,1,1
+twohandedweapon-645,메이플 파이롭 모울,1,1
+twohandedweapon-1112,라이온하트 기간틱모울,1,1
+twohandedweapon-1368,아가레스 블러디모울,1,1
+twohandedweapon-1054,메이플 베릴 토르,1,1
+twohandedweapon-894,메이플 래티넘 토르,1,1
+twohandedweapon-648,네크로 모울,1,1
+twohandedweapon-1059,메이플 이올렛 빅모울,1,1
+twohandedweapon-1392,템페스트 빅모울,1,1
+twohandedweapon-942,얼티밋 빅모울,1,1
+twohandedweapon-1462,파프니르 라이트닝어,1,1
+twohandedweapon-906,스칼렛 배틀해머,1,1
+twohandedweapon-1126,10주년 블랙 모울,1,1
+twohandedweapon-1376,10주년 화이트 모울,1,1
+twohandedweapon-692,마이스터 배틀해머,1,1
+twohandedweapon-1013,레볼루션 모울,1,1
+twohandedweapon-568,레드 모울,1,1
+twohandedweapon-240,살벌한 전기톱,1,1
+twohandedweapon-874,11주년 세인트 모울,1,1
+twohandedweapon-1119,자쿰의 포이즈닉 빅해머,1,1
+twohandedweapon-757,쟈이힌 투핸드해머,1,1
+twohandedweapon-1218,우트가르드 투핸드해머,1,1
+twohandedweapon-1396,앱솔랩스 브로드해머,1,1
+twohandedweapon-1408,로얄 반 레온 투핸드해머,1,1
+twohandedweapon-826,메이플 트레져 모울,1,1
+twohandedweapon-1269,설화선,1,1
+twohandedweapon-641,아케인셰이드 투핸드해머,1,1
+twohandedweapon-1186,봉인된 제네시스 투핸드해머,1,1
+twohandedweapon-1340,창,1,1
+twohandedweapon-1234,포크 창,1,1
+twohandedweapon-844,삼지창,1,1
+twohandedweapon-935,나카마키,1,1
+twohandedweapon-959,장팔사모,1,1
+twohandedweapon-614,제코,1,1
+twohandedweapon-1190,십자창,1,1
+twohandedweapon-492,스페판,1,1
+twohandedweapon-1020,물고기 작살,1,1
+twohandedweapon-1407,죽창,1,1
+twohandedweapon-1284,호진공창,1,1
+twohandedweapon-1322,페어프로즌,1,1
+twohandedweapon-1134,메이플 스피어,1,1
+twohandedweapon-707,펌프킨 스피어,1,1
+twohandedweapon-696,스키_레드,1,1
+twohandedweapon-540,스키_오렌지,1,1
+twohandedweapon-1199,스키_그린,1,1
+twohandedweapon-598,스키_스카이,1,1
+twohandedweapon-1261,피나카,1,1
+twohandedweapon-724,드래곤 팔티잔,1,1
+twohandedweapon-1442,낚싯대,1,1
+twohandedweapon-863,메이플 베리트 스피어,1,1
+twohandedweapon-533,타임리스 알슈피스,1,1
+twohandedweapon-664,벨룸 스피어,1,1
+twohandedweapon-594,메이플 파이롭 스피어,1,1
+twohandedweapon-997,막스 반 레온 스피어,1,1
+twohandedweapon-497,라이온하트 푸스키나,1,1
+twohandedweapon-1323,아가레스 블러디 스피어,1,1
+twohandedweapon-1448,메이플 베릴 파르파티,1,1
+twohandedweapon-458,메이플 래티넘 파르파티,1,1
+twohandedweapon-1052,네크로 스피어,1,1
+twohandedweapon-1024,메이플 이올렛 올피어스,1,1
+twohandedweapon-1315,템페스트 올피어스,1,1
+twohandedweapon-472,아메리칸 핫도그,1,1
+twohandedweapon-495,얼티밋 올피어스,1,1
+twohandedweapon-1452,파프니르 브류나크,1,1
+twohandedweapon-1158,스칼렛 배틀스피어,1,1
+twohandedweapon-459,10주년 블랙 스피어,1,1
+twohandedweapon-1425,10주년 화이트 스피어,1,1
+twohandedweapon-639,마이스터 배틀스피어,1,1
+twohandedweapon-750,레볼루션 스피어,1,1
+twohandedweapon-878,레드 스피어,1,1
+twohandedweapon-816,11주년 세인트 스피어,1,1
+twohandedweapon-542,자쿰의 포이즈닉 스피어,1,1
+twohandedweapon-573,쟈이힌 스피어,1,1
+twohandedweapon-530,우트가르드 스피어,1,1
+twohandedweapon-450,앱솔랩스 피어싱스피어,1,1
+twohandedweapon-484,메이플 트레져 스피어,1,1
+twohandedweapon-1363,아케인셰이드 스피어,1,1
+twohandedweapon-1099,봉인된 제네시스 스피어,1,1
+twohandedweapon-889,폴암,1,1
+twohandedweapon-1202,미스릴 폴암,1,1
+twohandedweapon-1459,커터문,1,1
+twohandedweapon-469,도끼 폴암,1,1
 twohandedweapon-1201,지저분한 대걸레,1,1
+twohandedweapon-753,구룡도,1,1
+twohandedweapon-1172,아이언 볼,1,1
+twohandedweapon-881,팬텀,1,1
+twohandedweapon-496,황룡도,1,1
+twohandedweapon-1303,크레센트,1,1
+twohandedweapon-1437,방천극,1,1
+twohandedweapon-1086,서핑보드,1,1
+twohandedweapon-1159,스카이 스노우보드,1,1
+twohandedweapon-920,아쿠아 스노우보드,1,1
+twohandedweapon-1346,실버 스노우보드,1,1
+twohandedweapon-1181,골든 스노우보드,1,1
+twohandedweapon-617,다크 스노우보드,1,1
+twohandedweapon-477,블러드 스노우보드,1,1
+twohandedweapon-1132,냉동참치,1,1
+twohandedweapon-1154,월아산,1,1
+twohandedweapon-1080,핼버드,1,1
+twohandedweapon-803,노란 대걸레,1,1
 twohandedweapon-1242,흰색 대걸레,1,1
 twohandedweapon-651,남색 대걸레,1,1
-twohandedweapon-803,노란 대걸레,1,1
-twohandedweapon-1199,스키 그린,1,1
-twohandedweapon-598,스키 스카이,1,1
-twohandedweapon-540,스키 오렌지,1,1
-twohandedweapon-696,스키 레드,1,1
-twohandedweapon-1442,낚시대,0.5,0.5
-twohandedweapon-1407,죽창,1,1
+twohandedweapon-635,메이플 폴암,1,1
+twohandedweapon-838,청룡언월도,1,1
+twohandedweapon-728,빨간색 서핑보드,1,1
+twohandedweapon-793,초록색 서핑보드,1,1
+twohandedweapon-1348,검정색 서핑보드,1,1
+twohandedweapon-1058,황금색 서핑보드,1,1
+twohandedweapon-1254,제드버그,1,1
+twohandedweapon-818,드래곤 핼버드,1,1
+twohandedweapon-776,슈퍼 스노우보드,1,1
+twohandedweapon-1108,화이트캔디,1,1
+twohandedweapon-725,메이플 카르스탄,1,1
+twohandedweapon-663,타임리스 디에스이라에,1,1
+twohandedweapon-1386,아란의 폴암 마하,1,1
+twohandedweapon-553,베인 폴암,1,1
+twohandedweapon-555,스틸 폴암,1,1
+twohandedweapon-1277,모글레이,1,1
+twohandedweapon-783,메이플 파이롭 핼버드,1,1
+twohandedweapon-1326,설빙지도,1,1
+twohandedweapon-727,막스 반 레온 핼버드,1,1
+twohandedweapon-752,라이온하트 파르티잔,1,1
+twohandedweapon-1416,아가레스 블러디 폴암,1,1
+twohandedweapon-1453,날렵한 전사의 장미,1,1
+twohandedweapon-806,광포한 전사의 장미,1,1
+twohandedweapon-1043,분노한 전사의 장미,1,1
+twohandedweapon-1309,메이플 래티넘 프람,1,1
+twohandedweapon-1271,유니언 폴암,1,1
+twohandedweapon-989,네크로 폴암,1,1
+twohandedweapon-789,메이플 이올렛 하프문,1,1
+twohandedweapon-632,유성빙하도,1,1
+twohandedweapon-498,템페스트 하프문,1,1
+twohandedweapon-1319,얼티밋 하프문,1,1
+twohandedweapon-537,파프니르 문글레이브,1,1
+twohandedweapon-581,스칼렛 헬버드,1,1
+twohandedweapon-464,10주년 블랙 폴암,1,1
+twohandedweapon-1298,10주년 화이트 폴암,1,1
+twohandedweapon-1465,마이스터 헬버드,1,1
+twohandedweapon-755,레볼루션 폴암,1,1
+twohandedweapon-1055,11주년 세인트 폴암,1,1
+twohandedweapon-1139,자쿰의 포이즈닉 폴암,1,1
+twohandedweapon-602,쟈이힌 핼버드,1,1
+twohandedweapon-1235,우트가르드 핼버드,1,1
+twohandedweapon-843,앱솔랩스 핼버드,1,1
+twohandedweapon-1128,메이플 트레져 폴암,1,1
+twohandedweapon-968,아케인셰이드 폴암,1,1
+twohandedweapon-1404,봉인된 제네시스 폴암,1,1
+twohandedweapon-1173,배틀 보우,1,1
+twohandedweapon-891,사냥꾼의 활,1,1
+twohandedweapon-729,워 보우,1,1
+twohandedweapon-667,합금 활,1,1
+twohandedweapon-1038,봉황위궁,1,1
+twohandedweapon-761,라이덴,1,1
+twohandedweapon-1294,레드 바이퍼,1,1
+twohandedweapon-656,발터2000,1,1
+twohandedweapon-677,올림푸스,1,1
+twohandedweapon-721,레드 힌켈,1,1
+twohandedweapon-566,블루 힌켈,1,1
+twohandedweapon-1129,골든 힌켈,1,1
+twohandedweapon-628,마린 아룬드,1,1
+twohandedweapon-517,파이어 아룬드,1,1
+twohandedweapon-980,골든 아룬드,1,1
+twohandedweapon-737,다크 아룬드,1,1
+twohandedweapon-1418,메이플 보우,1,1
+twohandedweapon-558,메투스,1,1
+twohandedweapon-937,마법 파괴 활,1,1
+twohandedweapon-1411,화이트 니스록,1,1
+twohandedweapon-536,골든 니스록,1,1
+twohandedweapon-1027,다크 니스록,1,1
+twohandedweapon-671,메이플 헌터스,1,1
+twohandedweapon-1259,조가지궁,1,1
+twohandedweapon-1105,메투스 블루,1,1
+twohandedweapon-1211,메투스 블랙,1,1
+twohandedweapon-1417,드래곤 샤인보우,1,1
+twohandedweapon-780,메이플 간디바 보우,1,1
+twohandedweapon-1093,타임리스 엔가우,1,1
+twohandedweapon-1274,바리사다,1,1
+twohandedweapon-839,베인 롱보우,1,1
+twohandedweapon-1151,메이플 파이롭 보우,1,1
+twohandedweapon-1400,팍스 반 레온 보우,1,1
+twohandedweapon-895,팔콘윙 컴포지트 보우,1,1
+twohandedweapon-719,이포스 블러디 롱보우,1,1
+twohandedweapon-1031,날렵한 레이븐 보우,1,1
+twohandedweapon-1329,광포한 레이븐 보우,1,1
+twohandedweapon-963,분노한 레이븐 보우,1,1
+twohandedweapon-670,메이플 베릴 템페스트,1,1
+twohandedweapon-859,메이플 래티넘 템페스트,1,1
+twohandedweapon-1347,네크로 롱보우,1,1
+twohandedweapon-1212,메이플 이올렛 애쉬로드,1,1
+twohandedweapon-456,신묘사수지궁,1,1
+twohandedweapon-1229,템페스트 애쉬로드,1,1
+twohandedweapon-845,얼티밋 애쉬로드,1,1
+twohandedweapon-548,파프니르 윈드체이서,1,1
+twohandedweapon-797,스칼렛 배틀보우,1,1
+twohandedweapon-744,10주년 블랙 롱보우,1,1
+twohandedweapon-633,10주년 화이트 롱보우,1,1
+twohandedweapon-813,마이스터 배틀보우,1,1
+twohandedweapon-1369,레볼루션 보우,1,1
+twohandedweapon-526,신속의 날개,1,1
+twohandedweapon-681,레드 보우,1,1
+twohandedweapon-982,라이트시커,1,1
+twohandedweapon-971,11주년 세인트 롱보우,1,1
+twohandedweapon-665,자쿰의 포이즈닉 보우,1,1
+twohandedweapon-1213,쟈이힌 보우,1,1
+twohandedweapon-1131,우트가르드 보우,1,1
+twohandedweapon-923,앱솔랩스 슈팅보우,1,1
+twohandedweapon-1447,메이플 트레져 롱보우,1,1
+twohandedweapon-604,아케인셰이드 보우,1,1
+twohandedweapon-841,봉인된 제네시스 보우,1,1
+twohandedweapon-749,산양 석궁,1,1
+twohandedweapon-999,석궁,1,1
+twohandedweapon-1352,전투 석궁,1,1
+twohandedweapon-766,발란쉐,1,1
+twohandedweapon-1292,이글크로,1,1
+twohandedweapon-1156,헤클러,1,1
+twohandedweapon-956,실버 크로우,1,1
+twohandedweapon-1308,로우어,1,1
+twohandedweapon-955,골든 크로우,1,1
+twohandedweapon-1468,그로스야거,1,1
+twohandedweapon-770,마린 샬리트,1,1
+twohandedweapon-802,파이어 샬리트,1,1
+twohandedweapon-513,골든 샬리트,1,1
+twohandedweapon-1170,다크 샬리트,1,1
+twohandedweapon-924,메이플 크로우,1,1
+twohandedweapon-582,화이트 네쉐르,1,1
+twohandedweapon-835,골든 네쉐르,1,1
+twohandedweapon-1226,다크 네쉐르,1,1
+twohandedweapon-616,카사 크로우,1,1
+twohandedweapon-1150,메이플 크로스보우,1,1
+twohandedweapon-1272,옐로우 크로우,1,1
+twohandedweapon-1355,드래곤 샤인크로스,1,1
+twohandedweapon-590,메이플 니샤다,1,1
+twohandedweapon-605,타임리스 블랙뷰티,1,1
+twohandedweapon-993,인페르나,1,1
+twohandedweapon-970,메이플 파이롭 크로우,1,1
+twohandedweapon-842,레볼루션 크로스보우,1,1
+twohandedweapon-1243,팍스 반 레온 크로스보우,1,1
+twohandedweapon-1048,팔콘윙 헤비크로스보우,1,1
+twohandedweapon-764,이포스 블러디 크로스보우,1,1
+twohandedweapon-460,날렵한 레이븐 석궁,1,1
+twohandedweapon-1061,광포한 레이븐 석궁,1,1
+twohandedweapon-718,분노한 레이븐 석궁,1,1
+twohandedweapon-864,메이플 베릴 발리스타,1,1
+twohandedweapon-1251,메이플 래티넘 발리스타,1,1
+twohandedweapon-995,유니언 크로스보우,1,1
+twohandedweapon-1301,네크로 크로스보우,1,1
+twohandedweapon-1470,메이플 이올렛 록,1,1
+twohandedweapon-868,신묘사수지석궁,1,1
+twohandedweapon-579,레지스탕스 크로스보우,1,1
+twohandedweapon-1402,템페스트 록,1,1
+twohandedweapon-1130,얼티밋 록,1,1
+twohandedweapon-644,파프니르 윈드윙슈터,1,1
+twohandedweapon-831,스칼렛 크로스보우,1,1
+twohandedweapon-1030,10주년 블랙 크로우,1,1
+twohandedweapon-701,10주년 화이트 크로우,1,1
+twohandedweapon-1042,마이스터 크로스보우,1,1
+twohandedweapon-1435,레볼루션 다크크로우,1,1
+twohandedweapon-518,레드 크로스보우,1,1
+twohandedweapon-739,11주년 세인트 석궁,1,1
+twohandedweapon-1249,자쿰의 포이즈닉 크로스보우,1,1
+twohandedweapon-1144,쟈이힌 크로스보우,1,1
+twohandedweapon-808,우트가르드 크로스보우,1,1
+twohandedweapon-708,앱솔랩스 크로스보우,1,1
+twohandedweapon-1248,메이플 트레져 석궁,1,1
+twohandedweapon-948,아케인셰이드 크로스보우,1,1
+twohandedweapon-1063,봉인된 제네시스 크로스보우,1,1
+twohandedweapon-1629,이덴산 목제 작살총,1,1
+twohandedweapon-1624,이덴산 철제 작살총,1,1
+twohandedweapon-1625,이덴산 황금 작살총,1,1
+twohandedweapon-273,가니어,1,1
+twohandedweapon-340,스틸 티탄즈,1,1
+twohandedweapon-369,미스릴 티탄즈,1,1
+twohandedweapon-355,골드 티탄즈,1,1
+twohandedweapon-167,브론즈 이고르,1,1
+twohandedweapon-61,스틸 이고르,1,1
+twohandedweapon-389,아다만티움 이고르,1,1
+twohandedweapon-343,메바,1,1
+twohandedweapon-27,스틸 가즈,1,1
+twohandedweapon-320,미스릴 가즈,1,1
+twohandedweapon-277,아다만티움 가즈,1,1
+twohandedweapon-996,브론즈 가디언,1,1
+twohandedweapon-1015,실버 가디언,1,1
+twohandedweapon-1311,다크 가디언,1,1
+twohandedweapon-1036,스틸 보닌,1,1
+twohandedweapon-1458,블러드 보닌,1,1
+twohandedweapon-1267,아다만티움 보닌,1,1
+twohandedweapon-1162,다크 보닌,1,1
+twohandedweapon-1373,스틸 슬레인,1,1
+twohandedweapon-713,블러드 슬레인,1,1
+twohandedweapon-732,사파이어 슬레인,1,1
+twohandedweapon-564,다크 슬레인,1,1
+twohandedweapon-239,브론즈 기간틱,1,1
+twohandedweapon-22,블러드 기간틱,1,1
+twohandedweapon-278,사파이어 기간틱,1,1
+twohandedweapon-246,다크 기간틱,1,1
+twohandedweapon-38,황갑충,1,1
+twohandedweapon-224,녹갑충,1,1
+twohandedweapon-136,청갑충,1,1
+twohandedweapon-330,흑갑충,1,1
+twohandedweapon-123,메이플 스론즈,1,1
+twohandedweapon-184,코브라스티어,1,1
+twohandedweapon-39,메이플 칸데오,1,1
+twohandedweapon-365,캐스터스,1,1
+twohandedweapon-211,드래곤 그린 슬레브,1,1
+twohandedweapon-449,드래곤 퍼플 슬레브,1,1
+twohandedweapon-163,레드 크리븐,1,1
+twohandedweapon-333,메이플 스칸다,1,1
+twohandedweapon-36,타임리스 람피온,1,1
+twohandedweapon-265,클립토,1,1
+twohandedweapon-41,베인바이터,1,1
+twohandedweapon-137,메이플 파이롭 스칸다,1,1
+twohandedweapon-50,녹스 반 레온 가즈,1,1
+twohandedweapon-418,레이븐혼 메탈피스트,1,1
+twohandedweapon-298,핼파스 블러디미스트,1,1
+twohandedweapon-794,날렵한 비틀,1,1
+twohandedweapon-1473,광포한 비틀,1,1
+twohandedweapon-1196,분노한 비틀,1,1
+twohandedweapon-64,메이플 베릴 체이서,1,1
+twohandedweapon-360,메이플 래티넘 체이서,1,1
+twohandedweapon-308,네크로 블러디미스트,1,1
+twohandedweapon-191,메이플 이올렛 블랙 저스티스,1,1
+twohandedweapon-138,템페스트 저스티스,1,1
+twohandedweapon-353,얼티밋 블랙 이벤트,1,1
+twohandedweapon-172,파프니르 리스크홀더,1,1
+twohandedweapon-381,스칼렛 다크슬레인,1,1
+twohandedweapon-413,10주년 블랙 스티어,1,1
+twohandedweapon-129,10주년 화이트 스티어,1,1
+twohandedweapon-243,마이스터 다크슬레인,1,1
+twohandedweapon-194,레볼루션 스티어,1,1
+twohandedweapon-487,승리의 날개,1,1
+twohandedweapon-141,레드 스티어,1,1
+twohandedweapon-11,11주년 세인트 스티어,1,1
+twohandedweapon-70,자쿰의 포이즈닉 가즈,1,1
+twohandedweapon-146,쟈이힌 가즈,1,1
+twohandedweapon-109,우트가르드 가즈,1,1
+twohandedweapon-407,앱솔랩스 리벤지가즈,1,1
+twohandedweapon-230,메이플 트레져 스티어,1,1
+twohandedweapon-218,아케인셰이드 가즈,1,1
+twohandedweapon-293,봉인된 제네시스 가즈,1,1
 twohandedweapon-282,스틸 너클,1,1
-twohandedweapon-1132,냉동참치,1,1
-twohandedweapon-653,사케,1,1
-twohandedweapon-1020,물고기 작살,1,1
-twohandedweapon-1160,강철구 망치,1,1
-twohandedweapon-1210,환목검,1,1
-twohandedweapon-756,빅해머,1,1
-twohandedweapon-546,곡괭이,0.5,0.5
-twohandedweapon-851,몽키 스페너,1,1
-twohandedweapon-782,사각 망치,1,1
-twohandedweapon-709,나무 망치,1,1
-twohandedweapon-637,쇠 도끼,0.5,0.5
-twohandedweapon-748,알루미늄 야구 방망이,1,1
-twohandedweapon-904,나무 야구 방망이,1,1
-twohandedweapon-1555,목검,1,1
-twohandedweapon-666,참마도,0.1,0.1
+twohandedweapon-272,레더 암즈,1,1
+twohandedweapon-155,더블테일 너클,1,1
+twohandedweapon-62,노만 그립,1,1
+twohandedweapon-284,프라임 핸즈,1,1
+twohandedweapon-237,실버 메이든,1,1
+twohandedweapon-401,네오자드,1,1
+twohandedweapon-199,데빌클로,1,1
+twohandedweapon-423,세라핌즈,1,1
+twohandedweapon-68,베이아 크래쉬,1,1
+twohandedweapon-185,스틸르노,1,1
+twohandedweapon-250,백혈귀,1,1
+twohandedweapon-107,킹 센트,1,1
+twohandedweapon-158,용아주조,1,1
+twohandedweapon-52,메이플 너클,1,1
+twohandedweapon-56,메이플 스톰 핑거,1,1
+twohandedweapon-238,메이플 골든 크로,1,1
+twohandedweapon-193,타임리스 에퀴녹스,1,1
+twohandedweapon-8,크루시오,1,1
+twohandedweapon-30,뽀삐발 너클,1,1
+twohandedweapon-196,메이플 파이롭 너클,1,1
+twohandedweapon-409,코라 반 레온 클로,1,1
+twohandedweapon-161,샤크투스 와일드탈론,1,1
+twohandedweapon-341,베파르 블러디 핸즈,1,1
+twohandedweapon-231,날렵한 해적의 너클,1,1
+twohandedweapon-372,광포한 해적의 너클,1,1
+twohandedweapon-258,분노한 해적의 너클,1,1
+twohandedweapon-402,메이플 베릴 퀘이커,1,1
+twohandedweapon-346,메이플 래티넘 퀘이커,1,1
+twohandedweapon-214,네크로 울프,1,1
+twohandedweapon-124,메이플 이올렛 블러디 클로,1,1
+twohandedweapon-108,템페스트 블러디 클로,1,1
+twohandedweapon-147,얼티밋 블러디 클로,1,1
+twohandedweapon-113,파프니르 펜리르탈론,1,1
+twohandedweapon-182,스칼렛 그리폰클로,1,1
+twohandedweapon-404,10주년 블랙 그립,1,1
+twohandedweapon-368,10주년 화이트 그립,1,1
+twohandedweapon-16,마이스터 그리폰클로,1,1
+twohandedweapon-215,레볼루션 그립,1,1
+twohandedweapon-321,레드 너클,1,1
+twohandedweapon-327,11주년 세인트 그립,1,1
+twohandedweapon-302,자쿰의 포이즈닉 너클,1,1
+twohandedweapon-28,쟈이힌 클로,1,1
+twohandedweapon-220,우트가르드 클로,1,1
+twohandedweapon-160,앱솔랩스 블로우너클,1,1
+twohandedweapon-261,메이플 트레져 그립,1,1
+twohandedweapon-121,아케인셰이드 클로,1,1
+twohandedweapon-406,봉인된 제네시스 클로,1,1
+twohandedweapon-151,피스톨,1,1
+twohandedweapon-430,델린져,1,1
+twohandedweapon-287,개런드 피스톨,1,1
+twohandedweapon-283,골든훅,1,1
+twohandedweapon-177,콜드마인드,1,1
+twohandedweapon-51,슈팅 스타,1,1
+twohandedweapon-190,루나 슈터,1,1
+twohandedweapon-213,라스펠트건,1,1
+twohandedweapon-405,버닝헬,1,1
+twohandedweapon-57,어비스 슈터,1,1
+twohandedweapon-103,인피티니,1,1
+twohandedweapon-183,피스메이커,1,1
+twohandedweapon-306,콘체르토,1,1
+twohandedweapon-420,드래곤 세인트,1,1
+twohandedweapon-433,메이플 건,1,1
+twohandedweapon-150,메이플 스톰 피스톨,1,1
+twohandedweapon-292,메이플 캐논 슈터,1,1
+twohandedweapon-351,타임리스 블라인드니스,1,1
+twohandedweapon-428,템페스트,1,1
+twohandedweapon-371,베인 슈터,1,1
+twohandedweapon-264,데저트 이글,1,1
+twohandedweapon-208,레볼루션 건,1,1
+twohandedweapon-202,코라 반 레온 피스톨,1,1
+twohandedweapon-176,샤크투스 샤프슈터,1,1
+twohandedweapon-140,베파르 블러디 이글,1,1
+twohandedweapon-235,메이플 베릴 윈체스터,1,1
+twohandedweapon-352,메이플 래티넘 윈체스터,1,1
+twohandedweapon-339,유니언 슈터,1,1
+twohandedweapon-364,네크로 이글,1,1
+twohandedweapon-156,메이플 이올렛 퀸즈핑거,1,1
+twohandedweapon-314,레지스탕스 건,1,1
+twohandedweapon-440,템페스트 퀸즈핑거,1,1
+twohandedweapon-58,얼티밋 퀸즈핑거,1,1
+twohandedweapon-148,파프니르 첼리스카,1,1
+twohandedweapon-347,스칼렛 인피니티,1,1
+twohandedweapon-337,10주년 블랙 슈터,1,1
+twohandedweapon-135,10주년 화이트 슈터,1,1
+twohandedweapon-162,마이스터 인피니티,1,1
+twohandedweapon-373,레볼루션 슈팅스타,1,1
+twohandedweapon-271,레드 건,1,1
+twohandedweapon-44,11주년 세인트 슈터,1,1
+twohandedweapon-438,자쿰의 포이즈닉 건,1,1
+twohandedweapon-145,쟈이힌 피스톨,1,1
+twohandedweapon-73,우트가르드 피스톨,1,1
+twohandedweapon-398,앱솔랩스 포인팅건,1,1
+twohandedweapon-396,메이플 트레져 슈터,1,1
+twohandedweapon-338,아케인셰이드 피스톨,1,1
+twohandedweapon-128,봉인된 제네시스 피스톨,1,1
+twohandedweapon-1503,매시브 섀도우,1,1
+twohandedweapon-1510,라피스 1형,1,1
+twohandedweapon-1504,라피스 2형,1,1
+twohandedweapon-1505,라피스 3형,1,1
+twohandedweapon-1508,라피스 4형,1,1
+twohandedweapon-1500,라피스 5형,1,1
+twohandedweapon-1501,라피스 6형,1,1
+twohandedweapon-1509,라피스 7형,1,1
+twohandedweapon-1507,라피스 8형,1,1
+twohandedweapon-1506,라피스 9형,1,1
+twohandedweapon-1502,제네시스 라피스,1,1
+twohandedweapon-1511,샤프니스 섀도우,1,1
+twohandedweapon-1513,라즐리 1형,1,1
+twohandedweapon-1520,라즐리 2형,1,1
+twohandedweapon-1515,라즐리 3형,1,1
+twohandedweapon-1517,라즐리 4형,1,1
+twohandedweapon-1512,라즐리 5형,1,1
+twohandedweapon-1516,라즐리 6형,1,1
+twohandedweapon-1514,라즐리 7형,1,1
+twohandedweapon-1518,라즐리 8형,1,1
+twohandedweapon-1519,라즐리 9형,1,1
+twohandedweapon-1521,제네시스 라즐리,1,1
+twohandedweapon-1539,마라드 에인션트 보우,1,1
+twohandedweapon-1548,아수르 에인션트 보우,1,1
+twohandedweapon-1540,우루크 에인션트 보우,1,1
+twohandedweapon-1522,아바리스 에인션트 보우,1,1
+twohandedweapon-1547,마그나 에인션트 보우,1,1
+twohandedweapon-1549,타니스 에인션트 보우,1,1
+twohandedweapon-1542,필로스 에인션트 보우,1,1
+twohandedweapon-1525,에페소스 에인션트 보우,1,1
+twohandedweapon-1526,블랙 에인션트 보우,1,1
+twohandedweapon-1550,드래곤 에인션트 보우,1,1
+twohandedweapon-1533,자쿰의 포이즈닉 에인션트 보우,1,1
+twohandedweapon-1528,네크로 에인션트 보우,1,1
+twohandedweapon-1524,브히제르 에인션트 보우,1,1
+twohandedweapon-1546,로얄 반 레온 에인션트 보우,1,1
+twohandedweapon-1538,쟈이힌 에인션트 보우,1,1
+twohandedweapon-1530,팔콘윙 에인션트 보우,1,1
+twohandedweapon-1523,우트가르드 에인션트 보우,1,1
+twohandedweapon-1543,마이스터 에인션트 보우,1,1
+twohandedweapon-1532,파프니르 에인션트 보우,1,1
+twohandedweapon-1535,앱솔랩스 에인션트 보우,1,1
+twohandedweapon-1529,아케인셰이드 에인션트 보우,1,1
+twohandedweapon-1554,봉인된 제네시스 에인션트 보우,1,1
+twohandedweapon-1642,장난감 총,1,1
+twohandedweapon-1659,검은 일렉 기타,1,1
+twohandedweapon-1656,갈색 일렉 기타,1,1
+twohandedweapon-1658,초록 일렉 기타,1,1
+twohandedweapon-1650,큐피드 보우,1,1
+twohandedweapon-1661,엔젤 보우,1,1
+twohandedweapon-1638,큐피드 크로스보우,1,1
+twohandedweapon-1655,마녀의 빗자루,1,1
+twohandedweapon-1648,별자리 세트 잠자리채,1,1
+twohandedweapon-1653,별자리 세트 활,1,1
+twohandedweapon-1657,모형 라이플,1,1
+twohandedweapon-1641,별자리 세트 석궁,1,1
+twohandedweapon-1645,통기타,1,1
+twohandedweapon-1646,푸른색 통기타,1,1
+twohandedweapon-1639,샤이닝 보우,1,1
+twohandedweapon-1660,가위 막대기,1,1
+twohandedweapon-1654,바위 막대기,1,1
+twohandedweapon-1649,보 막대기,1,1
+twohandedweapon-1652,블루 샤이닝 크로스보우,1,1
+twohandedweapon-1637,핑크 샤이닝 크로스보우,1,1
+twohandedweapon-1651,하프,1,1
+twohandedweapon-1636,테니스라켓,1,1
+twohandedweapon-1647,바이올린,1,1
+twohandedweapon-1640,핑크 리본 양산,1,1
+twohandedweapon-1643,초코바,1,1
+twohandedweapon-1662,대석장,1,1
+twohandedweapon-1671,물총,1,1
+twohandedweapon-1668,해골 도끼,1,1
+twohandedweapon-1665,비즈 너클,1,1
+twohandedweapon-1666,호랑이발톱 너클,1,1
+twohandedweapon-1667,크리스마스 트리지팡이,1,1
+twohandedweapon-1670,반짝손가락,1,1
+twohandedweapon-1664,전기 너클,1,1
+twohandedweapon-1669,강력살충제,1,1

@@ -11,7 +11,7 @@ import (
 )
 
 func NewCreateCharacterPantsTable() *CreateCharacterPantsTable {
-	return &CreateCharacterPantsTable{records: make(map[string]*CreateCharacterPantsRecord,31)}
+	return &CreateCharacterPantsTable{records: make(map[string]*CreateCharacterPantsRecord,444)}
 }
 
 type CreateCharacterPantsTable struct {
