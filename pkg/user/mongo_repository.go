@@ -71,18 +71,6 @@ func (r *UserMongoRepository) ensureIndexes(ctx context.Context) error {
 			SetName("user_character_name_idx"),
 	}
 
-	// 기존 인덱스 삭제 - https://github.com/dek0058/MScannot206Server/issues/5
-	if _, err := r.user.Indexes().DropOne(ctx, "user_character_name_idx"); err != nil {
-		var cmdErr mongo.CommandError
-		if errors.As(err, &cmdErr) {
-			if cmdErr.Code != 27 {
-				return err
-			}
-		} else {
-			return err
-		}
-	}
-
 	_, err := r.user.Indexes().CreateMany(ctx, []mongo.IndexModel{slotIndex, characterNameIndex})
 	if err != nil {
 		return err

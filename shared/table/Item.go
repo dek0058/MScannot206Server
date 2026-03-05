@@ -29,6 +29,8 @@ type ItemRecord struct {
 	RUID string
 
 	Icon string
+
+	InventoryType string
 }
 
 func (t *ItemTable) Load(csvPath string) error {
@@ -53,6 +55,7 @@ func (t *ItemTable) Load(csvPath string) error {
 		rec.ItemDesc = record[3]
 		rec.RUID = record[4]
 		rec.Icon = record[5]
+		rec.InventoryType = record[6]
 		_, ok := t.records[rec.Index]
 		if ok {
 			log.Printf("Duplicate key '%v' found in CSV, skipping record.\n", rec.Index)
